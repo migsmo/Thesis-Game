@@ -9,6 +9,7 @@ public class PilotLogic : MonoBehaviour
     public TextMeshProUGUI ExerciseLabel;
     public TextMeshProUGUI CurrentLevel;
     public TextMeshProUGUI SetLabel;
+    public TextMeshProUGUI UpcomingExerciseLabel;
     public Image SyncBar;
     public Image SideBarL;
     public Image SideBarR;
@@ -111,12 +112,19 @@ public class PilotLogic : MonoBehaviour
                 CurrentTime = 5f;
                 getReady = false;
                 setLabel("Get Ready");
+            
+                if (currExercise == 0)
+                {
+                    UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise];
+                }
+
             }
             if (!getReady && CurrentTime <= 0 && !startExercise)
             {
                 CurrentTime = exerciseTimer + 0.3f;
                 startExercise = true;
                 setLabel(exerciseList[currExercise]);
+                UpcomingExerciseLabel.text = "";
             }
             if (startExercise && CurrentTime <= 0)
             {
@@ -124,6 +132,14 @@ public class PilotLogic : MonoBehaviour
                 ExerciseDone = true;
                 CurrentTime = restTimer;
                 setLabel("Rest");
+                if (currExercise < setNo)
+                {
+                    UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise + 1];
+                }
+                else if (currExercise == exerciseLength)
+                {
+                    UpcomingExerciseLabel.text = "";
+                }
             }
         }
         else
