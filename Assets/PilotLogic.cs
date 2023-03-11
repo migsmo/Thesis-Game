@@ -8,6 +8,7 @@ public class PilotLogic : MonoBehaviour
     public TextMeshProUGUI Timer;
     public TextMeshProUGUI ExerciseLabel;
     public TextMeshProUGUI CurrentLevel;
+    public TextMeshProUGUI SetLabel;
     public Image SyncBar;
     public Image SideBarL;
     public Image SideBarR;
@@ -15,12 +16,13 @@ public class PilotLogic : MonoBehaviour
 
     private string ExerciseName;
     private float CurrentTime = 0f;
-    private float RestTimer = 10.3f;
+    private float RestTimer = 1.3f;
     private float exerciseTimer = 0f;
 
     private bool getReady = true;
     private bool startExercise = false;
     private bool ExerciseDone = false;
+    private bool WorkOutDone = false;
 
     private string[] exerciseList;
     private int selectedLevel;
@@ -28,6 +30,7 @@ public class PilotLogic : MonoBehaviour
     private int setNo;
     private int exerciseLength;
     private int currExercise = 0;
+    private int currSet = 0;
 
     // Start is called before the first frame update
     void Start() 
@@ -38,17 +41,33 @@ public class PilotLogic : MonoBehaviour
         setNo = LevelSelectDisplay.setNo;
         exerciseList = LevelSelectDisplay.exerciseList;
         CurrentLevel.text = "Level " + selectedLevel;
+        SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
         exerciseLength = exerciseList.Length;
+        Debug.Log(setNo);
     }
 
     void Update()
     {
         getSyncBar();
         setBar();
-
-        if (currExercise < exerciseList.Length)
+       
+        if (currExercise < exerciseList.Length && currSet < setNo)
         {
             SetExerciseTimer();
+        }
+        else if (currExercise == exerciseList.Length && currSet < setNo)
+        {
+            currSet++;
+            if (currSet == setNo)
+            {
+                ExerciseLabel.text = "Level Complete!";
+            }
+            else
+            {
+                SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
+                currExercise = 0;
+            }
+           
         }
     }
 
