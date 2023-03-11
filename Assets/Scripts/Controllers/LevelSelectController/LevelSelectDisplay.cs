@@ -23,11 +23,6 @@ public class LevelSelectDisplay : MonoBehaviour
         levelNo.text = level.levelNumber.ToString();
     }
 
-    public void Test()
-    {
-        Debug.Log("Level = " + level.levelNumber);
-    }
-
     public void OpenScene()
     {
         selectedLevel = level.levelNumber;
@@ -35,7 +30,7 @@ public class LevelSelectDisplay : MonoBehaviour
         restTimer = level.restTimer;
         setNo = level.setNo;
         exerciseList = level.exerciseList;
-        SceneManager.LoadScene("LevelPilot");
+        SceneManager.LoadScene("Pilot");
     }
 
 }
