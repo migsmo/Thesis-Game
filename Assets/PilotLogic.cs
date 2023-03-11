@@ -26,6 +26,31 @@ public class PilotLogic : MonoBehaviour
     void Start()
     {
         setLabel(ExerciseList[currExercise]);
+    
+
+        private int selectedLevel;
+        private int exerciseTimer;
+        private int restTimer;
+        private int setNo;
+        private int currentExercise;
+        private string[] exerciseList;
+        private int exerciseLength;
+
+        public TMP_Text exerciseLabel;
+        public TMP_Text currentLevel;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        selectedLevel = LevelSelectDisplay.selectedLevel;
+        exerciseTimer = LevelSelectDisplay.exerciseTimer;
+        restTimer = LevelSelectDisplay.restTimer;
+        setNo = LevelSelectDisplay.setNo;
+        exerciseList = LevelSelectDisplay.exerciseList;
+        currentLevel.text = "Level " + selectedLevel;
+
+        exerciseLength = exerciseList.Length;
+        currentExercise = 0;
     }
 
     // Update is called once per frame
@@ -40,6 +65,16 @@ public class PilotLogic : MonoBehaviour
         }
     }
 
+    IEnumerator ExerciseCoroutine()
+    {
+        while(currentExercise < exerciseLength)
+        {
+            yield return new WaitForSeconds(2f);
+            currentExercise++;
+            Debug.Log(exerciseList[currentExercise]);
+        }
+    }
+
     public void getSyncBar()
     {
         SyncBar.fillAmount = (float)SyncPercentage / 100;
@@ -48,11 +83,12 @@ public class PilotLogic : MonoBehaviour
     public void setLabel(string Label)
     {
         ExerciseName = Label;
+        exerciseLabel.text = exerciseList[currentExercise];
     }
 
     public void getLabel()
     {
-        ExerciseLabel.text = ExerciseName;
+        exerciseLabel.text = exerciseList[currentExercise];
     }
 
     public void setBar()

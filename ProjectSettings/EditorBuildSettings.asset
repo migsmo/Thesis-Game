@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Tutorial.unity
     guid: aedfab49e41da461a80d7c6570be7901
   - enabled: 1
-    path: Assets/Scenes/Pilot.unity
+    path: Assets/Scenes/LevelPilot.unity
     guid: d6a3798c21bd8c640b1d4760f2b249d2
+  - enabled: 1
+    path: Assets/Scenes/Pilot.unity
+    guid: 0a4f0597be9d5a84bb0b4555f032a695
   m_configObjects: {}
