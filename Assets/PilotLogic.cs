@@ -16,8 +16,8 @@ public class PilotLogic : MonoBehaviour
 
     private string ExerciseName;
     private float CurrentTime = 0f;
-    private float RestTimer = 1.3f;
     private float exerciseTimer = 0f;
+    private int restTimer;
 
     private bool getReady = true;
     private bool startExercise = false;
@@ -26,7 +26,6 @@ public class PilotLogic : MonoBehaviour
 
     private string[] exerciseList;
     private int selectedLevel;
-    private int restTimer;
     private int setNo;
     private int exerciseLength;
     private int currExercise = 0;
@@ -123,7 +122,7 @@ public class PilotLogic : MonoBehaviour
             {
                 startExercise = false;
                 ExerciseDone = true;
-                CurrentTime = RestTimer;
+                CurrentTime = restTimer;
                 setLabel("Rest");
             }
         }
