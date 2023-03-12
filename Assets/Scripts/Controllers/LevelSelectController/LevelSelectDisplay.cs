@@ -32,5 +32,4 @@ public class LevelSelectDisplay : MonoBehaviour
         exerciseList = level.exerciseList;
         SceneManager.LoadScene("Pilot");
     }
-
 }

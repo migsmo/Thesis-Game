@@ -10,6 +10,17 @@ public class Level : ScriptableObject
     public int restTimer;
     public int setNo;
     public int starsEarned;
+    public int starsRequired;
 
     public string[] exerciseList;
+
+    int getStarts()
+    {
+        return starsRequired;
+    }
+
+    void setStars(int num)
+    {
+        starsEarned = num;
+    }
 }
