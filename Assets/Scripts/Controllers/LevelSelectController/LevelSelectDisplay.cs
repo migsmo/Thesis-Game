@@ -16,11 +16,16 @@ public class LevelSelectDisplay : MonoBehaviour
 
     public Level level;
     public TMP_Text levelNo;
+    public Button levelButton;
 
     // Start is called before the first frame update
     void Start()
     {
         levelNo.text = level.levelNumber.ToString();
+        if (!level.isUnlocked)
+        {
+            levelButton.enabled = false;
+        }
     }
 
     public void OpenScene()

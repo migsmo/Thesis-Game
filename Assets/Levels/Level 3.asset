@@ -17,6 +17,8 @@ MonoBehaviour:
   restTimer: 10
   setNo: 2
   starsEarned: 0
+  starsRequired: 0
+  isUnlocked: 1
   exerciseList:
   - Wall Sit
   - Sumo Squat
