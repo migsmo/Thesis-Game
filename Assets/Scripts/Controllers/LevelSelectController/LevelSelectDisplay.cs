@@ -17,6 +17,7 @@ public class LevelSelectDisplay : MonoBehaviour
     public Level level;
     public TMP_Text levelNo;
     public Button levelButton;
+    public Image lockIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,8 @@ public class LevelSelectDisplay : MonoBehaviour
         if (!level.isUnlocked)
         {
             levelButton.enabled = false;
+            levelNo.enabled = false;
+            lockIcon.enabled = true;
         }
     }
 
