@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Sample
   m_EditorClassIdentifier: 
   levelNumber: 0
-  exerciseTimer: 0
-  restTimer: 0
-  setNo: 0
+  exerciseTimer: 2
+  restTimer: 2
+  setNo: 2
   starsEarned: 0
   starsRequired: 0
   energyCost: 0
-  isUnlocked: 0
-  exerciseList: []
+  isUnlocked: 1
+  exerciseList:
+  - Exercise 1
+  - Exercise 2
+  - Exercise 3
