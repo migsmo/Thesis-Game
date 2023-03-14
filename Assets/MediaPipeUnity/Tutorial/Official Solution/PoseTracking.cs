@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Stopwatch = System.Diagnostics.Stopwatch;
 using Mediapipe.Unity.CoordinateSystem;
+using MediaPipeUnity.Tutorial.Official_Solution;
 
 namespace Mediapipe.Unity.PoseLandmark
 {
@@ -63,9 +65,9 @@ namespace Mediapipe.Unity.PoseLandmark
       _graph = new CalculatorGraph(_configAsset.text);
 
       var outputVideoStream = new OutputStream<ImageFramePacket, ImageFrame>(_graph, "segmentation_mask");
-      var multiFaceLandmarksStream = new OutputStream<NormalizedLandmarkListPacket, NormalizedLandmarkList>(_graph, "pose_landmarks");
+      var poseLandmarksStream = new OutputStream<NormalizedLandmarkListPacket, NormalizedLandmarkList>(_graph, "pose_landmarks");
       outputVideoStream.StartPolling().AssertOk();
-      multiFaceLandmarksStream.StartPolling().AssertOk();
+      poseLandmarksStream.StartPolling().AssertOk();
 
       _sidePacketpass = new SidePacket();
 
@@ -82,6 +84,9 @@ namespace Mediapipe.Unity.PoseLandmark
       stopwatch.Start();
 
       var screenRect = _screen.GetComponent<RectTransform>().rect;
+      
+      PoseEmbedder poseEmbedder = new PoseEmbedder();
+      PoseClassifier classifier = new PoseClassifier("Assets/fitness_poses_csvs_out", poseEmbedder);
 
       while (true)
       {
@@ -101,17 +106,25 @@ namespace Mediapipe.Unity.PoseLandmark
           }
         }
 
-        if (multiFaceLandmarksStream.TryGetNext(out var multiFaceLandmarks))
+        if (poseLandmarksStream.TryGetNext(out var poseLandmarks))
         {
-          if (multiFaceLandmarks != null && multiFaceLandmarks.Landmark.Count > 0)
+          if (poseLandmarks != null && poseLandmarks.Landmark.Count > 0)
           {
-            //foreach (var landmarks in multiFaceLandmarks.Landmark)
-            //{
-            //  print("Landmark");
-            //  print(landmarks.ToString());
-            //}
-            print($"Coordinates detected: {multiFaceLandmarks.Landmark.Count}");
-            print(multiFaceLandmarks.Landmark);
+            // print($"Coordinates detected: {poseLandmarks.Landmark.Count}");
+            // print(poseLandmarks.Landmark);
+            
+            // TODO: Detect pose here   
+            var classifications = classifier.Classify(poseLandmarks.Landmark.Select(lmk =>
+              new Vector3(lmk.X * _width, lmk.Y * _height, lmk.Z * _width)
+            ).ToArray());
+            
+            foreach (KeyValuePair<string, int> pose in classifications)
+            {
+              if (pose.Value >= 8)
+              {
+                print($"{pose.Key}: {pose.Value}");
+              }
+            }
           }
         }
       }
