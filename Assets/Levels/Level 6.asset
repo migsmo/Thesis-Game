@@ -18,6 +18,7 @@ MonoBehaviour:
   setNo: 2
   starsEarned: 0
   starsRequired: 4
+  isUnlocked: 0
   exerciseList:
   - Wall Sit
   - Sumo Squat

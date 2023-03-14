@@ -18,6 +18,7 @@ MonoBehaviour:
   setNo: 3
   starsEarned: 0
   starsRequired: 4
+  isUnlocked: 0
   exerciseList:
   - Glute Bridge
   - Single Leg Glute Bridge (L)

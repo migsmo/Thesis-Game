@@ -22,6 +22,10 @@ public class LevelSelectDisplay : MonoBehaviour
     void Start()
     {
         levelNo.text = level.levelNumber.ToString();
+    }
+
+    void Update()
+    {
         if (!level.isUnlocked)
         {
             levelButton.enabled = false;

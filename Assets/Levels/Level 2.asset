@@ -16,7 +16,7 @@ MonoBehaviour:
   exerciseTimer: 15
   restTimer: 10
   setNo: 3
-  starsEarned: 0
+  starsEarned: 1
   starsRequired: 0
   isUnlocked: 1
   exerciseList:
