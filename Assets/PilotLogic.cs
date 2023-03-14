@@ -132,7 +132,7 @@ public class PilotLogic : MonoBehaviour
                 ExerciseDone = true;
                 CurrentTime = restTimer;
                 setLabel("Rest");
-                if (currExercise < setNo)
+                if (currExercise + 1 < exerciseLength)
                 {
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise + 1];
                 }
