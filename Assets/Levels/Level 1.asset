@@ -18,6 +18,7 @@ MonoBehaviour:
   setNo: 3
   starsEarned: 2
   starsRequired: 0
+  energyCost: 33
   isUnlocked: 1
   exerciseList:
   - Wall Sit
