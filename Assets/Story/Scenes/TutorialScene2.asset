@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TutorialScene2
   m_EditorClassIdentifier: 
   sentences:
-  - text: Now  that i've shown you guys around the campus, I'll show you guys my
-      favourite place.
+  - text: Now that i've shown you guys around the campus, I'll show you guys my favourite
+      place.
     speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
   - text: "This is the Exor Hangar, this is where you\u2019ll be spending most of
       your time in the Acadamy. As you can see behind me, Exors are mechs that uses

@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public StoryScene currentScene;
     public SpeechBarController speechBar;
-    public BackgroundController backgroundController;
+    public SpriteSwitcher backgroundController;
 
     // Start is called before the first frame update
     void Start()
