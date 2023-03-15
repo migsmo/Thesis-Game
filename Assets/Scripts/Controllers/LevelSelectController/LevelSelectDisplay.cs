@@ -18,11 +18,13 @@ public class LevelSelectDisplay : MonoBehaviour
     public TMP_Text levelNo;
     public Button levelButton;
     public Image lockIcon;
+    public GameObject Panel;
 
     // Start is called before the first frame update
     void Start()
     {
         levelNo.text = level.levelNumber.ToString();
+        Panel.SetActive(false);
     }
 
     void Update()
@@ -43,5 +45,18 @@ public class LevelSelectDisplay : MonoBehaviour
         setNo = level.setNo;
         exerciseList = level.exerciseList;
         SceneManager.LoadScene("Pilot");
+    }
+
+    public void OnMouseOver()
+    {
+        if (level.isUnlocked)
+        {
+            Panel.SetActive(true);
+        }
+    }
+
+    public void OnMouseExit()
+    {
+        Panel.SetActive(false);
     }
 }
