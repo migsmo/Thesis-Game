@@ -4513,7 +4513,7 @@ PrefabInstance:
     - target: {fileID: 2399529385339796272, guid: 2e3cbb1fca0baf648b0ad45c946783bc, type: 3}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 96c9969c4c4412048a77ba0e68a5296d, type: 2}
+      objectReference: {fileID: 11400000, guid: 7efb564df4ae7024abdb5677f62f526d, type: 2}
     - target: {fileID: 2399529385339796276, guid: 2e3cbb1fca0baf648b0ad45c946783bc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

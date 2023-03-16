@@ -19,7 +19,7 @@ public class PilotLogic : MonoBehaviour
     private float CurrentTime = 0f;
     private float exerciseTimer = 0f;
     private int restTimer;
-    private int setRestTimer=60;
+    private float setRestTimer=60f;
 
     private bool getReady = true;
     private bool startExercise = false;
@@ -54,7 +54,17 @@ public class PilotLogic : MonoBehaviour
        
         if (currExercise < exerciseList.Length && currSet < setNo)
         {
-            SetExerciseTimer();
+            if (SetDone)
+            {
+                Timer.text = CurrentTime.ToString("0");
+                CurrentTime -= 1 * Time.deltaTime;
+                if (CurrentTime <= 0)
+                {
+                    SetDone = false;
+                }
+            }
+            else
+                SetExerciseTimer();
         }
         else if (currExercise == exerciseList.Length && currSet < setNo)
         {
@@ -66,7 +76,9 @@ public class PilotLogic : MonoBehaviour
             else
             {
                 SetDone = true;
-                nextSet();
+                SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
+                CurrentTime = setRestTimer;
+                currExercise = 0;
             }
            
         }
@@ -83,20 +95,6 @@ public class PilotLogic : MonoBehaviour
         ExerciseLabel.text = ExerciseName;
     }
 
-    public void nextSet()
-    {
-        if (SetDone)
-        {
-            CurrentTime = setRestTimer;
-        }
-
-        if (CurrentTime <= 0)
-        {
-            SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
-            currExercise = 0;
-            SetDone = false;
-        }
-    }
     public void setBar()
     {
         if (SyncPercentage >= 75)
@@ -120,6 +118,13 @@ public class PilotLogic : MonoBehaviour
     public void SetExerciseTimer()
     {
         Timer.text = CurrentTime.ToString("0");
+        if (SetDone)
+        {
+            Debug.Log("In 2");
+            CurrentTime = setRestTimer;
+            SetDone = false;
+        }
+
         if (!ExerciseDone)
         {
             if (getReady)
