@@ -14,16 +14,21 @@ public class PilotLogic : MonoBehaviour
     public Image SideBarL;
     public Image SideBarR;
     public int SyncPercentage;
+    public AudioClip StartCue;
+    public AudioClip StopCue;
+    public AudioSource audioSource;
+    private float volume = 1;
 
     private string ExerciseName;
     private float CurrentTime = 0f;
     private float exerciseTimer = 0f;
     private int restTimer;
+    private float setRestTimer = 60f;
 
     private bool getReady = true;
     private bool startExercise = false;
     private bool ExerciseDone = false;
-    private bool WorkOutDone = false;
+    private bool SetDone = false;
 
     private string[] exerciseList;
     private int selectedLevel;
@@ -33,7 +38,7 @@ public class PilotLogic : MonoBehaviour
     private int currSet = 0;
 
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
         selectedLevel = LevelSelectDisplay.selectedLevel;
         exerciseTimer = LevelSelectDisplay.exerciseTimer;
@@ -43,17 +48,26 @@ public class PilotLogic : MonoBehaviour
         CurrentLevel.text = "Level " + selectedLevel;
         SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
         exerciseLength = exerciseList.Length;
-        Debug.Log(setNo);
     }
 
     void Update()
     {
         getSyncBar();
         setBar();
-       
+
         if (currExercise < exerciseList.Length && currSet < setNo)
         {
-            SetExerciseTimer();
+            if (SetDone)
+            {
+                Timer.text = CurrentTime.ToString("0");
+                CurrentTime -= 1 * Time.deltaTime;
+                if (CurrentTime <= 0)
+                {
+                    SetDone = false;
+                }
+            }
+            else
+                SetExerciseTimer();
         }
         else if (currExercise == exerciseList.Length && currSet < setNo)
         {
@@ -64,10 +78,12 @@ public class PilotLogic : MonoBehaviour
             }
             else
             {
+                SetDone = true;
                 SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
+                CurrentTime = setRestTimer;
                 currExercise = 0;
             }
-           
+
         }
     }
 
@@ -105,6 +121,13 @@ public class PilotLogic : MonoBehaviour
     public void SetExerciseTimer()
     {
         Timer.text = CurrentTime.ToString("0");
+        if (SetDone)
+        {
+            Debug.Log("In 2");
+            CurrentTime = setRestTimer;
+            SetDone = false;
+        }
+
         if (!ExerciseDone)
         {
             if (getReady)
@@ -112,7 +135,7 @@ public class PilotLogic : MonoBehaviour
                 CurrentTime = 5f;
                 getReady = false;
                 setLabel("Get Ready");
-            
+
                 if (currExercise == 0)
                 {
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise];
@@ -125,12 +148,14 @@ public class PilotLogic : MonoBehaviour
                 startExercise = true;
                 setLabel(exerciseList[currExercise]);
                 UpcomingExerciseLabel.text = "";
+                audioSource.PlayOneShot(StartCue, volume);
             }
             if (startExercise && CurrentTime <= 0)
             {
                 startExercise = false;
                 ExerciseDone = true;
                 CurrentTime = restTimer;
+                audioSource.PlayOneShot(StopCue, volume);
                 setLabel("Rest");
                 if (currExercise + 1 < exerciseLength)
                 {
