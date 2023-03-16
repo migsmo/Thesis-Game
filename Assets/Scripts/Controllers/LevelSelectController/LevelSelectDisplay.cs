@@ -20,11 +20,45 @@ public class LevelSelectDisplay : MonoBehaviour
     public Image lockIcon;
     public GameObject Panel;
 
+    public Sprite CompletedStar;
+    public Image star1;
+    public Image star2;
+    public Image star3;
+
+    public TextMeshProUGUI LevelName;
+    public TextMeshProUGUI EnergyCost;
+    public TextMeshProUGUI Exercises;
+    public TextMeshProUGUI Sets;
+
     // Start is called before the first frame update
     void Start()
     {
         levelNo.text = level.levelNumber.ToString();
         Panel.SetActive(false);
+
+
+        // Initialize Stars
+        switch (level.starsEarned)
+        {
+            case 3:
+                star3.GetComponent<Image>().sprite = CompletedStar;
+                star2.GetComponent<Image>().sprite = CompletedStar;
+                star1.GetComponent<Image>().sprite = CompletedStar;
+                break;
+            case 2:
+                star2.GetComponent<Image>().sprite = CompletedStar;
+                star1.GetComponent<Image>().sprite = CompletedStar;
+                break;
+            case 1:
+                star1.GetComponent<Image>().sprite = CompletedStar;
+                break;
+        }
+
+        // Initialize Panel
+        LevelName.text = "Level " + level.levelNumber;
+        EnergyCost.text = "Energy Cost: " + level.energyCost;
+        Sets.text = "Sets: " + level.setNo;
+        Exercises.text = "Exercises (" + level.exerciseList.Length + ")";
     }
 
     void Update()

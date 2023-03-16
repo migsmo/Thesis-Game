@@ -14,6 +14,10 @@ public class PilotLogic : MonoBehaviour
     public Image SideBarL;
     public Image SideBarR;
     public int SyncPercentage;
+    public AudioClip StartCue;
+    public AudioClip StopCue;
+    public AudioSource audioSource;
+    private float volume = 1;
 
     private string ExerciseName;
     private float CurrentTime = 0f;
@@ -34,7 +38,7 @@ public class PilotLogic : MonoBehaviour
     private int currSet = 0;
 
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
         selectedLevel = LevelSelectDisplay.selectedLevel;
         exerciseTimer = LevelSelectDisplay.exerciseTimer;
@@ -44,14 +48,13 @@ public class PilotLogic : MonoBehaviour
         CurrentLevel.text = "Level " + selectedLevel;
         SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
         exerciseLength = exerciseList.Length;
-        Debug.Log(setNo);
     }
 
     void Update()
     {
         getSyncBar();
         setBar();
-       
+
         if (currExercise < exerciseList.Length && currSet < setNo)
         {
             if (SetDone)
@@ -80,7 +83,7 @@ public class PilotLogic : MonoBehaviour
                 CurrentTime = setRestTimer;
                 currExercise = 0;
             }
-           
+
         }
     }
 
@@ -132,7 +135,7 @@ public class PilotLogic : MonoBehaviour
                 CurrentTime = 5f;
                 getReady = false;
                 setLabel("Get Ready");
-            
+
                 if (currExercise == 0)
                 {
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise];
@@ -145,12 +148,14 @@ public class PilotLogic : MonoBehaviour
                 startExercise = true;
                 setLabel(exerciseList[currExercise]);
                 UpcomingExerciseLabel.text = "";
+                audioSource.PlayOneShot(StartCue, volume);
             }
             if (startExercise && CurrentTime <= 0)
             {
                 startExercise = false;
                 ExerciseDone = true;
                 CurrentTime = restTimer;
+                audioSource.PlayOneShot(StopCue, volume);
                 setLabel("Rest");
                 if (currExercise + 1 < exerciseLength)
                 {
