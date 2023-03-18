@@ -38,8 +38,15 @@ namespace Mediapipe.Unity.PoseLandmark
 
     SidePacket _sidePacketpass;
 
+    private PilotLogic _pilotLogic;
+    public GameObject gameObject;
+
     private IEnumerator Start()
     {
+      var exerciseList = LevelSelectDisplay.exerciseList;
+      _pilotLogic = gameObject.GetComponent<PilotLogic>();
+      print(_pilotLogic.currExercise);
+      
       if (WebCamTexture.devices.Length == 0)
       {
         throw new System.Exception("no camara");
@@ -130,15 +137,21 @@ namespace Mediapipe.Unity.PoseLandmark
             //   }
             // }
 
-            string pose = "Sumo Squat Down";
-            
+            // string pose = "Sumo Squat Down";
+
+            string pose = exerciseList[_pilotLogic.currExercise];
+
             try
             {
               print($"{pose}: {smoothed[pose]}");
+
+              _pilotLogic.SyncPercentage = (int) Math.Round(smoothed[pose] * 10);
             }
             catch (Exception e)
             {
               print($"{pose} pose not detected");
+              
+              _pilotLogic.SyncPercentage = 0;
             }
           }
         }

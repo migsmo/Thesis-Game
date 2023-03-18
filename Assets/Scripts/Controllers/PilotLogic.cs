@@ -36,7 +36,7 @@ public class PilotLogic : MonoBehaviour
     private int selectedLevel;
     private int setNo;
     private int exerciseLength;
-    private int currExercise = 0;
+    public int currExercise = 0;
     private int currSet = 0;
 
     // Start is called before the first frame update
