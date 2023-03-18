@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class PilotLogic : MonoBehaviour
 {
     public TextMeshProUGUI Timer;
@@ -75,6 +77,7 @@ public class PilotLogic : MonoBehaviour
             if (currSet == setNo)
             {
                 ExerciseLabel.text = "Level Complete!";
+                SceneManager.LoadScene("PostBattle");
             }
             else
             {

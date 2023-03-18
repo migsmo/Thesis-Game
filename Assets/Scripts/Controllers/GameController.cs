@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -24,9 +25,14 @@ public class GameController : MonoBehaviour
             {
                 if(speechBar.IsLastSentence())
                 {
-                    currentScene = currentScene.nextScene;
-                    speechBar.PlayScene(currentScene);
-                    backgroundController.SwitchImage(currentScene.background);
+                    if (currentScene.nextScene == null)
+                        SceneManager.LoadScene("Pilot");
+                    else
+                    {
+                        currentScene = currentScene.nextScene;
+                        speechBar.PlayScene(currentScene);
+                        backgroundController.SwitchImage(currentScene.background);
+                    }
                 } else
                 {
                     speechBar.PlayNextSentence();

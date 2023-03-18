@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class PostBattleManager : MonoBehaviour
 {
 
@@ -61,5 +63,10 @@ public class PostBattleManager : MonoBehaviour
             total_stars = 1;
             star1.GetComponent<Image>().sprite = CompletedStar;
         }
+    }
+
+    public void Return()
+    {
+        SceneManager.LoadScene("LevelSelect");
     }
 }
