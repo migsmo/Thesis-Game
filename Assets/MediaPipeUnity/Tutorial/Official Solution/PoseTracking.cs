@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -87,6 +88,7 @@ namespace Mediapipe.Unity.PoseLandmark
       
       PoseEmbedder poseEmbedder = new PoseEmbedder();
       PoseClassifier classifier = new PoseClassifier("Assets/fitness_poses_csvs_out", poseEmbedder);
+      EMADictSmoothing smoothing = new EMADictSmoothing();
 
       while (true)
       {
@@ -117,13 +119,26 @@ namespace Mediapipe.Unity.PoseLandmark
             var classifications = classifier.Classify(poseLandmarks.Landmark.Select(lmk =>
               new Vector3(lmk.X * _width, lmk.Y * _height, lmk.Z * _width)
             ).ToArray());
+
+            var smoothed = smoothing.Smooth(classifications);
             
-            foreach (KeyValuePair<string, int> pose in classifications)
+            // foreach (KeyValuePair<string, int> pose in classifications)
+            // {
+            //   if (pose.Value >= 0)
+            //   {
+            //     print($"{pose.Key}: {pose.Value}");
+            //   }
+            // }
+
+            string pose = "Sumo Squat Down";
+            
+            try
             {
-              if (pose.Value >= 8)
-              {
-                print($"{pose.Key}: {pose.Value}");
-              }
+              print($"{pose}: {smoothed[pose]}");
+            }
+            catch (Exception e)
+            {
+              print($"{pose} pose not detected");
             }
           }
         }
