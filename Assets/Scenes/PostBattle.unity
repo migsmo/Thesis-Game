@@ -388,6 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106907108}
   - component: {fileID: 106907109}
+  - component: {fileID: 106907110}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -443,6 +444,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &106907110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106907107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5870977aabd076640a5db934d51761c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259900950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1305,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 922444952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 5870977aabd076640a5db934d51761c4, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &922444952
 MonoBehaviour:
   m_ObjectHideFlags: 0

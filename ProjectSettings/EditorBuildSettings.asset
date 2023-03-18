@@ -20,10 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: aedfab49e41da461a80d7c6570be7901
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Pilot.unity
     guid: 0a4f0597be9d5a84bb0b4555f032a695
+  - enabled: 1
+    path: Assets/Scenes/PostBattle.unity
+    guid: a90e6f850185c434282c0aa6f536cd88
   m_configObjects: {}
