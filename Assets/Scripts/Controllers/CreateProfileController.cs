@@ -8,7 +8,7 @@ public class CreateProfileController : MonoBehaviour
     // Start is called before the first frame update
     public void Confirm()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Intro");
     }
 
     // Update is called once per frame
