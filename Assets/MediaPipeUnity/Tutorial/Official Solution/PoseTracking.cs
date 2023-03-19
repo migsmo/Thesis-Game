@@ -145,7 +145,8 @@ namespace Mediapipe.Unity.PoseLandmark
             {
               print($"{pose}: {smoothed[pose]}");
 
-              _pilotLogic.SyncPercentage = (int) Math.Round(smoothed[pose] * 10);
+              _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
+              // var percentage = smoothed[pose] < 6 ? 0 : 
             }
             catch (Exception e)
             {
