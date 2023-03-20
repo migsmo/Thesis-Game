@@ -13,6 +13,7 @@ public class LevelSelectDisplay : MonoBehaviour
     public static int restTimer;
     public static int setNo;
     public static string[] exerciseList;
+    public static Level currLevel;
 
     public Level level;
     public TMP_Text levelNo;
@@ -78,6 +79,7 @@ public class LevelSelectDisplay : MonoBehaviour
         restTimer = level.restTimer;
         setNo = level.setNo;
         exerciseList = level.exerciseList;
+        currLevel = level;
         SceneManager.LoadScene("Pilot");
     }
 
