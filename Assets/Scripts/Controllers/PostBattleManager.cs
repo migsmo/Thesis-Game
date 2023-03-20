@@ -20,7 +20,7 @@ public class PostBattleManager : MonoBehaviour
     public ExerciseRatingDisplay Labels;
     private string[] exerciseList;
     private int[] percentageList = new int[11] {60, 70, 100, 50, 50, 60, 80, 70, 100, 100, 100 };
-    private int[] percentageList2 = new int[17] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
+    private int[] percentageList2 = new int[11] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
     private int total_stars = 0;
     private Report report;
 
