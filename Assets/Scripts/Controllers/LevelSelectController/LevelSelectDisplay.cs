@@ -39,7 +39,18 @@ public class LevelSelectDisplay : MonoBehaviour
         Panel.SetActive(false);
         int time = 0;
 
-        // Initialize Stars
+        // Initialize Panel
+        LevelName.text = "Level " + level.levelNumber;
+        EnergyCost.text = "Energy Cost: " + level.energyCost;
+        Sets.text = "Sets: " + level.setNo;
+        Exercises.text = "Exercises (" + level.exerciseList.Length + ")";
+
+        time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
+        PlayTime.text = "Play Time: " + time + "min";
+    }
+
+    void OnEnable()
+    {
         switch (level.starsEarned)
         {
             case 3:
@@ -56,19 +67,6 @@ public class LevelSelectDisplay : MonoBehaviour
                 break;
         }
 
-        // Initialize Panel
-        LevelName.text = "Level " + level.levelNumber;
-        EnergyCost.text = "Energy Cost: " + level.energyCost;
-        Sets.text = "Sets: " + level.setNo;
-        Exercises.text = "Exercises (" + level.exerciseList.Length + ")";
-
-        time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
-        PlayTime.text = "Play Time: " + time + "min";
-
-    }
-
-    void Update()
-    {
         if (!level.isUnlocked)
         {
             levelButton.enabled = false;
