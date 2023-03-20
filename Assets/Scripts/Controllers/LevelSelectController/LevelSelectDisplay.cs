@@ -30,13 +30,14 @@ public class LevelSelectDisplay : MonoBehaviour
     public TextMeshProUGUI EnergyCost;
     public TextMeshProUGUI Exercises;
     public TextMeshProUGUI Sets;
+    public TextMeshProUGUI PlayTime;
 
     // Start is called before the first frame update
     void Start()
     {
         levelNo.text = level.levelNumber.ToString();
         Panel.SetActive(false);
-
+        int time = 0;
 
         // Initialize Stars
         switch (level.starsEarned)
@@ -60,6 +61,10 @@ public class LevelSelectDisplay : MonoBehaviour
         EnergyCost.text = "Energy Cost: " + level.energyCost;
         Sets.text = "Sets: " + level.setNo;
         Exercises.text = "Exercises (" + level.exerciseList.Length + ")";
+
+        time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
+        PlayTime.text = "Play Time: " + time + "min";
+
     }
 
     void Update()
