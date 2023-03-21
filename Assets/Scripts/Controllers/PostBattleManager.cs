@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class PostBattleManager : MonoBehaviour
 {
-
     public Image TotalBar;
     public Sprite CompletedStar;
     public Image star1;
@@ -18,20 +17,15 @@ public class PostBattleManager : MonoBehaviour
     public TextMeshProUGUI ExerciseName;
     public TextMeshProUGUI Percentage;
     public ExerciseRatingDisplay Labels;
-    private string[] exerciseList;
-    private int[] percentageList = new int[11] {60, 70, 100, 50, 50, 60, 80, 70, 100, 100, 100 };
-    private int[] percentageList2 = new int[11] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
     private int total_stars = 0;
     private Report report;
 
     // Start is called before the first frame update
     void Start()
     {
-        exerciseList = LevelSelectDisplay.exerciseList;
-        report = new Report(exerciseList, percentageList2);
-        report.generateReport();
+        report = PilotLogic.levelReport;
 
-        for (int i = 0; i < report.getExerciseLength(); i++)
+        for (int i = 0; i < PilotLogic.levelReport.getExerciseLength(); i++)
         {
             ExerciseRating.transform.GetChild(0).GetChild(0).name = report.exerciseList[i];
             ExerciseRating.transform.GetChild(0).GetChild(1).name = report.percentageList[i].ToString();
