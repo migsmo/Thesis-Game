@@ -37,10 +37,11 @@ public class PilotLogic : MonoBehaviour
     private int selectedLevel;
     private int setNo;
     private int exerciseLength;
-    public int currExercise = 0;
+    public int currExercise = -1;
     private int currSet = 0;
+    public int nextExercise = 0;
     
-    public int[] percentageList = new int[17] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+    public int[] percentageList = new int[17];
 
     // Start is called before the first frame update
     void Start()
@@ -52,11 +53,12 @@ public class PilotLogic : MonoBehaviour
         exerciseList = LevelSelectDisplay.exerciseList;
         CurrentLevel.text = "Level " + selectedLevel;
         SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
+        percentageList = new int[exerciseList.Length];
         exerciseLength = exerciseList.Length;
         
         // Temporary code to be replaced to test post battle scene
         levelReport = new Report(exerciseList, percentageList);
-        levelReport.generateReport();
+        // levelReport.generateReport();
     }
 
     void Update()
@@ -84,6 +86,7 @@ public class PilotLogic : MonoBehaviour
             if (currSet == setNo)
             {
                 ExerciseLabel.text = "Level Complete!";
+                levelReport.generateReport();
                 SceneManager.LoadScene("PostBattle");
             }
             else
@@ -91,7 +94,8 @@ public class PilotLogic : MonoBehaviour
                 SetDone = true;
                 SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
                 CurrentTime = setRestTimer;
-                currExercise = 0;
+                currExercise = -1;
+                nextExercise = 0;
             }
 
         }
@@ -146,16 +150,19 @@ public class PilotLogic : MonoBehaviour
                 getReady = false;
                 setLabel("Get Ready");
 
-                if (currExercise == 0)
-                {
-                    UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise];
-                }
-
+                // if (currExercise == 0)
+                // {
+                //     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise];
+                // }
+                
+                UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
             }
             if (!getReady && CurrentTime <= 0 && !startExercise)
             {
                 CurrentTime = exerciseTimer + 0.3f;
                 startExercise = true;
+                currExercise = nextExercise;
+                nextExercise++;
                 setLabel(exerciseList[currExercise]);
                 UpcomingExerciseLabel.text = "";
                 audioSource.PlayOneShot(StartCue, volume);
@@ -167,11 +174,13 @@ public class PilotLogic : MonoBehaviour
                 CurrentTime = restTimer;
                 audioSource.PlayOneShot(StopCue, volume);
                 setLabel("Rest");
-                if (currExercise + 1 < exerciseLength)
+                currExercise = -1;
+                // nextExercise++;
+                if (nextExercise < exerciseLength)
                 {
-                    UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise + 1];
+                    UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
                 }
-                else if (currExercise == exerciseLength)
+                else if (nextExercise == exerciseLength)
                 {
                     UpcomingExerciseLabel.text = "";
                 }
@@ -184,7 +193,9 @@ public class PilotLogic : MonoBehaviour
             {
                 ExerciseDone = false;
                 CurrentTime = exerciseTimer;
-                currExercise++;
+                // currExercise++;
+                // nextExercise++;
+                currExercise = -1;
                 getReady = true;
             }
         }

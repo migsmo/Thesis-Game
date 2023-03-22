@@ -47,12 +47,18 @@ namespace Mediapipe.Unity.PoseLandmark
     private IEnumerator Start()
     {
       var exerciseList = Array.Empty<string>();
+      var totalScores = Array.Empty<int>();
+      var frameCtr = Array.Empty<int>();
 
       try
       {
         exerciseList = LevelSelectDisplay.exerciseList;
+        
         _pilotLogic = gameObject.GetComponent<PilotLogic>();
+        
         print(_pilotLogic.currExercise);
+        totalScores = new int[exerciseList.Length];
+        frameCtr = new int[exerciseList.Length];
       }
       catch (Exception e)
       {
@@ -142,28 +148,43 @@ namespace Mediapipe.Unity.PoseLandmark
 
             var smoothed = smoothing.Smooth(classifications);
             
-            foreach (KeyValuePair<string, int> poseA in classifications)
-            {
-              if (poseA.Value >= 0)
-              {
-                print($"{poseA.Key}: {poseA.Value}");
-              }
-            }
+            // foreach (KeyValuePair<string, int> poseA in classifications)
+            // {
+            //   if (poseA.Value >= 0)
+            //   {
+            //     print($"{poseA.Key}: {poseA.Value}");
+            //   }
+            // }
 
             // string pose = "Sumo Squat Down";
 
             try
             {
-              string pose = exerciseList[_pilotLogic.currExercise];
-              print($"{pose}: {smoothed[pose]}");
-
-              _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
-              // var percentage = smoothed[pose] < 6 ? 0 : 
+              if (_pilotLogic.currExercise > -1)
+              {
+                string pose = exerciseList[_pilotLogic.currExercise];
+                print($"{pose}: {smoothed[pose]}");
+                _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
+              
+                // Update percentages here
+                frameCtr[_pilotLogic.currExercise]++;
+                totalScores[_pilotLogic.currExercise] += (int) Math.Floor(smoothed[pose] * 10);
+                _pilotLogic.percentageList[_pilotLogic.currExercise] =
+                  totalScores[_pilotLogic.currExercise] / frameCtr[_pilotLogic.currExercise];
+              
+                print(_pilotLogic.percentageList);
+              }
+              else
+              {
+                string pose = exerciseList[_pilotLogic.nextExercise];
+                print($"Next pose: {pose}"); 
+                _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
+              }
             }
             catch (Exception e)
             {
-              print($"Pose not detected");
-              
+              // print(e);
+
               _pilotLogic.SyncPercentage = 0;
             }
             

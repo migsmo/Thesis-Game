@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49990daeb5623345a3c691462a3c98a, type: 3}
   m_Name: Sample
   m_EditorClassIdentifier: 
-  levelNumber: 0
-  exerciseTimer: 2
-  restTimer: 2
+  levelNumber: 1
+  exerciseTimer: 10
+  restTimer: 5
   setNo: 2
-  starsEarned: 0
+  starsEarned: 2
   starsRequired: 0
   energyCost: 0
   isUnlocked: 1
   exerciseList:
-  - Exercise 1
+  - Sumo Squat Down
+  - Static Lunge (L)
+  - Static Lunge (R)
