@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Resources;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -23,6 +24,7 @@ public class PostBattleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SaveManager saveManager = new SaveManager();
         report = PilotLogic.levelReport;
 
         for (int i = 0; i < PilotLogic.levelReport.getExerciseLength(); i++)
@@ -54,7 +56,9 @@ public class PostBattleManager : MonoBehaviour
                 break;
         }
 
+        if (report.earnedStars <= LevelSelectDisplay.currLevel.starsEarned) return;
         LevelSelectDisplay.currLevel.starsEarned = report.earnedStars;
+        saveManager.Save(LevelSelectDisplay.currLevel);
     }
 
     public void Return()

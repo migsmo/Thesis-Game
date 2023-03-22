@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Resources;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -33,14 +34,14 @@ public class LevelSelectDisplay : MonoBehaviour
     public TextMeshProUGUI PlayTime;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         levelNo.text = level.levelNumber.ToString();
         Panel.SetActive(false);
         int time = 0;
-
-        // Initialize Stars
-       
+        
+        SaveManager saveManager = new SaveManager();
+        level.starsEarned = saveManager.Load(level);
 
         // Initialize Panel
         LevelName.text = "Level " + level.levelNumber;
