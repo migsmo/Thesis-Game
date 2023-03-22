@@ -92,6 +92,7 @@ public class PilotLogic : MonoBehaviour
             else
             {
                 SetDone = true;
+                ExerciseLabel.text = "Set Rest";
                 SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
                 CurrentTime = setRestTimer;
                 currExercise = -1;
