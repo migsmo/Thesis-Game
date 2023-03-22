@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "New Level", menuName = "Level")] 
 public class Level : ScriptableObject
 {
@@ -15,14 +16,4 @@ public class Level : ScriptableObject
     public bool isUnlocked = false;
 
     public string[] exerciseList;
-
-    int getStarts()
-    {
-        return starsRequired;
-    }
-
-    void setStars(int num)
-    {
-        starsEarned = num;
-    }
 }

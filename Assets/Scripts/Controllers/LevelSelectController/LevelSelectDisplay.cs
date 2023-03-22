@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Resources;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -13,7 +14,9 @@ public class LevelSelectDisplay : MonoBehaviour
     public static int restTimer;
     public static int setNo;
     public static string[] exerciseList;
+
     public EnergyBarOverlay energyBarOverlay;
+    public static Level currLevel;
 
     public Level level;
     public TMP_Text levelNo;
@@ -30,15 +33,31 @@ public class LevelSelectDisplay : MonoBehaviour
     public TextMeshProUGUI EnergyCost;
     public TextMeshProUGUI Exercises;
     public TextMeshProUGUI Sets;
+    public TextMeshProUGUI PlayTime;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         levelNo.text = level.levelNumber.ToString();
         Panel.SetActive(false);
+        int time = 0;
+        
+        SaveManager saveManager = new SaveManager();
+        level.starsEarned = saveManager.Load(level);
 
+        // Initialize Panel
+        LevelName.text = "Level " + level.levelNumber;
+        EnergyCost.text = "Energy Cost: " + level.energyCost;
+        Sets.text = "Sets: " + level.setNo;
+        Exercises.text = "Exercises (" + level.exerciseList.Length + ")";
 
-        // Initialize Stars
+        time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
+        PlayTime.text = "Play Time: " + time + "min";
+
+    }
+
+    void Update()
+    {
         switch (level.starsEarned)
         {
             case 3:
@@ -55,15 +74,6 @@ public class LevelSelectDisplay : MonoBehaviour
                 break;
         }
 
-        // Initialize Panel
-        LevelName.text = "Level " + level.levelNumber;
-        EnergyCost.text = "Energy Cost: " + level.energyCost;
-        Sets.text = "Sets: " + level.setNo;
-        Exercises.text = "Exercises (" + level.exerciseList.Length + ")";
-    }
-
-    void Update()
-    {
         if (!level.isUnlocked)
         {
             levelButton.enabled = false;
@@ -86,6 +96,7 @@ public class LevelSelectDisplay : MonoBehaviour
         restTimer = level.restTimer;
         setNo = level.setNo;
         exerciseList = level.exerciseList;
+        currLevel = level;
         SceneManager.LoadScene("Pilot");
     }
 

@@ -5,15 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public Level level;
     public StoryScene currentScene;
     public SpeechBarController speechBar;
     public SpriteSwitcher backgroundController;
+    public static int selectedLevel;
+    public static int exerciseTimer;
+    public static int restTimer;
+    public static int setNo;
+    public static string[] exerciseList;
 
     // Start is called before the first frame update
     void Start()
     {
         speechBar.PlayScene(currentScene);
         backgroundController.SetImage(currentScene.background);
+        LevelSelectDisplay.selectedLevel = level.levelNumber;
+        LevelSelectDisplay.exerciseTimer = level.exerciseTimer;
+        LevelSelectDisplay.restTimer = level.restTimer;
+        LevelSelectDisplay.setNo = level.setNo;
+        LevelSelectDisplay.exerciseList = level.exerciseList;
     }
 
     // Update is called once per frame

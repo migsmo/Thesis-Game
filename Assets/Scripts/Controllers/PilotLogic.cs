@@ -20,6 +20,7 @@ public class PilotLogic : MonoBehaviour
     public AudioClip StopCue;
     public AudioSource audioSource;
     private float volume = 1;
+    public static Report levelReport;
 
     private string ExerciseName;
     private float CurrentTime = 0f;
@@ -38,6 +39,8 @@ public class PilotLogic : MonoBehaviour
     private int exerciseLength;
     private int currExercise = 0;
     private int currSet = 0;
+    
+    private int[] percentageList = new int[17] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +53,10 @@ public class PilotLogic : MonoBehaviour
         CurrentLevel.text = "Level " + selectedLevel;
         SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
         exerciseLength = exerciseList.Length;
-
+        
+        // Temporary code to be replaced to test post battle scene
+        levelReport = new Report(exerciseList, percentageList);
+        levelReport.generateReport();
         SceneManager.LoadScene("PostBattle");
     }
 
@@ -174,6 +180,7 @@ public class PilotLogic : MonoBehaviour
         }
         else
         {
+
             if (CurrentTime <= 0)
             {
                 ExerciseDone = false;
