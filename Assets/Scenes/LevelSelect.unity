@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: ad6515aae2283144c8ee0eb6bd609ada, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -502,6 +506,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: f1d0b096c3613564989e76d201ab1cda, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -654,21 +662,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3790723764956756746, guid: 79ba4235064d05947ad409022fa66688, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3790723764956756746, guid: 79ba4235064d05947ad409022fa66688, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 3790723764956756746, guid: 79ba4235064d05947ad409022fa66688, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 460240058}
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3790723764956756746, guid: 79ba4235064d05947ad409022fa66688, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DecreaseEnergy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: EnergyBarOverlay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309931321156780510, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4377240741537838195, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_Name
@@ -826,7 +850,13 @@ PrefabInstance:
     - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 7efb564df4ae7024abdb5677f62f526d, type: 2}
+
+      objectReference: {fileID: 11400000, guid: 96c9969c4c4412048a77ba0e68a5296d, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
+
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1145,7 +1175,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1221431626}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1253,6 +1283,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 8c1fff5c9927aad44a11a185b733566f, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1570,7 +1604,7 @@ RectTransform:
   - {fileID: 43473757}
   - {fileID: 947257776}
   m_Father: {fileID: 1221431626}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1634,7 +1668,7 @@ RectTransform:
   m_Children:
   - {fileID: 1814439504}
   m_Father: {fileID: 1221431626}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1735,6 +1769,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432016489}
   m_CullTransparentMesh: 1
+--- !u!224 &460240057 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+  m_PrefabInstance: {fileID: 1091479804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &460240058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 763491892816838082, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+  m_PrefabInstance: {fileID: 1091479804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba7ae7db94c6451f809698e53379209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &567201851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1778,6 +1828,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 8a7704ba3986bfd45afe74f52f5ab47b, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2072,6 +2126,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 566cecadd06ca6d42873557d515470c0, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2416,6 +2474,103 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3735284403559853499, guid: 79ba4235064d05947ad409022fa66688, type: 3}
   m_PrefabInstance: {fileID: 416383090}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1091479804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1221431626}
+    m_Modifications:
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838083, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763491892816838084, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+      propertyPath: m_Name
+      value: EnergyBarOverlay
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
 --- !u!1 &1221431622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,6 +2665,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 460240057}
   - {fileID: 379282663}
   - {fileID: 1317148475}
   - {fileID: 428049360}
@@ -2604,6 +2760,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 3ac4514580489714d81b3e942fc2eb21, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2918,7 +3078,7 @@ RectTransform:
   m_Children:
   - {fileID: 2024714431}
   m_Father: {fileID: 1221431626}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3101,7 +3261,7 @@ RectTransform:
   - {fileID: 2062017382}
   - {fileID: 60031865}
   m_Father: {fileID: 1221431626}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3522,6 +3682,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: e99a52f08eded494eaff47b1c546861e, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3821,6 +3985,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: f3f1f3d2b3e9a1d42a368b5e792e97fc, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 460240058}
     - target: {fileID: 1701732220697658375, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
