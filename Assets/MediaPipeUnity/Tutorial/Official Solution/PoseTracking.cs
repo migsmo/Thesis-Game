@@ -40,12 +40,24 @@ namespace Mediapipe.Unity.PoseLandmark
 
     private PilotLogic _pilotLogic;
     public GameObject gameObject;
+    
+    public GameObject skeletonModel;
+
 
     private IEnumerator Start()
     {
-      var exerciseList = LevelSelectDisplay.exerciseList;
-      _pilotLogic = gameObject.GetComponent<PilotLogic>();
-      print(_pilotLogic.currExercise);
+      var exerciseList = Array.Empty<string>();
+
+      try
+      {
+        exerciseList = LevelSelectDisplay.exerciseList;
+        _pilotLogic = gameObject.GetComponent<PilotLogic>();
+        print(_pilotLogic.currExercise);
+      }
+      catch (Exception e)
+      {
+        
+      }
       
       if (WebCamTexture.devices.Length == 0)
       {
@@ -121,6 +133,7 @@ namespace Mediapipe.Unity.PoseLandmark
           {
             // print($"Coordinates detected: {poseLandmarks.Landmark.Count}");
             // print(poseLandmarks.Landmark);
+            // break;
             
             // TODO: Detect pose here   
             var classifications = classifier.Classify(poseLandmarks.Landmark.Select(lmk =>
@@ -129,20 +142,19 @@ namespace Mediapipe.Unity.PoseLandmark
 
             var smoothed = smoothing.Smooth(classifications);
             
-            // foreach (KeyValuePair<string, int> pose in classifications)
-            // {
-            //   if (pose.Value >= 0)
-            //   {
-            //     print($"{pose.Key}: {pose.Value}");
-            //   }
-            // }
+            foreach (KeyValuePair<string, int> poseA in classifications)
+            {
+              if (poseA.Value >= 0)
+              {
+                print($"{poseA.Key}: {poseA.Value}");
+              }
+            }
 
             // string pose = "Sumo Squat Down";
 
-            string pose = exerciseList[_pilotLogic.currExercise];
-
             try
             {
+              string pose = exerciseList[_pilotLogic.currExercise];
               print($"{pose}: {smoothed[pose]}");
 
               _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
@@ -150,10 +162,28 @@ namespace Mediapipe.Unity.PoseLandmark
             }
             catch (Exception e)
             {
-              print($"{pose} pose not detected");
+              print($"Pose not detected");
               
               _pilotLogic.SyncPercentage = 0;
             }
+            
+           // Update Skeleton
+           // for (int i = 0; i < poseLandmarks.Landmark.Count; i++)
+           // {
+           //   // Get the landmark and its position
+           //   var landmark = poseLandmarks.Landmark[i];
+           //   Vector3 position = new Vector3(landmark.X, landmark.Y, landmark.Z);
+           //
+           //   // Update the corresponding joint in the skeletonModel
+           //   // Use the landmark index or name to find the corresponding joint in the skeleton
+           //   // (e.g., using GameObject.Find or accessing a predefined list of joint GameObjects)
+           //   GameObject joint = GetJointByLandmarkIndex(i);
+           //   if (joint != null)
+           //   {
+           //     joint.transform.position = position;
+           //     // Update the rotation of the joint based on the position of connected joints
+           //   }
+           // }
           }
         }
       }
