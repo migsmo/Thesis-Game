@@ -19,15 +19,14 @@ public class PostBattleManager : MonoBehaviour
     public TextMeshProUGUI ExerciseName;
     public TextMeshProUGUI Percentage;
     public ExerciseRatingDisplay Labels;
-    private string[] exerciseList = new string[11] { "Wall Sit", "Sumo Squat", "Static Lunge(L)", "Static Lunge(R)",
-                                      "Glute Bridge", "Single Leg Glute Bridge(L)", "Single Leg Glute Bridge(R)",
-                                      "Straight Bridge", "Single Leg Glute Bridge(L)", "Single Leg Glute Bridge(R)",
-                                      "Straight Bridge"};
+    private string[] exerciseList;
     private int[] percentageList = new int[11] {60, 70, 100, 50, 50, 60, 80, 70, 100, 100, 100 };
     private int total_stars = 0;
+    private Report report;
     // Start is called before the first frame update
     void Start()
     {
+        exerciseList = LevelSelectDisplay.exerciseList;
         for (int i = 0; i < exerciseList.Length; i++)
         {
             ExerciseRating.transform.GetChild(0).GetChild(0).name = exerciseList[i];
