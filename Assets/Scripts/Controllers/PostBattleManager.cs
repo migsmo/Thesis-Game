@@ -14,16 +14,15 @@ public class PostBattleManager : MonoBehaviour
     public Image star2;
     public Image star3;
     public TextMeshProUGUI PercentageLabel;
+    public TextMeshProUGUI LevelName;
     public GameObject ExerciseRating;
-    public TextMeshProUGUI ExerciseName;
-    public TextMeshProUGUI Percentage;
-    public ExerciseRatingDisplay Labels;
     private int total_stars = 0;
     private Report report;
 
     // Start is called before the first frame update
     void Start()
     {
+        LevelName.text = "Level " + LevelSelectDisplay.currLevel.levelNumber;
         SaveManager saveManager = new SaveManager();
         report = PilotLogic.levelReport;
 
@@ -40,6 +39,7 @@ public class PostBattleManager : MonoBehaviour
 
         PercentageLabel.text = report.totalPercentage.ToString("F2") + "%";
         TotalBar.fillAmount = (float)report.totalPercentage / 100;
+        
         switch (report.earnedStars)
         {
             case 3:

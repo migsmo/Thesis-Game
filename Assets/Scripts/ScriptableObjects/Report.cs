@@ -21,8 +21,7 @@ public class Report
         {
             totalPercentage += percentageList[i];
         }
-
-        Debug.Log($"");
+        
         totalPercentage = totalPercentage / exerciseList.Length;
 
         if (totalPercentage >= 75)
