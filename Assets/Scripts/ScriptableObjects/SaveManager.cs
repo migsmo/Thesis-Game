@@ -46,7 +46,7 @@ namespace Resources
                             DateTime.Now.Day + "-" + 
                             DateTime.Now.Year + "-" + 
                             time + "-" +
-                            "Level" + report.levelNumber;
+                            "Level" + report.levelNumber + ".txt";
             string path = Application.dataPath + Directory + "/" + fileName;
             
             DateTime currentDateTime = DateTime.Now;
