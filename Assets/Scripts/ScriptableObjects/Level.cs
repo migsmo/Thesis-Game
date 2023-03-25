@@ -14,6 +14,7 @@ public class Level : ScriptableObject
     public int starsRequired;
     public int energyCost;
     public bool isUnlocked = false;
+    public bool isGuided;
 
     public string[] exerciseList;
 }
