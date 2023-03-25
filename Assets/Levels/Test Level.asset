@@ -20,6 +20,7 @@ MonoBehaviour:
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1
+  isGuided: 0
   exerciseList:
   - Sumo Squat Down
   - Wall Sit
