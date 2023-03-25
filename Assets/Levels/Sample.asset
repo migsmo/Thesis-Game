@@ -20,6 +20,7 @@ MonoBehaviour:
   starsRequired: 0
   energyCost: 0
   isUnlocked: 1
+  isGuided: 1
   exerciseList:
   - Sumo Squat Down
   - Static Lunge (L)
