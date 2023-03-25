@@ -25,7 +25,6 @@ public class PostBattleManager : MonoBehaviour
         LevelName.text = "Level " + LevelSelectDisplay.currLevel.levelNumber;
         SaveManager saveManager = new SaveManager();
         report = PilotLogic.levelReport;
-        saveManager.generateLog(report);
 
         for (int i = 0; i < PilotLogic.levelReport.getExerciseLength(); i++)
         {

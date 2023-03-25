@@ -8,7 +8,6 @@ public class Report
     public int[] percentageList;
     public int earnedStars = 0;
     public float totalPercentage = 0;
-    public int levelNumber;
 
     public Report(string[] exerciseList, int[] percentageList)
     {
