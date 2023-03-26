@@ -86,10 +86,10 @@ public class LevelSelectDisplay : MonoBehaviour
     {
         Debug.LogWarning("level.energyCost" + level.energyCost);
         bool isEnergyDeducted = energyBarOverlay.DecreaseEnergy(level.energyCost);
-        // if(!isEnergyDeducted)
-        // {
-        //     return;
-        // }
+        if(!isEnergyDeducted)
+        {
+            return;
+        }
 
         selectedLevel = level.levelNumber;
         exerciseTimer = level.exerciseTimer;
