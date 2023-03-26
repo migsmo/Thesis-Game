@@ -58,7 +58,9 @@ public class PilotLogic : MonoBehaviour
         
         // Temporary code to be replaced to test post battle scene
         levelReport = new Report(exerciseList, percentageList);
-        // levelReport.generateReport();
+        levelReport.levelNumber = selectedLevel;
+        levelReport.generateReport();
+        SceneManager.LoadScene("PostBattle");
     }
 
     void Update()
