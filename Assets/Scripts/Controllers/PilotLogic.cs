@@ -100,7 +100,7 @@ public class PilotLogic : MonoBehaviour
                 {
                     ExerciseLabel.text = "Level Complete!";
                     levelReport.generateReport();
-                    SceneManager.LoadScene("PostBattle");
+                    SceneManager.LoadScene("FinalCutscene");
                 }
                 else
                 {
@@ -204,8 +204,11 @@ public class PilotLogic : MonoBehaviour
                 // {
                 //     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise];
                 // }
-                
-                UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
+
+                if (nextExercise < exerciseLength)
+                {
+                    UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
+                }
             }
             if (!getReady && CurrentTime <= 0 && !startExercise)
             {
