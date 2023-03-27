@@ -24,7 +24,6 @@ public class PilotLogic : MonoBehaviour
     public AudioClip StopCue;
     public AudioSource audioSource;
     private float volume = 1;
-    public CanvasGroup RestCutscenePanel;
     public static Report levelReport;
 
     private string ExerciseName;
@@ -63,7 +62,7 @@ public class PilotLogic : MonoBehaviour
         SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
         percentageList = new int[exerciseList.Length];
         exerciseLength = exerciseList.Length;
-
+        
         // Temporary code to be replaced to test post battle scene
         levelReport = new Report(exerciseList, percentageList);
         levelReport.levelNumber = selectedLevel;
@@ -216,8 +215,6 @@ public class PilotLogic : MonoBehaviour
                 setLabel(exerciseList[currExercise]);
                 UpcomingExerciseLabel.text = "";
                 audioSource.PlayOneShot(StartCue, volume);
-                startCutscene = false;
-                endCutscene = true;
             }
             if (startExercise && CurrentTime <= 0)
             {
@@ -227,8 +224,6 @@ public class PilotLogic : MonoBehaviour
                 audioSource.PlayOneShot(StopCue, volume);
                 setLabel("Rest");
                 currExercise = -1;
-                startCutscene = true;
-                endCutscene = false;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
                 {
