@@ -2427,6 +2427,8 @@ MonoBehaviour:
   CurrentLevel: {fileID: 1427691922}
   SetLabel: {fileID: 1871592007}
   UpcomingExerciseLabel: {fileID: 1823333611}
+  AveLabel: {fileID: 225911872}
+  ExerciseLabel2: {fileID: 1586785282}
   SyncBar: {fileID: 632473399}
   SideBarL: {fileID: 1677863832}
   SideBarR: {fileID: 1420311624}
