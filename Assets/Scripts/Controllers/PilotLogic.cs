@@ -24,7 +24,6 @@ public class PilotLogic : MonoBehaviour
     public AudioClip StopCue;
     public AudioSource audioSource;
     private float volume = 1;
-    public CanvasGroup RestCutscenePanel;
     public static Report levelReport;
 
     private string ExerciseName;
@@ -38,8 +37,6 @@ public class PilotLogic : MonoBehaviour
     private bool ExerciseDone = false;
     private bool SetDone = false;
     private bool inFrame = false;
-    private bool startCutscene = false;
-    private bool endCutscene = false;
 
     private string[] exerciseList;
     private int selectedLevel;
@@ -63,7 +60,7 @@ public class PilotLogic : MonoBehaviour
         SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
         percentageList = new int[exerciseList.Length];
         exerciseLength = exerciseList.Length;
-
+        
         // Temporary code to be replaced to test post battle scene
         levelReport = new Report(exerciseList, percentageList);
         levelReport.levelNumber = selectedLevel;
@@ -117,30 +114,6 @@ public class PilotLogic : MonoBehaviour
         else
         {
             ExerciseLabel.text = "Body not in Frame";
-        }
-
-        if (startCutscene)
-        {
-            if (RestCutscenePanel.alpha < 1)
-            {
-                RestCutscenePanel.alpha += Time.deltaTime;
-                if (RestCutscenePanel.alpha >= 1)
-                {
-                    startCutscene = false;
-                }
-            }
-        }
-        
-        if (endCutscene)
-        {
-            if (RestCutscenePanel.alpha >= 0)
-            {
-                RestCutscenePanel.alpha -= Time.deltaTime;
-                if (RestCutscenePanel.alpha == 0)
-                {
-                    endCutscene = false;
-                }
-            }
         }
     }
 
@@ -216,8 +189,6 @@ public class PilotLogic : MonoBehaviour
                 setLabel(exerciseList[currExercise]);
                 UpcomingExerciseLabel.text = "";
                 audioSource.PlayOneShot(StartCue, volume);
-                startCutscene = false;
-                endCutscene = true;
             }
             if (startExercise && CurrentTime <= 0)
             {
@@ -227,8 +198,6 @@ public class PilotLogic : MonoBehaviour
                 audioSource.PlayOneShot(StopCue, volume);
                 setLabel("Rest");
                 currExercise = -1;
-                startCutscene = true;
-                endCutscene = false;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
                 {
