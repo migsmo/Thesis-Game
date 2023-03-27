@@ -14,6 +14,7 @@ public class PilotLogic : MonoBehaviour
     public TextMeshProUGUI UpcomingExerciseLabel;
     public TextMeshProUGUI AveLabel;
     public TextMeshProUGUI ExerciseLabel2;
+    public CanvasGroup RestCutscenePanel;
     public Image SyncBar;
     public Image SideBarL;
     public Image SideBarR;
@@ -210,6 +211,8 @@ public class PilotLogic : MonoBehaviour
             {
                 CurrentTime = exerciseTimer + 0.3f;
                 startExercise = true;
+                startCutscene = false;
+                endCutscene = true;
                 currExercise = nextExercise;
                 nextExercise++;
                 setLabel(exerciseList[currExercise]);
@@ -224,6 +227,8 @@ public class PilotLogic : MonoBehaviour
                 audioSource.PlayOneShot(StopCue, volume);
                 setLabel("Rest");
                 currExercise = -1;
+                startCutscene = true;
+                endCutscene = false;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
                 {
