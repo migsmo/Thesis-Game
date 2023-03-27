@@ -12,10 +12,14 @@ public class PilotLogic : MonoBehaviour
     public TextMeshProUGUI CurrentLevel;
     public TextMeshProUGUI SetLabel;
     public TextMeshProUGUI UpcomingExerciseLabel;
+    public TextMeshProUGUI AveLabel;
+    public TextMeshProUGUI ExerciseLabel2;
     public Image SyncBar;
     public Image SideBarL;
     public Image SideBarR;
+    public Image AveBar;
     public int SyncPercentage;
+    public int AvePercentage;
     public AudioClip StartCue;
     public AudioClip StopCue;
     public AudioSource audioSource;
@@ -35,6 +39,7 @@ public class PilotLogic : MonoBehaviour
     private bool SetDone = false;
     private bool startCutscene = false;
     private bool endCutscene = false;
+    private bool inFrame = false;
 
     private string[] exerciseList;
     private int selectedLevel;
@@ -69,40 +74,49 @@ public class PilotLogic : MonoBehaviour
     void Update()
     {
         getSyncBar();
+        getAveBar();
         setBar();
 
-        if (currExercise < exerciseList.Length && currSet < setNo)
+        if (inFrame)
         {
-            if (SetDone)
+            if (currExercise < exerciseList.Length && currSet < setNo)
             {
-                Timer.text = CurrentTime.ToString("0");
-                CurrentTime -= 1 * Time.deltaTime;
-                if (CurrentTime <= 0)
+                if (SetDone)
                 {
-                    SetDone = false;
+                    Timer.text = CurrentTime.ToString("0");
+                    CurrentTime -= 1 * Time.deltaTime;
+                    if (CurrentTime <= 0)
+                    {
+                        SetDone = false;
+                    }
                 }
+                else
+                    SetExerciseTimer();
             }
-            else
-                SetExerciseTimer();
+            else if (currExercise == exerciseList.Length && currSet < setNo)
+            {
+                currSet++;
+                if (currSet == setNo)
+                {
+                    ExerciseLabel.text = "Level Complete!";
+                    levelReport.generateReport();
+                    SceneManager.LoadScene("PostBattle");
+                }
+                else
+                {
+                    SetDone = true;
+                    ExerciseLabel.text = "Set Rest";
+                    SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
+                    CurrentTime = setRestTimer;
+                    currExercise = -1;
+                    nextExercise = 0;
+                }
+
+            }
         }
-        else if (currExercise == exerciseList.Length && currSet < setNo)
+        else
         {
-            currSet++;
-            if (currSet == setNo)
-            {
-                ExerciseLabel.text = "Level Complete!";
-                levelReport.generateReport();
-                SceneManager.LoadScene("PostBattle");
-            }
-            else
-            {
-                SetDone = true;
-                ExerciseLabel.text = "Set Rest";
-                SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
-                CurrentTime = setRestTimer;
-                currExercise = -1;
-                nextExercise = 0;
-            }
+            ExerciseLabel.text = "Body not in Frame";
         }
 
         if (startCutscene)
@@ -135,10 +149,17 @@ public class PilotLogic : MonoBehaviour
         SyncBar.fillAmount = (float)SyncPercentage / 100;
     }
 
+    public void getAveBar()
+    {
+        AveBar.fillAmount = (float)AvePercentage / 100;
+        AveLabel.text = AvePercentage.ToString() + "%";
+    }
+
     public void setLabel(string Label)
     {
         ExerciseName = Label;
         ExerciseLabel.text = ExerciseName;
+        ExerciseLabel2.text = ExerciseName;
     }
 
     public void setBar()
