@@ -14,6 +14,7 @@ public class PilotLogic : MonoBehaviour
     public TextMeshProUGUI UpcomingExerciseLabel;
     public TextMeshProUGUI AveLabel;
     public TextMeshProUGUI ExerciseLabel2;
+    public CanvasGroup RestCutscenePanel;
     public Image SyncBar;
     public Image SideBarL;
     public Image SideBarR;
@@ -36,6 +37,8 @@ public class PilotLogic : MonoBehaviour
     private bool startExercise = false;
     private bool ExerciseDone = false;
     private bool SetDone = false;
+    private bool startCutscene = false;
+    private bool endCutscene = false;
     private bool inFrame = false;
 
     private string[] exerciseList;
@@ -115,6 +118,30 @@ public class PilotLogic : MonoBehaviour
         {
             ExerciseLabel.text = "Body not in Frame";
         }
+
+        if (startCutscene)
+        {
+            if (RestCutscenePanel.alpha < 1)
+            {
+                RestCutscenePanel.alpha += Time.deltaTime;
+                if (RestCutscenePanel.alpha >= 1)
+                {
+                    startCutscene = false;
+                }
+            }
+        }
+        
+        if (endCutscene)
+        {
+            if (RestCutscenePanel.alpha >= 0)
+            {
+                RestCutscenePanel.alpha -= Time.deltaTime;
+                if (RestCutscenePanel.alpha == 0)
+                {
+                    endCutscene = false;
+                }
+            }
+        }
     }
 
     public void getSyncBar()
@@ -184,6 +211,8 @@ public class PilotLogic : MonoBehaviour
             {
                 CurrentTime = exerciseTimer + 0.3f;
                 startExercise = true;
+                startCutscene = false;
+                endCutscene = true;
                 currExercise = nextExercise;
                 nextExercise++;
                 setLabel(exerciseList[currExercise]);
@@ -198,6 +227,8 @@ public class PilotLogic : MonoBehaviour
                 audioSource.PlayOneShot(StopCue, volume);
                 setLabel("Rest");
                 currExercise = -1;
+                startCutscene = true;
+                endCutscene = false;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
                 {
