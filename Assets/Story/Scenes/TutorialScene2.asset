@@ -16,11 +16,14 @@ MonoBehaviour:
   - text: Now that i've shown you guys around the campus, I'll show you guys my favourite
       place.
     speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+    actions: []
   - text: "This is the Exor Hangar, this is where you\u2019ll be spending most of
       your time in the Acadamy. As you can see behind me, Exors are mechs that uses
       state of the art technology developed by Sigma Corp to fight off the Saizans."
     speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+    actions: []
   - text: "Why don\u2019t you hop you all hop in one, so I can show you how it works."
     speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
-  background: {fileID: 21300000, guid: 6313a82f8323d485181a183123b026c3, type: 3}
+    actions: []
+  background: {fileID: 21300000, guid: 5310aed3d7f83b542af0c908ab863a8c, type: 3}
   nextScene: {fileID: 11400000, guid: 8e6ba4eca1138488e84d4caaf1fe51ae, type: 2}
