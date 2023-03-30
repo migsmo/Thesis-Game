@@ -39,7 +39,7 @@ public class PilotLogic : MonoBehaviour
     private bool SetDone = false;
     private bool startCutscene = false;
     private bool endCutscene = false;
-    private bool inFrame = false;
+    private bool inFrame = true;
 
     private string[] exerciseList;
     private int selectedLevel;

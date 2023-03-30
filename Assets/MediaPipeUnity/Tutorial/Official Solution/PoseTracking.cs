@@ -179,7 +179,6 @@ namespace Mediapipe.Unity.PoseLandmark
               // print(e);
 
               _pilotLogic.SyncPercentage = 0;
-              _pilotLogic.AvePercentage = 0;
             }
           }
         }
