@@ -119,28 +119,6 @@ public class PoseClassifier : MonoBehaviour
         return poseSamples;
     }
 
-    public List<PoseSampleOutlier> FindPoseSampleOutliers()
-    {
-        var outliers = new List<PoseSampleOutlier>();
-        foreach (var sample in poseSamples)
-        {
-            var poseLandmarks = (Vector3[]) sample.landmarks.Clone();
-            var poseClassification = Classify(poseLandmarks);
-
-            var classNames = poseClassification
-                .Where(x => x.Value == poseClassification.Values.Max())
-                .Select(x => x.Key)
-                .ToList();
-
-            if (sample.className != classNames.Single())
-            {
-                outliers.Add(new PoseSampleOutlier(sample, poseClassification, classNames.ToArray()));
-            }
-        }
-
-        return outliers;
-    }
-    
     public Dictionary<string, int> Classify(Vector3[] poseLandmarks) {
         // Check that provided and target poses have the same shape.
         Debug.Assert(poseLandmarks.Length == nLandmarks, "Unexpected shape");
@@ -200,6 +178,22 @@ public class PoseClassifier : MonoBehaviour
     
     private Vector3[] FlipLandmarks(Vector3[] landmarks) {
         return landmarks.Select(l => new Vector3(-l.x, l.y, l.z)).ToArray();
+    }
+
+    public Vector3[] GetPoseLandmarks(string pose)
+    {
+        Vector3[] landmarks = null;
+
+        foreach (var sample in poseSamples)
+        {
+            if (sample.className.Equals(pose))
+            {
+                landmarks = sample.landmarks;
+                break;
+            }
+        }
+
+        return landmarks;
     }
     
     // private Vector3 MaxAbsDiff(Vector3[] a, Vector3[] b)
