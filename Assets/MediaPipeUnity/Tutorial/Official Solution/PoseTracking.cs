@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using Stopwatch = System.Diagnostics.Stopwatch;
 using Mediapipe.Unity.CoordinateSystem;
 using MediaPipeUnity.Tutorial.Official_Solution;
+using Unity.VisualScripting;
 
 namespace Mediapipe.Unity.PoseLandmark
 {
@@ -23,8 +24,6 @@ namespace Mediapipe.Unity.PoseLandmark
 
     [SerializeField] int camaraSwitch;
 
-    //[SerializeField] private MultiFaceLandmarkListAnnotationController _multiFaceLandmarksAnnotationController;
-
     private CalculatorGraph _graph;
 
     private ResourceManager _resourceManager;
@@ -40,9 +39,10 @@ namespace Mediapipe.Unity.PoseLandmark
 
     private PilotLogic _pilotLogic;
     public GameObject gameObject;
-    
-    public GameObject skeletonModel;
 
+    [SerializeField] private GameObject frontView;
+    [SerializeField] private GameObject sideView;
+    [SerializeField] private GameObject[] exercisePrefabs;
 
     private IEnumerator Start()
     {
@@ -56,7 +56,6 @@ namespace Mediapipe.Unity.PoseLandmark
         
         _pilotLogic = gameObject.GetComponent<PilotLogic>();
         
-        print(_pilotLogic.currExercise);
         totalScores = new int[exerciseList.Length];
         frameCtr = new int[exerciseList.Length];
       }
@@ -137,32 +136,20 @@ namespace Mediapipe.Unity.PoseLandmark
         {
           if (poseLandmarks != null && poseLandmarks.Landmark.Count > 0)
           {
-            // print($"Coordinates detected: {poseLandmarks.Landmark.Count}");
-            // print(poseLandmarks.Landmark);
-            // break;
-            
-            // TODO: Detect pose here   
-            var classifications = classifier.Classify(poseLandmarks.Landmark.Select(lmk =>
+            Vector3[] worldLandmarkPoints = poseLandmarks.Landmark.Select(lmk =>
               new Vector3(lmk.X * _width, lmk.Y * _height, lmk.Z * _width)
-            ).ToArray());
+            ).ToArray();
+            
+            var classifications = classifier.Classify(worldLandmarkPoints);
 
             var smoothed = smoothing.Smooth(classifications);
             
-            // foreach (KeyValuePair<string, int> poseA in classifications)
-            // {
-            //   if (poseA.Value >= 0)
-            //   {
-            //     print($"{poseA.Key}: {poseA.Value}");
-            //   }
-            // }
-
-            // string pose = "Sumo Squat Down";
-
             try
             {
               if (_pilotLogic.currExercise > -1)
               {
                 string pose = exerciseList[_pilotLogic.currExercise];
+                UpdateModels(pose);
                 print($"{pose}: {smoothed[pose]}");
                 _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
               
@@ -173,9 +160,12 @@ namespace Mediapipe.Unity.PoseLandmark
                   totalScores[_pilotLogic.currExercise] / frameCtr[_pilotLogic.currExercise];
               
                 print(_pilotLogic.percentageList);
+                
+                // Vector3[] landmarks = classifier.GetPoseLandmarks(pose);
               }
               else
               {
+                ClearModelContainers();
                 string pose = exerciseList[_pilotLogic.nextExercise];
                 print($"Next pose: {pose}"); 
                 _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
@@ -187,24 +177,6 @@ namespace Mediapipe.Unity.PoseLandmark
 
               _pilotLogic.SyncPercentage = 0;
             }
-            
-           // Update Skeleton
-           // for (int i = 0; i < poseLandmarks.Landmark.Count; i++)
-           // {
-           //   // Get the landmark and its position
-           //   var landmark = poseLandmarks.Landmark[i];
-           //   Vector3 position = new Vector3(landmark.X, landmark.Y, landmark.Z);
-           //
-           //   // Update the corresponding joint in the skeletonModel
-           //   // Use the landmark index or name to find the corresponding joint in the skeleton
-           //   // (e.g., using GameObject.Find or accessing a predefined list of joint GameObjects)
-           //   GameObject joint = GetJointByLandmarkIndex(i);
-           //   if (joint != null)
-           //   {
-           //     joint.transform.position = position;
-           //     // Update the rotation of the joint based on the position of connected joints
-           //   }
-           // }
           }
         }
       }
@@ -229,6 +201,78 @@ namespace Mediapipe.Unity.PoseLandmark
 
           _graph.Dispose();
         }
+      }
+    }
+
+    private void UpdateModels(string exercise)
+    {
+      
+      if (frontView.transform.childCount > 0 || sideView.transform.childCount > 0)
+      {
+        return;
+      }
+      print("updating models");
+      try
+      {
+        var prefabs = new Dictionary<string, int>()
+        {
+          { "Assisted L Sit", 0},
+          {"Bird Dog Unilateral Alternate (L)", 1},
+          {"Bird Dog Unilateral Alternate (R)", 2},
+          {"Elbow Planks", 3},
+          {"Glute Bridge", 4},
+          {"High Planks", 5},
+          {"Pushup Hold", 6},
+          {"Side Plank (L)", 7},
+          {"Side Plank (L) Easy", 8},
+          {"Side Plank (R)", 9},
+          {"Side Plank (R) Easy", 10},
+          {"Single Leg Glute Bridge (L)", 11},
+          {"Single Leg Glute Bridge (R)", 12},
+          {"Static Lunge (L)", 13},
+          {"Static Lunge (R)", 14},
+          {"Straight Bridge", 15},
+          { "Superman Hold", 16 },
+          { "Sumo Squat Down", 17 },
+          { "Wall Sit", 18}
+        };
+        print(exercisePrefabs[prefabs[exercise]].ToString());
+        // Instantiate the prefab
+        GameObject instantiatedPrefab = Instantiate(exercisePrefabs[prefabs[exercise]]);
+        GameObject clonedPrefab = Instantiate(instantiatedPrefab);
+
+        // Set the instantiated prefab's parent to the desired GameObject
+        instantiatedPrefab.transform.SetParent(frontView.transform);
+        clonedPrefab.transform.SetParent(sideView.transform);
+
+        // Set the instantiated prefab's local position to zero
+        instantiatedPrefab.transform.localPosition = Vector3.zero;
+        clonedPrefab.transform.localPosition = Vector3.zero;
+
+        // Set the instantiated prefab's local rotation to identity (no rotation)
+        instantiatedPrefab.transform.localRotation = Quaternion.identity;
+        clonedPrefab.transform.localRotation = Quaternion.identity;
+
+        // Set the instantiated prefab's local scale to one (default scale)
+        instantiatedPrefab.transform.localScale = Vector3.one;
+        clonedPrefab.transform.localScale = Vector3.one;
+      }
+      catch (Exception e)
+      {
+        print(e);
+      }
+    }
+    
+    private void ClearModelContainers()
+    {
+      foreach (Transform child in frontView.transform)
+      {
+        Destroy(child.gameObject);
+      }
+
+      foreach (Transform child in sideView.transform)
+      {
+        Destroy(child.gameObject);
       }
     }
   }
