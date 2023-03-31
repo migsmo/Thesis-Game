@@ -8,6 +8,7 @@ using System.Linq;
 public class EnergyBarOverlay : MonoBehaviour
 {
     private EnergyBarController energyBarController;
+    private PopupWindowController popupWindowController;
     
 
     void Start()
@@ -19,30 +20,46 @@ public class EnergyBarOverlay : MonoBehaviour
 
     private IEnumerator FindEnergyBarController()
     {
-        // Wait until the EnergyBar scene has finished loading
         Scene energyBarScene = SceneManager.GetSceneByName("EnergyBar");
         yield return new WaitUntil(() => energyBarScene.isLoaded);
 
-        // Find the EnergyBarController component in the EnergyBar scene
-        EnergyBarController[] controllers = energyBarScene.GetRootGameObjects()
+        EnergyBarController[] energyController = energyBarScene.GetRootGameObjects()
             .SelectMany(go => go.GetComponentsInChildren<EnergyBarController>(true))
             .ToArray();
 
-        if (controllers.Length > 0)
+        
+        if (energyController.Length > 0 )
         {
-            // If there is more than one EnergyBarController in the scene, warn about it
-            if (controllers.Length > 1)
+            if (energyController.Length > 1) 
             {
                 Debug.LogWarning("Multiple EnergyBarController components found in EnergyBar scene. Using first one.");
             }
-
-            // Use the first EnergyBarController found
-            energyBarController = controllers[0];
+          
+            energyBarController = energyController[0];
         }
         else
         {
             Debug.LogError("Failed to find EnergyBarController component in EnergyBar scene.");
         }
+
+        PopupWindowController[] popController = energyBarScene.GetRootGameObjects()
+         .SelectMany(go => go.GetComponentsInChildren<PopupWindowController>(true))
+         .ToArray();
+
+        if ( popController.Length > 0)
+        {
+            if (popController.Length > 1)
+            {
+                Debug.LogWarning("Multiple PopupWindowController components found in EnergyBar scene. Using first one.");
+            }
+            popupWindowController = popController[0];
+
+        }
+        else
+        {
+            Debug.LogError("Failed to find PopupWindowController component in EnergyBar scene.");
+        }
+
 
 
     }
@@ -54,6 +71,7 @@ public class EnergyBarOverlay : MonoBehaviour
 
         if (energy > energyBarController.GetEnergy())
         {
+            popupWindowController.AddToQueue("Not enough energy");
             return false;
         }
 
