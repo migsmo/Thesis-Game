@@ -149,7 +149,13 @@ namespace Mediapipe.Unity.PoseLandmark
               if (_pilotLogic.currExercise > -1)
               {
                 string pose = exerciseList[_pilotLogic.currExercise];
-                UpdateModels(pose);
+                // UpdateModels(pose);
+
+                if (LevelSelectDisplay.currLevel.isGuided)
+                {
+                  UpdateModels(pose);
+                }
+                
                 print($"{pose}: {smoothed[pose]}");
                 _pilotLogic.SyncPercentage = (int) Math.Floor(smoothed[pose] * 10);
               
