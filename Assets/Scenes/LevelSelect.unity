@@ -505,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 3dce7f65803e94d14b03fe953e968d72, type: 2}
+      objectReference: {fileID: 11400000, guid: 7efb564df4ae7024abdb5677f62f526d, type: 2}
     - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: energyBarOverlay
       value: 
@@ -2498,8 +2498,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736362957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -34.24871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
