@@ -38,7 +38,7 @@ public class PilotLogic : MonoBehaviour
     private bool ExerciseDone = false;
     private bool SetDone = false;
     private bool startCutscene = false;
-    private bool endCutscene = false;
+    private bool endCutscene = true;
     private bool inFrame = true;
 
     private string[] exerciseList;
@@ -88,6 +88,8 @@ public class PilotLogic : MonoBehaviour
                     if (CurrentTime <= 0)
                     {
                         SetDone = false;
+                        startExercise = false;
+                        getReady = true;
                     }
                 }
                 else
@@ -98,7 +100,6 @@ public class PilotLogic : MonoBehaviour
                 currSet++;
                 if (currSet == setNo)
                 {
-                    ExerciseLabel.text = "Level Complete!";
                     levelReport.generateReport();
                     SceneManager.LoadScene("FinalCutscene");
                 }
@@ -113,6 +114,7 @@ public class PilotLogic : MonoBehaviour
                 }
 
             }
+
         }
         else
         {
@@ -185,21 +187,14 @@ public class PilotLogic : MonoBehaviour
     public void SetExerciseTimer()
     {
         Timer.text = CurrentTime.ToString("0");
-        if (SetDone)
-        {
-            Debug.Log("In 2");
-            CurrentTime = setRestTimer;
-            SetDone = false;
-        }
 
         if (!ExerciseDone)
         {
             if (getReady)
             {
-                CurrentTime = 5f;
                 getReady = false;
-                setLabel("Get Ready");
-
+                startCutscene = false;
+                endCutscene = true;
                 // if (currExercise == 0)
                 // {
                 //     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[currExercise];
@@ -207,6 +202,8 @@ public class PilotLogic : MonoBehaviour
 
                 if (nextExercise < exerciseLength)
                 {
+                    setLabel("Get Ready");
+                    CurrentTime = 5f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
                 }
             }
@@ -214,8 +211,6 @@ public class PilotLogic : MonoBehaviour
             {
                 CurrentTime = exerciseTimer + 0.3f;
                 startExercise = true;
-                startCutscene = false;
-                endCutscene = true;
                 currExercise = nextExercise;
                 nextExercise++;
                 setLabel(exerciseList[currExercise]);
@@ -224,18 +219,18 @@ public class PilotLogic : MonoBehaviour
             }
             if (startExercise && CurrentTime <= 0)
             {
-                startExercise = false;
                 ExerciseDone = true;
-                CurrentTime = restTimer;
+                startExercise = false;
                 audioSource.PlayOneShot(StopCue, volume);
-                setLabel("Rest");
                 currExercise = -1;
-                startCutscene = true;
-                endCutscene = false;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
                 {
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
+                    CurrentTime = restTimer;
+                    setLabel("Rest");
+                    startCutscene = true;
+                    endCutscene = false;
                 }
                 else if (nextExercise == exerciseLength)
                 {
@@ -248,12 +243,15 @@ public class PilotLogic : MonoBehaviour
 
             if (CurrentTime <= 0)
             {
-                ExerciseDone = false;
-                CurrentTime = exerciseTimer;
+                if (nextExercise < exerciseLength)
+                {
+                    CurrentTime = exerciseTimer;
+                }
                 // currExercise++;
                 // nextExercise++;
                 currExercise = -1;
                 getReady = true;
+                ExerciseDone = false;
             }
         }
         CurrentTime -= 1 * Time.deltaTime;
