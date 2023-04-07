@@ -15,7 +15,7 @@ MonoBehaviour:
   levelNumber: 2
   exerciseTimer: 15
   restTimer: 10
-  setNo: 1
+  setNo: 2
   starsEarned: 2
   starsRequired: 0
   energyCost: 33
@@ -28,6 +28,6 @@ MonoBehaviour:
   - Straight Bridge
   - Side Plank (L) Easy
   - Side Plank (R) Easy
-  - Bird Dog Unilateral Alternate (L)
-  - Bird Dog Unilateral Alternate (R)
+  - Bird Dog (L)
+  - Bird Dog (R)
   - Pushup Hold

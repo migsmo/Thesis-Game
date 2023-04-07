@@ -83,8 +83,9 @@ namespace Mediapipe.Unity.PoseLandmark
 
       _resourceManager = new LocalResourceManager();
       yield return _resourceManager.PrepareAssetAsync("pose_detection.bytes");
-      yield return _resourceManager.PrepareAssetAsync("pose_landmark_heavy.bytes");
-
+      // yield return _resourceManager.PrepareAssetAsync("pose_landmark_heavy.bytes");
+      yield return _resourceManager.PrepareAssetAsync("pose_landmark_full.bytes");
+      
       var stopwatch = new Stopwatch();
 
       _graph = new CalculatorGraph(_configAsset.text);
@@ -226,8 +227,8 @@ namespace Mediapipe.Unity.PoseLandmark
         var prefabs = new Dictionary<string, int>()
         {
           { "Assisted L Sit", 0},
-          {"Bird Dog Unilateral Alternate (L)", 1},
-          {"Bird Dog Unilateral Alternate (R)", 2},
+          {"Bird Dog (L)", 1},
+          {"Bird Dog (R)", 2},
           {"Elbow Planks", 3},
           {"Glute Bridge", 4},
           {"High Planks", 5},

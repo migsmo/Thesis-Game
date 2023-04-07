@@ -16,7 +16,7 @@ MonoBehaviour:
   exerciseTimer: 15
   restTimer: 10
   setNo: 1
-  starsEarned: 0
+  starsEarned: 3
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1
@@ -33,8 +33,8 @@ MonoBehaviour:
   - Side Plank (L)
   - Side Plank (R)
   - Superman Hold
-  - Bird Dog Unilateral Alternate (L)
-  - Bird Dog Unilateral Alternate (R)
+  - Bird Dog (L)
+  - Bird Dog (R)
   - Assisted L Sit
   - High Planks
   - Pushup Hold
