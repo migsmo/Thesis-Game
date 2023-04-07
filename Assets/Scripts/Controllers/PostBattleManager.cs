@@ -64,6 +64,9 @@ public class PostBattleManager : MonoBehaviour
 
     public void Return()
     {
-        SceneManager.LoadScene("LevelSelect");
+        if (LevelSelectDisplay.currLevel.levelNumber == 0)
+            SceneManager.LoadScene("MainMenu");
+        else
+            SceneManager.LoadScene("LevelSelect");
     }
 }

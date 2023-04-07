@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
         LevelSelectDisplay.restTimer = level.restTimer;
         LevelSelectDisplay.setNo = level.setNo;
         LevelSelectDisplay.exerciseList = level.exerciseList;
+        LevelSelectDisplay.currLevel = level;
     }
 
     // Update is called once per frame
