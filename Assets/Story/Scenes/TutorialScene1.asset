@@ -55,5 +55,5 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 500, y: 0}
       moveSpeed: 0
-  background: {fileID: 21300000, guid: 858290d4f7dbf47e98971da837d68772, type: 3}
+  background: {fileID: 21300000, guid: 83de200c1b6eb56419b0f4c4e86f3251, type: 3}
   nextScene: {fileID: 11400000, guid: 2b96f284e43a04d6981805ceead6c1be, type: 2}
