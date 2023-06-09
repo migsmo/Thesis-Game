@@ -5,13 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
-{ 
-    public AudioSource audioSource;
-    private float volume = 1;
-    void Start()
-    {
-        audioSource.Play();
-    }
+{
     // Start is called before the first frame update
     public void StoryMode()
     {
