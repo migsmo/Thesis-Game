@@ -62,7 +62,7 @@ namespace Resources
                 File.AppendAllText(path, report.exerciseList[i] + " " + report.percentageList[i] + "%" + newLine);
             }
             
-            File.AppendAllText(path, "Total Percentage: " + report.totalPercentage + "%");
+            File.AppendAllText(path, "Total Percentage: " + report.totalPercentage + "%" + newLine);
             File.AppendAllText(path, "Total Stars Earned: " + report.earnedStars);
         }
     }
