@@ -10,6 +10,7 @@ public class LevelSelectManager : MonoBehaviour
     public Level[] levels;
     private int total_stars = 0;
     public static int calculatedStars;
+    
     // Start is called before the first frame update
     void Start()
     {
