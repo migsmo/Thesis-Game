@@ -22,7 +22,6 @@ MonoBehaviour:
   isUnlocked: 0
   isGuided: 1
   exerciseList:
-  - Wall Sit
   - Sumo Squat
   - Static Lunge (L)
   - Static Lunge (R)
@@ -30,5 +29,4 @@ MonoBehaviour:
   - Side Planks (L)
   - Side Planks (R)
   - Superman Hold
-  - Assisted L Sit
   - High Plank
