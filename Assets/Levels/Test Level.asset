@@ -23,10 +23,8 @@ MonoBehaviour:
   isGuided: 1
   exerciseList:
   - Sumo Squat Down
-  - Wall Sit
   - Static Lunge (L)
   - Static Lunge (R)
-  - Assisted L Sit
   - Bird Dog Unilateral Alternate (L)
   - Bird Dog Unilateral Alternate (R)
   - Elbow Planks
