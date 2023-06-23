@@ -25,11 +25,11 @@ public class Report
         
         totalPercentage = totalPercentage / exerciseList.Length;
 
-        if (totalPercentage >= 75)
+        if (totalPercentage >= 90)
         {
             earnedStars = 3;
         }
-        else if (totalPercentage < 75 && totalPercentage >= 50)
+        else if (totalPercentage is >= 75 and < 90)
         {
             earnedStars = 2;
         }
