@@ -2650,6 +2650,8 @@ MonoBehaviour:
   AvePercentage: 0
   StartCue: {fileID: 8300000, guid: 26f3869ad51c10d40a1b4c070a1a8506, type: 3}
   StopCue: {fileID: 8300000, guid: 7ddbbac37c128224d8fbbfdc810157fd, type: 3}
+  Ding: {fileID: 8300000, guid: 699dc9be962c5494c9a49c174523019e, type: 3}
+  PowerDown: {fileID: 8300000, guid: b48400b928adf234dbfb6c0a9f3c014e, type: 3}
   audioSource: {fileID: 690079845}
   currExercise: 0
   nextExercise: 0

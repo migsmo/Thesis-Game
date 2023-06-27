@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class PilotLogic : MonoBehaviour
     public int AvePercentage;
     public AudioClip StartCue;
     public AudioClip StopCue;
+    public AudioClip Ding;
+    public AudioClip PowerDown;
     public AudioSource audioSource;
     private float volume = 1;
     public static Report levelReport;
@@ -40,6 +43,9 @@ public class PilotLogic : MonoBehaviour
     private bool startCutscene = false;
     private bool endCutscene = true;
     private bool inFrame = true;
+    private bool audioPlayed1 = false;
+    private bool audioPlayed2 = false;
+    private bool audioPlayed3 = false;
 
     private string[] exerciseList;
     private int selectedLevel;
@@ -217,11 +223,30 @@ public class PilotLogic : MonoBehaviour
                 UpcomingExerciseLabel.text = "";
                 audioSource.PlayOneShot(StartCue, volume);
             }
+
+            if (!getReady && (CurrentTime <= 3) && !startExercise && !audioPlayed3)
+            {
+                audioPlayed3 = true;
+                audioSource.PlayOneShot(Ding, volume);
+            }
+            if (!getReady && (CurrentTime <= 2) && !startExercise && !audioPlayed2)
+            {
+                audioPlayed2 = true;
+                audioSource.PlayOneShot(Ding, volume);
+            }
+            if (!getReady && (CurrentTime <= 1) && !startExercise && !audioPlayed1)
+            {
+                audioPlayed1 = true;
+                audioSource.PlayOneShot(Ding, volume);
+            }
             if (startExercise && CurrentTime <= 0)
             {
                 ExerciseDone = true;
                 startExercise = false;
-                audioSource.PlayOneShot(StopCue, volume);
+                audioSource.PlayOneShot(PowerDown, volume);
+                audioPlayed3 = false;
+                audioPlayed2 = false;
+                audioPlayed1 = false;
                 currExercise = -1;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
@@ -240,7 +265,6 @@ public class PilotLogic : MonoBehaviour
         }
         else
         {
-
             if (CurrentTime <= 0)
             {
                 if (nextExercise < exerciseLength)
