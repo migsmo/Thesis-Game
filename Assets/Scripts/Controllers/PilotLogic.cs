@@ -24,9 +24,9 @@ public class PilotLogic : MonoBehaviour
     public int AvePercentage;
     public AudioClip StartCue;
     public AudioClip StopCue;
-    public AudioClip Ding;
-    public AudioClip PowerDown;
     public AudioSource audioSource;
+    public AudioClip CountDown;
+    public AudioClip PowerUp;
     private float volume = 1;
     public static Report levelReport;
 
@@ -45,7 +45,6 @@ public class PilotLogic : MonoBehaviour
     private bool inFrame = true;
     private bool audioPlayed1 = false;
     private bool audioPlayed2 = false;
-    private bool audioPlayed3 = false;
 
     private string[] exerciseList;
     private int selectedLevel;
@@ -118,9 +117,7 @@ public class PilotLogic : MonoBehaviour
                     currExercise = -1;
                     nextExercise = 0;
                 }
-
             }
-
         }
         else
         {
@@ -198,6 +195,7 @@ public class PilotLogic : MonoBehaviour
         {
             if (getReady)
             {
+                audioSource.PlayOneShot(PowerUp, volume);
                 getReady = false;
                 startCutscene = false;
                 endCutscene = true;
@@ -224,27 +222,22 @@ public class PilotLogic : MonoBehaviour
                 audioSource.PlayOneShot(StartCue, volume);
             }
 
-            if (!getReady && (CurrentTime <= 3) && !startExercise && !audioPlayed3)
-            {
-                audioPlayed3 = true;
-                audioSource.PlayOneShot(Ding, volume);
-            }
-            if (!getReady && (CurrentTime <= 2) && !startExercise && !audioPlayed2)
-            {
-                audioPlayed2 = true;
-                audioSource.PlayOneShot(Ding, volume);
-            }
-            if (!getReady && (CurrentTime <= 1) && !startExercise && !audioPlayed1)
+            if (!getReady && (CurrentTime <= 3) && !startExercise && !audioPlayed1)
             {
                 audioPlayed1 = true;
-                audioSource.PlayOneShot(Ding, volume);
+                audioSource.PlayOneShot(CountDown, volume);
+            }
+
+            if (startExercise && CurrentTime <= 3 && !audioPlayed2)
+            {
+                audioPlayed2 = true;
+                audioSource.PlayOneShot(CountDown, volume);
             }
             if (startExercise && CurrentTime <= 0)
             {
                 ExerciseDone = true;
                 startExercise = false;
-                audioSource.PlayOneShot(PowerDown, volume);
-                audioPlayed3 = false;
+                audioSource.PlayOneShot(StopCue, volume);
                 audioPlayed2 = false;
                 audioPlayed1 = false;
                 currExercise = -1;
