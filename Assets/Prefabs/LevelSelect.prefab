@@ -1488,6 +1488,8 @@ MonoBehaviour:
   lockIcon: {fileID: 3401767696526744266}
   Panel: {fileID: 5381880968270909634}
   requiredStarsLabel: {fileID: 8674624792741618217}
+  transition: {fileID: 0}
+  transitionTime: 3
   CompletedStar: {fileID: 21300000, guid: 50d38c11d4cf22e44a22602215e5f12d, type: 3}
   star1: {fileID: 7920023944602521074}
   star2: {fileID: 8847041325597790603}
