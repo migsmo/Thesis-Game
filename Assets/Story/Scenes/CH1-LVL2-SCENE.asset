@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
+  m_Name: CH1-LVL2-SCENE
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Your progress is notable, Atlas. But there are always ways to improve.
+    speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: I'm ready to push my limits, Gaia. What's on the agenda today?
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: 'Our focus today is on elevating Hyperion''s speed, maneuverability, and
+      weapon capabilities. Remember, your movements in the coming challenge will
+      directly affect these attributes. '
+    speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: As Gaia finishes her briefing, another Titan Handler, Cygnus, enters the
+      bay, watching from a distance
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Nice to see you pushing the boundaries, Atlas. But the real test isn't
+      in here, it's out there.
+    speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: And we'll be ready, Cygnus.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: Atlas stands determined, prepared for what's next. Gaia begins to activate
+      the training simulation
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: 'Now, Atlas, let''s see how you handle the increased intensity against
+      larger rogue beasts. Every move, every exercise will dictate the battle''s
+      outcome. '
+    speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Atlas steps into the simulation, he takes a deep breath, ready to fight.
+      As the battle scene commences, the training bay falls silent. It's just Atlas,
+      the exercises, and the simulated rogue beasts
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  background: {fileID: 21300000, guid: b8b0a888a1d724b7cacc1a876af51baa, type: 3}
+  nextScene: {fileID: 0}
