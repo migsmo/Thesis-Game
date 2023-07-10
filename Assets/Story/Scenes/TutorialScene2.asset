@@ -13,17 +13,115 @@ MonoBehaviour:
   m_Name: TutorialScene2
   m_EditorClassIdentifier: 
   sentences:
-  - text: Now that i've shown you guys around the campus, I'll show you guys my favourite
-      place.
-    speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+  - text: (Luna explaining the interface)
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions: []
-  - text: "This is the Exor Hangar, this is where you\u2019ll be spending most of
-      your time in the Acadamy. As you can see behind me, Exors are mechs that uses
-      state of the art technology developed by Sigma Corp to fight off the Saizans."
-    speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+  - text: 'The exercises that you perform, Atlas, will control every aspect of your
+      Titan. It''s not just about strength, but flexibility, stamina, and coordination. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions: []
-  - text: "Why don\u2019t you hop you all hop in one, so I can show you how it works."
-    speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+  - text: So, it's a full-body challenge?
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: "Yes, Atlas. And as you progress, your Titan's abilities will mirror your
+      growth. It\u2019s best that you get a feel for it yourself."
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: "I\u2019ll start the simulation mode, and try to see and feel what it\u2019s
+      like to sync with your mech."
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: (Atlas in the pilot)
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Good job, Atlas! Remember, each exercise has its purpose. A squat can power
+      a Titan's legs for a strong kick, a push-up charges your Titan's arm strength
+      for a powerful punch.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: I understand, Luna. So, my fitness directly influences my Titan?
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: That's right. Now, as we progress these things will become even more difficult.
+      But for now, practice these exercises. It's the first step to becoming a Titan
+      Handler.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: I'm on it, Luna.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: 'Here''s to becoming the best Titan Handler Neo-Terra has ever seen. '
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
     actions: []
   background: {fileID: 21300000, guid: 5310aed3d7f83b542af0c908ab863a8c, type: 3}
   nextScene: {fileID: 11400000, guid: 8e6ba4eca1138488e84d4caaf1fe51ae, type: 2}
