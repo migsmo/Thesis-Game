@@ -97,7 +97,9 @@ public class LevelSelectDisplay : MonoBehaviour
         setNo = level.setNo;
         exerciseList = level.exerciseList;
         currLevel = level;
-        SceneManager.LoadScene("Pilot");
+
+        SceneManager.LoadScene("PoseDemo");
+        // SceneManager.LoadScene("Pilot");
     }
 
     public void OnMouseOver()

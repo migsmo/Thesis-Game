@@ -205,6 +205,7 @@ public class PilotLogic : MonoBehaviour
                     setLabel("Get Ready");
                     CurrentTime = 5f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
+                    currExercise = nextExercise;
                 }
             }
             if (!getReady && CurrentTime <= 0 && !startExercise)

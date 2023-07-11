@@ -22,7 +22,7 @@ MonoBehaviour:
   isUnlocked: 1
   isGuided: 0
   exerciseList:
-  - Sumo Squat Down
+  - Sumo Squat
   - Static Lunge (L)
   - Static Lunge (R)
   - Glute Bridge
@@ -35,6 +35,5 @@ MonoBehaviour:
   - Superman Hold
   - Bird Dog (L)
   - Bird Dog (R)
-  - Assisted L Sit
   - High Planks
   - Pushup Hold

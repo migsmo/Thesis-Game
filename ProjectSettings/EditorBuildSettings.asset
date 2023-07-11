@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalCutscene.unity
     guid: 99da1c441377cee449ee4fee370b532e
+  - enabled: 1
+    path: Assets/Scenes/PoseDemo.unity
+    guid: abbd3e1f098384d7291df33029ab1df8
   m_configObjects: {}

@@ -1092,7 +1092,6 @@ MonoBehaviour:
   frontView: {fileID: 402736760}
   sideView: {fileID: 1834705032}
   exercisePrefabs:
-  - {fileID: 8654250720420973338, guid: 86d00e34349a84227b1d24bfa26fb408, type: 3}
   - {fileID: 8654250720420973338, guid: a7a0f90496c3a4e37a3b7b2bc229c038, type: 3}
   - {fileID: 8654250720420973338, guid: 3646cb8efb5c34018813b3eb7a8473b8, type: 3}
   - {fileID: 8654250720420973338, guid: 83020498242d24156a38644eb9456004, type: 3}
@@ -1110,7 +1109,6 @@ MonoBehaviour:
   - {fileID: 8654250720420973338, guid: 02766b9de74534d74b4596f20d0b9824, type: 3}
   - {fileID: 8654250720420973338, guid: 64469f736dc344cc4aaf37299444d8f5, type: 3}
   - {fileID: 8654250720420973338, guid: 30f59b02f1c7e49a69ee38a36efc1bdb, type: 3}
-  - {fileID: 8654250720420973338, guid: 7cacd8ceb26c8496b8d4a52a98d833d7, type: 3}
 --- !u!1 &300169876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,7 +2089,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650834004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
