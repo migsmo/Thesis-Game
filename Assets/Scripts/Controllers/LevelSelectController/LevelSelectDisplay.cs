@@ -118,7 +118,7 @@ public class LevelSelectDisplay : MonoBehaviour
         setNo = level.setNo;
         exerciseList = level.exerciseList;
         currLevel = level;
-        StartCoroutine(LoadLevel("Pilot"));
+        StartCoroutine(LoadLevel("CameraSpace"));
     }
 
     public void OnMouseOver()

@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalCutscene.unity
     guid: 99da1c441377cee449ee4fee370b532e
+  - enabled: 1
+    path: Assets/Scenes/CameraSpace.unity
+    guid: 7e16f28013c294049b23bebd17a77f80
   m_configObjects: {}
