@@ -20,6 +20,8 @@ public class PilotLogic : MonoBehaviour
     public Image SideBarL;
     public Image SideBarR;
     public Image AveBar;
+    public Image LeftContainer;
+    public Image RightContainer;
     public RectTransform WarningScreen;
     public int SyncPercentage;
     public int AvePercentage;
@@ -74,6 +76,12 @@ public class PilotLogic : MonoBehaviour
         percentageList = new int[exerciseList.Length];
         exerciseLength = exerciseList.Length;
         transitionTimer = 2.5f;
+        
+        if (!LevelSelectDisplay.currLevel.isGuided)
+        {
+            RightContainer.enabled = false;
+            LeftContainer.enabled = false;
+        }
         
         // Temporary code to be replaced to test post battle scene
         levelReport = new Report(exerciseList, percentageList);
