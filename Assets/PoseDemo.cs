@@ -55,6 +55,7 @@ public class PoseDemo : MonoBehaviour
         }
         catch (Exception e)
         {
+            throw e;
         }
     }
 
@@ -65,8 +66,16 @@ public class PoseDemo : MonoBehaviour
 
     void Start()
     {
-        Destroy(poseContainer.transform.GetChild(0).gameObject);
-        updateModels(exerciseIdx);
+
+        try
+        {
+            updateModels(exerciseIdx);
+            Destroy(poseContainer.transform.GetChild(0).gameObject);
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
 
     // Update is called once per frame
@@ -79,7 +88,14 @@ public class PoseDemo : MonoBehaviour
         if (timer == duration / 2)
         {
             offset = 10;
-            updateModels(exerciseIdx + offset);
+            try
+            {
+                updateModels(exerciseIdx + offset);
+            }
+            catch (Exception e)
+            {
+                
+            }
         }
 
         if (timer <= 0)
