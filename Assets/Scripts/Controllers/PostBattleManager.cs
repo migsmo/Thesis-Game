@@ -74,8 +74,18 @@ public class PostBattleManager : MonoBehaviour
 
     public void Return()
     {
-        if (LevelSelectDisplay.currLevel.levelNumber == 0)
-            StartCoroutine(LoadLevel("MainMenu"));
+        if (!LevelSelectDisplay.fromSim)
+        {
+            if (!GameController.isBattleEnd)
+            {
+                StartCoroutine(LoadLevel(GameController.sceneName));
+                GameController.isPostBattle = true;
+            }
+            else
+            {
+                StartCoroutine(LoadLevel(GameController.nextName));
+            }
+        }
         else
             StartCoroutine(LoadLevel("LevelSelect"));
     }

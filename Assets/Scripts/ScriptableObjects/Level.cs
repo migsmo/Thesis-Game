@@ -7,6 +7,8 @@ using UnityEngine;
 public class Level : ScriptableObject
 {
     public int levelNumber;
+    public string levelName;
+    public string nextLevel;
     public int exerciseTimer;
     public int restTimer;
     public int setNo;
@@ -15,6 +17,8 @@ public class Level : ScriptableObject
     public int energyCost;
     public bool isUnlocked = false;
     public bool isGuided;
+    public bool isBattleEnd;
+    public bool isPostBattle;
 
     public string[] exerciseList;
 }

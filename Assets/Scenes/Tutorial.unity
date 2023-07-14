@@ -226,7 +226,7 @@ MonoBehaviour:
   image2: {fileID: 584397945}
 --- !u!95 &71902986
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -243,7 +243,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!224 &71902987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -636,6 +636,10 @@ MonoBehaviour:
   currentScene: {fileID: 11400000, guid: 1d75ae6c093c845b69643f394f87c932, type: 2}
   speechBar: {fileID: 1511558591}
   backgroundController: {fileID: 71902985}
+  sceneLevel: Tutorial
+  isBattleEnd: 0
+  isPostBattle: 0
+  postBattleIndex: 0
 --- !u!1 &1367375757
 GameObject:
   m_ObjectHideFlags: 0

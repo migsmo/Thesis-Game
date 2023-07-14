@@ -26,6 +26,7 @@ public class LevelSelectDisplay : MonoBehaviour
     public TMP_Text requiredStarsLabel;
     public Animator transition;
     public float transitionTime;
+    public static bool fromSim;
 
     public Sprite CompletedStar;
     public Image star1;
@@ -58,6 +59,7 @@ public class LevelSelectDisplay : MonoBehaviour
 
         time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
         PlayTime.text = "Play Time: " + time + "min";
+        fromSim = false;
        
     }
 
@@ -118,6 +120,7 @@ public class LevelSelectDisplay : MonoBehaviour
         setNo = level.setNo;
         exerciseList = level.exerciseList;
         currLevel = level;
+        fromSim = true;
         StartCoroutine(LoadLevel("Pilot"));
     }
 

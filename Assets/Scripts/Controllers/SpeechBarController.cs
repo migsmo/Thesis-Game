@@ -68,6 +68,11 @@ public class SpeechBarController : MonoBehaviour
         }
     }
 
+    public void setSentenceIndex(int index)
+    {
+        sentenceIndex = index;
+    }
+
     private void ActSpeakers()
     {
         List<StoryScene.Sentence.Action> actions = currentScene.sentences[sentenceIndex].actions;
