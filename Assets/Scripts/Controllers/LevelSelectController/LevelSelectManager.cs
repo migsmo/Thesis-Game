@@ -6,9 +6,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelSelectManager : MonoBehaviour
-{
+{ 
     public Level[] levels;
     private int total_stars = 0;
+    public static int calculatedStars;
+    public Animator transition;
+    public float transitionTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +20,8 @@ public class LevelSelectManager : MonoBehaviour
         {
             total_stars += levels[i].starsEarned;
         }
+
+        calculatedStars = total_stars;
 
         for (int i = 0; i < levels.Length; i++)
         {
@@ -38,6 +44,15 @@ public class LevelSelectManager : MonoBehaviour
 
     public void Return()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(LoadLevel("MainMenu"));
+    }
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }

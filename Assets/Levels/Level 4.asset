@@ -22,7 +22,6 @@ MonoBehaviour:
   isUnlocked: 0
   isGuided: 1
   exerciseList:
-  - Wall Sit
   - Sumo Squat
   - Static Lunge (L)
   - Static Lunge (R)

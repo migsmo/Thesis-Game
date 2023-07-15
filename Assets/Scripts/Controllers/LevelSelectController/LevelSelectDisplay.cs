@@ -23,6 +23,9 @@ public class LevelSelectDisplay : MonoBehaviour
     public Button levelButton;
     public Image lockIcon;
     public GameObject Panel;
+    public TMP_Text requiredStarsLabel;
+    public Animator transition;
+    public float transitionTime;
 
     public Sprite CompletedStar;
     public Image star1;
@@ -34,6 +37,8 @@ public class LevelSelectDisplay : MonoBehaviour
     public TextMeshProUGUI Exercises;
     public TextMeshProUGUI Sets;
     public TextMeshProUGUI PlayTime;
+
+    private int starRemainder;
 
     // Start is called before the first frame update
     void Awake()
@@ -53,32 +58,48 @@ public class LevelSelectDisplay : MonoBehaviour
 
         time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
         PlayTime.text = "Play Time: " + time + "min";
-
+       
     }
 
     void Update()
     {
-        switch (level.starsEarned)
-        {
-            case 3:
-                star3.GetComponent<Image>().sprite = CompletedStar;
-                star2.GetComponent<Image>().sprite = CompletedStar;
-                star1.GetComponent<Image>().sprite = CompletedStar;
-                break;
-            case 2:
-                star2.GetComponent<Image>().sprite = CompletedStar;
-                star1.GetComponent<Image>().sprite = CompletedStar;
-                break;
-            case 1:
-                star1.GetComponent<Image>().sprite = CompletedStar;
-                break;
-        }
-
         if (!level.isUnlocked)
         {
             levelButton.enabled = false;
             levelNo.enabled = false;
             lockIcon.enabled = true;
+            requiredStarsLabel.enabled = true;
+            star1.enabled = false;
+            star2.enabled = false;
+            star3.enabled = false;
+            starRemainder = level.starsRequired - LevelSelectManager.calculatedStars;
+
+            if (starRemainder > 1)
+            {
+                requiredStarsLabel.text = "You need " + starRemainder + " more stars to unlock";
+            }
+            else
+            {
+                requiredStarsLabel.text = "You need " + starRemainder + " more star to unlock";
+            }
+        }
+        else
+        {
+            switch (level.starsEarned)
+            {
+                case 3:
+                    star3.sprite = CompletedStar;
+                    star2.sprite = CompletedStar;
+                    star1.sprite = CompletedStar;
+                    break;
+                case 2:
+                    star2.sprite = CompletedStar;
+                    star1.sprite = CompletedStar;
+                    break;
+                case 1:
+                    star1.sprite = CompletedStar;
+                    break;
+            }
         }
     }
 
@@ -98,8 +119,9 @@ public class LevelSelectDisplay : MonoBehaviour
         exerciseList = level.exerciseList;
         currLevel = level;
 
-        SceneManager.LoadScene("PoseDemo");
-        // SceneManager.LoadScene("Pilot");
+        // StartCoroutine(LoadLevel("Pilot"));
+        // SceneManager.LoadScene("PoseDemo");
+        StartCoroutine(LoadLevel("PoseDemo));
     }
 
     public void OnMouseOver()
@@ -113,5 +135,14 @@ public class LevelSelectDisplay : MonoBehaviour
     public void OnMouseExit()
     {
         Panel.SetActive(false);
+    }
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }

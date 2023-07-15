@@ -18,6 +18,8 @@ public class PostBattleManager : MonoBehaviour
     public GameObject ExerciseRating;
     private int total_stars = 0;
     private Report report;
+    public Animator transition;
+    public float transitionTime;
 
     // Start is called before the first frame update
     void Start()
@@ -57,16 +59,33 @@ public class PostBattleManager : MonoBehaviour
                 break;
         }
 
-        if (report.earnedStars <= LevelSelectDisplay.currLevel.starsEarned) return;
-        LevelSelectDisplay.currLevel.starsEarned = report.earnedStars;
-        saveManager.Save(LevelSelectDisplay.currLevel);
+        if (report.earnedStars > LevelSelectDisplay.currLevel.starsEarned)
+        {
+            LevelSelectDisplay.currLevel.starsEarned = report.earnedStars;
+            saveManager.Save(LevelSelectDisplay.currLevel);
+        }
+
+        // Sample Save for Story Progress
+        var storyProgress = saveManager.LoadStoryProgress();
+        storyProgress.CompletedLevel();
+        storyProgress.AddStars(report.earnedStars);
+        saveManager.SaveStoryProgress(storyProgress);
     }
 
     public void Return()
     {
         if (LevelSelectDisplay.currLevel.levelNumber == 0)
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(LoadLevel("MainMenu"));
         else
-            SceneManager.LoadScene("LevelSelect");
+            StartCoroutine(LoadLevel("LevelSelect"));
+    }
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }
