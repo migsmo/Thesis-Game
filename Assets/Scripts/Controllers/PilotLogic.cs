@@ -113,7 +113,7 @@ public class PilotLogic : MonoBehaviour
         }
         if (inFrame && transitionDone)
         {
-            if (currExercise < exerciseLength-1 && currSet < setNo)
+            if (currExercise < exerciseLength && currSet < setNo)
             {
                 if (SetDone)
                 {
@@ -129,7 +129,7 @@ public class PilotLogic : MonoBehaviour
                 else
                     SetExerciseTimer();
             }
-            else if (currExercise == exerciseList.Length-1 && currSet < setNo)
+            else if (currExercise == exerciseList.Length && currSet < setNo)
             {
                 Debug.LogWarning("ENTERED EQUALS");
                 currSet++;
@@ -149,10 +149,10 @@ public class PilotLogic : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            ExerciseLabel.text = "Body not in Frame";
-        }
+        // else
+        // {
+        //     ExerciseLabel.text = "Body not in Frame";
+        // }
 
         if (startCutscene)
         {
@@ -236,7 +236,7 @@ public class PilotLogic : MonoBehaviour
                 if (nextExercise < exerciseLength)
                 {
                     setLabel("Get Ready");
-                    CurrentTime = 5f;
+                    CurrentTime = 1f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
                     currExercise = nextExercise;
                 }
@@ -272,7 +272,7 @@ public class PilotLogic : MonoBehaviour
                 audioSource.PlayOneShot(StopCue, volume);
                 audioPlayed2 = false;
                 audioPlayed1 = false;
-                //currExercise = -1;
+                currExercise = -1;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
                 {

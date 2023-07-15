@@ -146,10 +146,9 @@ namespace Mediapipe.Unity.PoseLandmark
                         var smoothed = smoothing.Smooth(classifications);
                         try
                         {
-                            if (_pilotLogic.currExercise > -1)
+                            if (_pilotLogic.currExercise > -1 && _pilotLogic.currExercise < exerciseList.Length)
                             {
                                 string pose = exerciseList[_pilotLogic.currExercise];
-                                // UpdateModels(pose);
 
                                 if (LevelSelectDisplay.currLevel.isGuided)
                                 {
@@ -173,10 +172,14 @@ namespace Mediapipe.Unity.PoseLandmark
                             else
                             {
                                 ClearModelContainers();
-                                string pose = exerciseList[_pilotLogic.nextExercise];
-                                print($"Next pose: {pose}");
-                                _pilotLogic.SyncPercentage = (int)Math.Floor(smoothed[pose] * 10);
-                                _pilotLogic.AvePercentage = 0;
+
+                                if (_pilotLogic.nextExercise < exerciseList.Length)
+                                {
+                                    string pose = exerciseList[_pilotLogic.nextExercise];
+                                    print($"Next pose: {pose}");
+                                    _pilotLogic.SyncPercentage = (int)Math.Floor(smoothed[pose] * 10);
+                                    _pilotLogic.AvePercentage = 0;
+                                }
                             }
                         }
                         catch (Exception e)
