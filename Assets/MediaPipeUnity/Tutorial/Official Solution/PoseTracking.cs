@@ -190,27 +190,27 @@ namespace Mediapipe.Unity.PoseLandmark
             }
         }
         
-        private void OnDestroy()
-        {
-            print("Destroyed tracking");
-            if (_webCamTexture != null)
-            {
-                _webCamTexture.Stop();
-            }
-
-            if (_graph != null)
-            {
-                try
-                {
-                    _graph.CloseInputStream("input_video").AssertOk();
-                    _graph.WaitUntilDone().AssertOk();
-                }
-                finally
-                {
-                    _graph.Dispose();
-                }
-            }
-        }
+        // private void OnDestroy()
+        // {
+        //     print("Destroyed tracking");
+        //     if (_webCamTexture != null)
+        //     {
+        //         _webCamTexture.Stop();
+        //     }
+        //
+        //     if (_graph != null)
+        //     {
+        //         try
+        //         {
+        //             _graph.CloseInputStream("input_video").AssertOk();
+        //             _graph.WaitUntilDone().AssertOk();
+        //         }
+        //         finally
+        //         {
+        //             _graph.Dispose();
+        //         }
+        //     }
+        // }
 
         private void UpdateModels(string exercise)
         {
