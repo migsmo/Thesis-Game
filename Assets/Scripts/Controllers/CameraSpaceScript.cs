@@ -8,6 +8,6 @@ public class CameraSpaceScript : MonoBehaviour
 {
   public void PilotScene()
   {
-    SceneManager.LoadScene("Pilot");
+    SceneManager.LoadScene("PoseDemo");
   }
 }
