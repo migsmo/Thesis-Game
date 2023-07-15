@@ -121,7 +121,7 @@ public class LevelSelectDisplay : MonoBehaviour
 
         // StartCoroutine(LoadLevel("Pilot"));
         // SceneManager.LoadScene("PoseDemo");
-        StartCoroutine(LoadLevel("PoseDemo));
+        StartCoroutine(LoadLevel("PoseDemo"));
     }
 
     public void OnMouseOver()
