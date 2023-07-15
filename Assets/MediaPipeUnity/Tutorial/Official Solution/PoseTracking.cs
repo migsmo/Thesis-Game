@@ -144,7 +144,6 @@ namespace Mediapipe.Unity.PoseLandmark
 
                         var classifications = classifier.Classify(worldLandmarkPoints);
                         var smoothed = smoothing.Smooth(classifications);
-                        print(smoothed);
                         try
                         {
                             if (_pilotLogic.currExercise > -1)
@@ -156,8 +155,7 @@ namespace Mediapipe.Unity.PoseLandmark
                                 {
                                     UpdateModels(pose);
                                 }
-
-                                print($"{pose}: {smoothed[pose]}");
+                                
                                 _pilotLogic.SyncPercentage = (int)Math.Floor(smoothed[pose] * 10);
 
                                 // Update percentages here
@@ -191,9 +189,10 @@ namespace Mediapipe.Unity.PoseLandmark
                 }
             }
         }
-
+        
         private void OnDestroy()
         {
+            print("Destroyed tracking");
             if (_webCamTexture != null)
             {
                 _webCamTexture.Stop();

@@ -119,9 +119,9 @@ public class LevelSelectDisplay : MonoBehaviour
         exerciseList = level.exerciseList;
         currLevel = level;
 
-        // StartCoroutine(LoadLevel("Pilot"));
+        StartCoroutine(LoadLevel("Pilot"));
         // SceneManager.LoadScene("PoseDemo");
-        StartCoroutine(LoadLevel("PoseDemo"));
+        // StartCoroutine(LoadLevel("PoseDemo"));
     }
 
     public void OnMouseOver()
