@@ -78,8 +78,8 @@ public class PostBattleManager : MonoBehaviour
         {
             if (!GameController.isBattleEnd)
             {
-                StartCoroutine(LoadLevel(GameController.sceneName));
                 GameController.isPostBattle = true;
+                StartCoroutine(LoadLevel(GameController.sceneName));
             }
             else
             {

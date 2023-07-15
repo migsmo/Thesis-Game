@@ -9,6 +9,7 @@ public class Level : ScriptableObject
     public int levelNumber;
     public string levelName;
     public string nextLevel;
+    public int postIndex;
     public int exerciseTimer;
     public int restTimer;
     public int setNo;

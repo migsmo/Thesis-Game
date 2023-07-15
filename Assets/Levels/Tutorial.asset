@@ -15,6 +15,7 @@ MonoBehaviour:
   levelNumber: 0
   levelName: Tutorial
   nextLevel: CreateProfile
+  postIndex: 5
   exerciseTimer: 10
   restTimer: 5
   setNo: 1
@@ -23,7 +24,7 @@ MonoBehaviour:
   energyCost: 0
   isUnlocked: 1
   isGuided: 1
-  isBattleEnd: 1
+  isBattleEnd: 0
   isPostBattle: 0
   exerciseList:
   - Sumo Squat

@@ -41,6 +41,10 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
+            if (isPostBattle)
+            {
+                SpeechBarController.sentenceIndex = postBattleIndex;
+            }
             if(speechBar.IsCompleted())
             {
                 if(speechBar.IsLastSentence())
