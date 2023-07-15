@@ -22,7 +22,7 @@ MonoBehaviour:
   isUnlocked: 1
   isGuided: 0
   exerciseList:
-  - Sumo Squat Down
+  - Sumo Squat
   - Static Lunge (L)
   - Static Lunge (R)
   - Glute Bridge
