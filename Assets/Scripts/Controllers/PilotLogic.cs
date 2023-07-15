@@ -64,7 +64,7 @@ public class PilotLogic : MonoBehaviour
     public int[] percentageList = new int[17];
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         selectedLevel = LevelSelectDisplay.selectedLevel;
         exerciseTimer = LevelSelectDisplay.exerciseTimer;

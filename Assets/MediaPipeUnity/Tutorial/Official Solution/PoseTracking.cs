@@ -26,7 +26,7 @@ namespace Mediapipe.Unity.PoseLandmark
 
         private CalculatorGraph _graph;
 
-        private ResourceManager _resourceManager;
+        // private static ResourceManager _resourceManager = new LocalResourceManager();
 
         private WebCamTexture _webCamTexture;
 
@@ -46,6 +46,7 @@ namespace Mediapipe.Unity.PoseLandmark
 
         private IEnumerator Start()
         {
+            print("started");
             var exerciseList = Array.Empty<string>();
             var totalScores = Array.Empty<int>();
             var frameCtr = Array.Empty<int>();
@@ -80,11 +81,23 @@ namespace Mediapipe.Unity.PoseLandmark
             _inputPixelData = new Color32[_width * _height];
 
             _screen.texture = _webCamTexture;
-
-            _resourceManager = new LocalResourceManager();
-            yield return _resourceManager.PrepareAssetAsync("pose_detection.bytes");
-            // yield return _resourceManager.PrepareAssetAsync("pose_landmark_heavy.bytes");
-            yield return _resourceManager.PrepareAssetAsync("pose_landmark_full.bytes");
+            
+            // _resourceManager = new LocalResourceManager();
+            
+            // if (!_resourceManager.IsPrepared("pose_detection.bytes"))
+            // {
+            //     yield return _resourceManager.PrepareAssetAsync("pose_detection.bytes");
+            // }
+            //
+            // if (!_resourceManager.IsPrepared("pose_landmark_full.bytes"))
+            // {
+            //     // yield return _resourceManager.PrepareAssetAsync("pose_landmark_heavy.bytes");
+            //     yield return _resourceManager.PrepareAssetAsync("pose_landmark_full.bytes");
+            // }
+            
+            // AssetLoader.Provide(new LocalResourceManager());
+            AssetLoader.PrepareAssetAsync("pose_detection.bytes");
+            AssetLoader.PrepareAssetAsync("pose_landmark_full.bytes");
 
             var stopwatch = new Stopwatch();
 
