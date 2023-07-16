@@ -249,7 +249,10 @@ public class PilotLogic : MonoBehaviour
                 nextExercise++;
                 Debug.LogWarning("CurrExercise" + currExercise);
                 Debug.LogWarning("exLength" + exerciseLength);
-                setLabel(exerciseList[currExercise]);
+                if (currExercise < exerciseLength)
+                {
+                    setLabel(exerciseList[currExercise]);
+                }
                 UpcomingExerciseLabel.text = "";
                 audioSource.PlayOneShot(StartCue, volume);
             }
