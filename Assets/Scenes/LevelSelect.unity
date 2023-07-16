@@ -2305,7 +2305,7 @@ PrefabInstance:
     - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: e8d706ffe7c01be4cb936c1a4fc37312, type: 2}
+      objectReference: {fileID: 11400000, guid: 566cecadd06ca6d42873557d515470c0, type: 2}
     - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: transition
       value: 

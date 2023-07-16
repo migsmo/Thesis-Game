@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class PilotLogic : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class PilotLogic : MonoBehaviour
     public TextMeshProUGUI UpcomingExerciseLabel;
     public TextMeshProUGUI AveLabel;
     public TextMeshProUGUI ExerciseLabel2;
-    public CanvasGroup RestCutscenePanel;
+    public RawImage RestCutscenePanel;
+    public VideoPlayer VideoPlayer;
     public Image SyncBar;
     public Image SideBarL;
     public Image SideBarR;
@@ -41,6 +43,7 @@ public class PilotLogic : MonoBehaviour
     private int restTimer;
     private float setRestTimer=60f;
     private float transitionTimer;
+    private string exerciseIndex;
 
     private bool getReady = true;
     private bool startExercise = false;
@@ -62,6 +65,20 @@ public class PilotLogic : MonoBehaviour
     public int nextExercise = 0;
     private float rotate = 0;
     public int[] percentageList = new int[17];
+    
+    public VideoClip sumoSquat;
+    public VideoClip staticLunge;
+    public VideoClip gluteBridge;
+    public VideoClip singleGlute;
+    public VideoClip straightBridge;
+    public VideoClip elbowPlanks;
+    public VideoClip sidePlank;
+    public VideoClip supermanHold;
+    public VideoClip birdDog;
+    public VideoClip highPlanks;
+    public VideoClip pushupHold;
+    public VideoClip easyPlanks;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -156,26 +173,67 @@ public class PilotLogic : MonoBehaviour
 
         if (startCutscene)
         {
-            if (RestCutscenePanel.alpha < 1)
+            switch (exerciseIndex)
             {
-                RestCutscenePanel.alpha += Time.deltaTime;
-                if (RestCutscenePanel.alpha >= 1)
-                {
-                    startCutscene = false;
-                }
+                case "Sumo Squat":
+                    VideoPlayer.clip = sumoSquat;
+                    break;
+                case "Static Lunge (L)":
+                    VideoPlayer.clip = staticLunge;
+                    break;
+                case "Static Lunge (R)":
+                    VideoPlayer.clip = staticLunge;
+                    break;
+                case "Glute Bridge":
+                    VideoPlayer.clip = gluteBridge;
+                    break;
+                case "Single Leg Glute Bridge (L)":
+                    VideoPlayer.clip = singleGlute;
+                    break;
+                case "Single Leg Glute Bridge (R)":
+                    VideoPlayer.clip = singleGlute;
+                    break;
+                case "Straight Bridge":
+                    VideoPlayer.clip = straightBridge;
+                    break;
+                case "Elbow Planks":
+                    VideoPlayer.clip = elbowPlanks;
+                    break;
+                case "Side Plank (L)":
+                    VideoPlayer.clip = sidePlank;
+                    break;
+                case "Side Plank (R)":
+                    VideoPlayer.clip = sidePlank;
+                    break;
+                case "Superman Hold":
+                    VideoPlayer.clip = supermanHold;
+                    break;
+                case "Bird Dog (L)":
+                    VideoPlayer.clip = birdDog;
+                    break;
+                case "Bird Dog (R)":
+                    VideoPlayer.clip = birdDog;
+                    break;
+                case "High Planks":
+                    VideoPlayer.clip = highPlanks;
+                    break;
+                case "Pushup Hold":
+                    VideoPlayer.clip = pushupHold;
+                    break;
+                case "Side Plank (L) Easy":
+                    VideoPlayer.clip = easyPlanks;
+                    break;
+                case "Side Plank (R) Easy":
+                    VideoPlayer.clip = easyPlanks;
+                    break;
             }
+            RestCutscenePanel.CrossFadeAlpha(1f, 0.5f, false);
+            VideoPlayer.Play();
         }
         
         if (endCutscene)
         {
-            if (RestCutscenePanel.alpha >= 0)
-            {
-                RestCutscenePanel.alpha -= Time.deltaTime;
-                if (RestCutscenePanel.alpha == 0)
-                {
-                    endCutscene = false;
-                }
-            }
+            RestCutscenePanel.CrossFadeAlpha(0f, 0.5f, false);
         }
     }
 
@@ -192,6 +250,7 @@ public class PilotLogic : MonoBehaviour
 
     public void setLabel(string Label)
     {
+        exerciseIndex = ExerciseName;
         ExerciseName = Label;
         ExerciseLabel.text = ExerciseName;
         ExerciseLabel2.text = ExerciseName;
@@ -236,7 +295,7 @@ public class PilotLogic : MonoBehaviour
                 if (nextExercise < exerciseLength)
                 {
                     setLabel("Get Ready");
-                    CurrentTime = 1f;
+                    CurrentTime = 5f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
                     currExercise = nextExercise;
                 }
