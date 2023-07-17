@@ -1,1 +1,1 @@
-{"CurrentLevel":17,"TotalStarsEarned":17}
+{"CurrentLevel":0,"TotalStarsEarned":0}

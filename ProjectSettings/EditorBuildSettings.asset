@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 4b4e0e3a598c2ba40b78d699904930fb
   - enabled: 1
+    path: Assets/Scenes/CameraSpace.unity
+    guid: 7e16f28013c294049b23bebd17a77f80
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: aedfab49e41da461a80d7c6570be7901
   - enabled: 1
@@ -35,6 +38,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PoseDemo.unity
     guid: abbd3e1f098384d7291df33029ab1df8
-    path: Assets/Scenes/CameraSpace.unity
-    guid: 7e16f28013c294049b23bebd17a77f80
   m_configObjects: {}

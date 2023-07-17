@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class FinalCutsceneScript : MonoBehaviour
 {
-    public TextMeshProUGUI Timer;
     private float timer = 10f;
     public Animator transition;
     public float transitionTime;
@@ -17,8 +16,8 @@ public class FinalCutsceneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer.text = timer.ToString("f0") + "s";
-        transitionTimer = 2.5f;
+        // Timer.text = timer.ToString("f0") + "s";
+        // transitionTimer = 2.5f;
     }
 
     // Update is called once per frame
@@ -27,7 +26,7 @@ public class FinalCutsceneScript : MonoBehaviour
         if (transitionTimer > 0)
         {
             transitionTimer -= Time.deltaTime;
-
+        
             // When the transition timer reaches zero, set transitionDone to true
             if (transitionTimer <= 0)
             {
@@ -37,7 +36,6 @@ public class FinalCutsceneScript : MonoBehaviour
         else
         {
             timer -= 1 * Time.deltaTime;
-            Timer.text = timer.ToString("f0") + "s";
 
             if (timer <= 0)
             {
