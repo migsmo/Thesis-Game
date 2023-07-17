@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public static string nextName;
     public static bool isBattleEnd;
     public static bool isPostBattle;
-    public int postBattleIndex;
+    public static int postBattleIndex;
     public static int selectedLevel;
     public static int exerciseTimer;
     public static int restTimer;
@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        postBattleIndex = level.postIndex;
         speechBar.PlayScene(currentScene);
         backgroundController.SetImage(currentScene.background);
         LevelSelectDisplay.selectedLevel = level.levelNumber;
@@ -39,12 +40,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            if (isPostBattle)
-            {
-                SpeechBarController.sentenceIndex = postBattleIndex;
-            }
             if(speechBar.IsCompleted())
             {
                 if(speechBar.IsLastSentence())

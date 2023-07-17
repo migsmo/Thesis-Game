@@ -17,7 +17,7 @@ MonoBehaviour:
   nextLevel: CreateProfile
   postIndex: 5
   exerciseTimer: 10
-  restTimer: 5
+  restTimer: 15
   setNo: 1
   starsEarned: 1
   starsRequired: 0

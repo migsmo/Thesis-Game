@@ -28,7 +28,13 @@ public class SpeechBarController : MonoBehaviour
     public void PlayScene(StoryScene scene)
     {
         currentScene = scene;
-        sentenceIndex = -1;
+        if (GameController.isPostBattle)
+        {
+            sentenceIndex = GameController.postBattleIndex;
+            GameController.isPostBattle = false;
+        }
+        else
+            sentenceIndex = -1;
         PlayNextSentence();
     }
 
@@ -68,7 +74,7 @@ public class SpeechBarController : MonoBehaviour
         }
     }
 
-    public void setSentenceIndex(int index)
+    public static void setSentenceIndex(int index)
     {
         sentenceIndex = index;
     }
