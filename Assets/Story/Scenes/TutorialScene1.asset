@@ -13,47 +13,43 @@ MonoBehaviour:
   m_Name: TutorialScene1
   m_EditorClassIdentifier: 
   sentences:
-  - text: "Wow... so this is the Campbell Academy. I finnaly took a step to my dream
-      of becoming a Guardian of the  High Frontier. Dad, if you\u2019re watching
-      over me right now, I can finally start in fulfilling my promise to you. "
-    speaker: {fileID: 11400000, guid: acdc9ceea44b1453381a775133c5d36d, type: 2}
-    actions: []
-  - text: "It looks like the new students are gathering over there, why don\u2019t
-      I head there too."
-    speaker: {fileID: 11400000, guid: acdc9ceea44b1453381a775133c5d36d, type: 2}
-    actions: []
-  - text: 'Hi everyone, my name is Echo. I am known as the 8th Guardian . '
-    speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+  - text: Welcome, Atlas. Today, we begin the journey to become a Titan Handler.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions:
-    - speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
       spriteIndex: 0
       actionType: 1
-      coords: {x: 500, y: 0}
+      coords: {x: 557, y: -146}
       moveSpeed: 0
-  - text: '*oh my god its the 8th guardian, they said he took down 800 seizens alone
-      in the last dead space mission*'
-    speaker: {fileID: 11400000, guid: 2c65bf2cf33944078aff17b0b48523c0, type: 2}
+  - text: I'm ready, Luna.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
     actions:
-    - speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
       spriteIndex: 1
       actionType: 1
-      coords: {x: 500, y: 0}
+      coords: {x: 557, y: -146}
       moveSpeed: 0
-  - text: '*Truly befitting of being the 8th Guardian*'
-    speaker: {fileID: 11400000, guid: c4ba6b28d2c1f43fa870bf392f006506, type: 2}
-    actions: []
-  - text: Cambell Academy truly lives up to their name, its just the first day and
-      I already met one of the Ten Guardians.
-    speaker: {fileID: 11400000, guid: acdc9ceea44b1453381a775133c5d36d, type: 2}
-    actions: []
-  - text: "Alright listen up everyone, Im responsible for showing you guys around
-      the academy. So follow me, I\u2019ll take you guys around"
-    speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+  - text: Excellent. Let's start with the basics.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions:
-    - speaker: {fileID: 11400000, guid: 29aacfb9bef8d44c995b9667a7eae78f, type: 2}
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
       spriteIndex: 0
       actionType: 1
-      coords: {x: 500, y: 0}
+      coords: {x: 557, y: -146}
       moveSpeed: 0
-  background: {fileID: 21300000, guid: 83de200c1b6eb56419b0f4c4e86f3251, type: 3}
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: "You need to understand that controlling a Titan is about harmony between
+      body and mind. Now get in the Titan and I\u2019ll explain to you the interface."
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  background: {fileID: 21300000, guid: 858290d4f7dbf47e98971da837d68772, type: 3}
   nextScene: {fileID: 11400000, guid: 2b96f284e43a04d6981805ceead6c1be, type: 2}

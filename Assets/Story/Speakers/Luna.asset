@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da22394c8830d43bb8f4cdf8214628e6, type: 3}
+  m_Name: Luna
+  m_EditorClassIdentifier: 
+  speakerName: LUNA
+  sprites:
+  - {fileID: 21300000, guid: d4518ad1702094520b0155dd25c85f1b, type: 3}
+  - {fileID: 21300000, guid: d19fc5abe81f64f01b345c2c1ad3125f, type: 3}
+  prefab: {fileID: 8597925127304662073, guid: 4344a6ef6e577465eb46db5fd8712119, type: 3}

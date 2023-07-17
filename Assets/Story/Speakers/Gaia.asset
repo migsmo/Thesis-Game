@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da22394c8830d43bb8f4cdf8214628e6, type: 3}
+  m_Name: Gaia
+  m_EditorClassIdentifier: 
+  speakerName: GAIA
+  sprites:
+  - {fileID: 21300000, guid: 5e791f00102f949818a464ff4073426a, type: 3}
+  - {fileID: 21300000, guid: aad362c474aa74e0f9e0b85db7ddad36, type: 3}
+  prefab: {fileID: 1179139899547659805, guid: 474ed2a33f5f94da6ae31a4f7c5ac537, type: 3}
