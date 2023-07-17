@@ -20,6 +20,7 @@ MonoBehaviour:
   starsRequired: 4
   energyCost: 45
   isUnlocked: 0
+  isGuided: 1
   exerciseList:
   - Glute Bridge
   - Single Leg Glute Bridge (L)

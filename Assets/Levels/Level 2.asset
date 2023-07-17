@@ -15,18 +15,19 @@ MonoBehaviour:
   levelNumber: 2
   exerciseTimer: 15
   restTimer: 10
-  setNo: 3
-  starsEarned: 0
+  setNo: 2
+  starsEarned: 2
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1
+  isGuided: 1
   exerciseList:
   - Glute Bridge
   - Single Leg Glute Bridge (L)
   - Single Leg Glute Bridge (R)
   - Straight Bridge
-  - Easy Side Planks (L)
-  - Easy Side Planks (R)
+  - Side Plank (L) Easy
+  - Side Plank (R) Easy
   - Bird Dog (L)
   - Bird Dog (R)
   - Pushup Hold

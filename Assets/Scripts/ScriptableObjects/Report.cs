@@ -2,26 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Report", menuName = "Report")] 
-public class Report : ScriptableObject
+public class Report
 {
     public string[] exerciseList;
-    public float[] percentageList;
-    public int earnedStars;
+    public int[] percentageList;
+    public int earnedStars = 0;
     public float totalPercentage = 0;
+    public int levelNumber;
+
+    public Report(string[] exerciseList, int[] percentageList)
+    {
+        this.exerciseList = exerciseList;
+        this.percentageList = percentageList;
+    }
 
     public void generateReport()
     {
-        for (int i = 0; i < exerciseList.Length; i++){
+        for (int i = 0; i < exerciseList.Length; i++)
+        {
             totalPercentage += percentageList[i];
         }
+        
         totalPercentage = totalPercentage / exerciseList.Length;
 
-        if (totalPercentage >= 75)
+        if (totalPercentage >= 90)
         {
             earnedStars = 3;
         }
-        else if (totalPercentage < 75 && totalPercentage >= 50)
+        else if (totalPercentage is >= 75 and < 90)
         {
             earnedStars = 2;
         }
@@ -31,5 +39,8 @@ public class Report : ScriptableObject
         }
     }
 
-    
+    public int getExerciseLength()
+    {
+        return exerciseList.Length;
+    }
 }

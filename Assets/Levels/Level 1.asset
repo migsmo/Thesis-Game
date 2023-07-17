@@ -15,19 +15,18 @@ MonoBehaviour:
   levelNumber: 1
   exerciseTimer: 15
   restTimer: 10
-  setNo: 3
-  starsEarned: 0
+  setNo: 1
+  starsEarned: 3
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1
+  isGuided: 1
   exerciseList:
-  - Wall Sit
   - Sumo Squat
   - Static Lunge (L)
   - Static Lunge (R)
   - Elbow Planks
-  - Side Planks (L)
-  - Side Planks (R)
+  - Side Plank (L)
+  - Side Plank (R)
   - Superman Hold
-  - Assisted L Sit
-  - High Plank
+  - High Planks

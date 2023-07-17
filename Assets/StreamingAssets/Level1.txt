@@ -1,0 +1,1 @@
+{"levelNumber":1,"exerciseTimer":15,"restTimer":10,"setNo":2,"starsEarned":2,"starsRequired":0,"energyCost":33,"isUnlocked":true,"isGuided":true,"exerciseList":["Sumo Squat Down","Static Lunge (L)","Static Lunge (R)","Elbow Planks","Side Plank (L)","Side Plank (R)","Superman Hold","Assisted L Sit","High Planks"]}

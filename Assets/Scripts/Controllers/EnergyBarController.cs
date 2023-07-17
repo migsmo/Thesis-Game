@@ -12,6 +12,7 @@ public class EnergyBarController : MonoBehaviour
     public TMP_Text energyCount;
     private static string lastResetDateKey = "LastEnergyResetDate";
 
+
     void Start()
     {
         energySlider = GetComponent<Slider>();

@@ -15,13 +15,13 @@ MonoBehaviour:
   levelNumber: 3
   exerciseTimer: 15
   restTimer: 10
-  setNo: 2
-  starsEarned: 0
+  setNo: 1
+  starsEarned: 3
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1
+  isGuided: 0
   exerciseList:
-  - Wall Sit
   - Sumo Squat
   - Static Lunge (L)
   - Static Lunge (R)
@@ -30,11 +30,10 @@ MonoBehaviour:
   - Single Leg Glute Bridge (R)
   - Straight Bridge
   - Elbow Planks
-  - Side Planks (L)
-  - Side Planks (R)
+  - Side Plank (L)
+  - Side Plank (R)
   - Superman Hold
   - Bird Dog (L)
   - Bird Dog (R)
-  - Assited L Sit
-  - High Plank
+  - High Planks
   - Pushup Hold

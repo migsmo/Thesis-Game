@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49990daeb5623345a3c691462a3c98a, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: 
+  levelNumber: 0
+  levelName: Tutorial
+  nextLevel: CreateProfile
+  postIndex: 5
+  exerciseTimer: 10
+  restTimer: 15
+  setNo: 1
+  starsEarned: 2
+  starsRequired: 0
+  energyCost: 0
+  isUnlocked: 1
+  isGuided: 1
+  isBattleEnd: 0
+  isPostBattle: 0
+  exerciseList:
+  - Sumo Squat
+  - Static Lunge (L)
+  - Static Lunge (R)
+  - Single Leg Glute Bridge (L)
+  - Single Leg Glute Bridge (R)

@@ -72,3 +72,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Packages/com.github.homuler.mediapipe/Runtime/Plugins/iOS/MediaPipeUnity.framework/MediaPipeUnity
 *.aar
+
+Packages/com.github.homuler.mediapipe/Runtime/Plugins/Android/mediapipe_android.aar
+
+.idea/
+.DS_Store
+.vsconfig/
