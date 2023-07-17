@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Sample
   m_EditorClassIdentifier: 
   levelNumber: 1
-  exerciseTimer: 10
+  levelName: 
+  nextLevel: 
+  postIndex: 0
+  exerciseTimer: 1
   restTimer: 5
   setNo: 1
   starsEarned: 2
@@ -21,5 +24,7 @@ MonoBehaviour:
   energyCost: 0
   isUnlocked: 1
   isGuided: 1
+  isBattleEnd: 0
+  isPostBattle: 0
   exerciseList:
   - Sumo Squat
