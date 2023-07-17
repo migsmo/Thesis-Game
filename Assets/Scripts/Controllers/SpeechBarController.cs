@@ -8,7 +8,7 @@ public class SpeechBarController : MonoBehaviour
     public TextMeshProUGUI barText;
     public TextMeshProUGUI personNameText;
 
-    private int sentenceIndex = -1;
+    public static int sentenceIndex = -1;
     private StoryScene currentScene;
     private State state = State.COMPLETED;
 
@@ -28,7 +28,13 @@ public class SpeechBarController : MonoBehaviour
     public void PlayScene(StoryScene scene)
     {
         currentScene = scene;
-        sentenceIndex = -1;
+        if (GameController.isPostBattle)
+        {
+            sentenceIndex = GameController.postBattleIndex;
+            GameController.isPostBattle = false;
+        }
+        else
+            sentenceIndex = -1;
         PlayNextSentence();
     }
 
@@ -66,6 +72,11 @@ public class SpeechBarController : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public static void setSentenceIndex(int index)
+    {
+        sentenceIndex = index;
     }
 
     private void ActSpeakers()

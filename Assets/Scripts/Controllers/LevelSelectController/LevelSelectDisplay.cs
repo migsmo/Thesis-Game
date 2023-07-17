@@ -24,6 +24,9 @@ public class LevelSelectDisplay : MonoBehaviour
     public Image lockIcon;
     public GameObject Panel;
     public TMP_Text requiredStarsLabel;
+    public Animator transition;
+    public float transitionTime;
+    public static bool fromSim;
 
     public Sprite CompletedStar;
     public Image star1;
@@ -56,6 +59,7 @@ public class LevelSelectDisplay : MonoBehaviour
 
         time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
         PlayTime.text = "Play Time: " + time + "min";
+        fromSim = false;
        
     }
 
@@ -116,7 +120,8 @@ public class LevelSelectDisplay : MonoBehaviour
         setNo = level.setNo;
         exerciseList = level.exerciseList;
         currLevel = level;
-        SceneManager.LoadScene("Pilot");
+        fromSim = true;
+        StartCoroutine(LoadLevel("CameraSpace"));
     }
 
     public void OnMouseOver()
@@ -130,5 +135,14 @@ public class LevelSelectDisplay : MonoBehaviour
     public void OnMouseExit()
     {
         Panel.SetActive(false);
+    }
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }

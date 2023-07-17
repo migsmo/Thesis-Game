@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class PilotLogic : MonoBehaviour
 {
@@ -14,24 +16,34 @@ public class PilotLogic : MonoBehaviour
     public TextMeshProUGUI UpcomingExerciseLabel;
     public TextMeshProUGUI AveLabel;
     public TextMeshProUGUI ExerciseLabel2;
-    public CanvasGroup RestCutscenePanel;
+    public RawImage RestCutscenePanel;
+    public VideoPlayer VideoPlayer;
     public Image SyncBar;
     public Image SideBarL;
     public Image SideBarR;
     public Image AveBar;
+    public Image LeftContainer;
+    public Image RightContainer;
+    public RectTransform WarningScreen;
     public int SyncPercentage;
     public int AvePercentage;
     public AudioClip StartCue;
     public AudioClip StopCue;
     public AudioSource audioSource;
+    public AudioClip CountDown;
+    public AudioClip PowerUp;
     private float volume = 1;
     public static Report levelReport;
+    public Animator transition;
+    public float transitionTime;
 
     private string ExerciseName;
     private float CurrentTime = 0f;
     private float exerciseTimer = 0f;
     private int restTimer;
     private float setRestTimer=60f;
+    private float transitionTimer;
+    private string exerciseIndex;
 
     private bool getReady = true;
     private bool startExercise = false;
@@ -40,6 +52,9 @@ public class PilotLogic : MonoBehaviour
     private bool startCutscene = false;
     private bool endCutscene = true;
     private bool inFrame = true;
+    private bool audioPlayed1 = false;
+    private bool audioPlayed2 = false;
+    public bool transitionDone = false;
 
     private string[] exerciseList;
     private int selectedLevel;
@@ -48,11 +63,25 @@ public class PilotLogic : MonoBehaviour
     public int currExercise = -1;
     private int currSet = 0;
     public int nextExercise = 0;
-    
+    private float rotate = 0;
     public int[] percentageList = new int[17];
+    
+    public VideoClip sumoSquat;
+    public VideoClip staticLunge;
+    public VideoClip gluteBridge;
+    public VideoClip singleGlute;
+    public VideoClip straightBridge;
+    public VideoClip elbowPlanks;
+    public VideoClip sidePlank;
+    public VideoClip supermanHold;
+    public VideoClip birdDog;
+    public VideoClip highPlanks;
+    public VideoClip pushupHold;
+    public VideoClip easyPlanks;
+
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         selectedLevel = LevelSelectDisplay.selectedLevel;
         exerciseTimer = LevelSelectDisplay.exerciseTimer;
@@ -63,6 +92,13 @@ public class PilotLogic : MonoBehaviour
         SetLabel.text = "Set " + (currSet + 1) + " / " + setNo;
         percentageList = new int[exerciseList.Length];
         exerciseLength = exerciseList.Length;
+        transitionTimer = 2.5f;
+        
+        if (!LevelSelectDisplay.currLevel.isGuided)
+        {
+            RightContainer.enabled = false;
+            LeftContainer.enabled = false;
+        }
         
         // Temporary code to be replaced to test post battle scene
         levelReport = new Report(exerciseList, percentageList);
@@ -76,10 +112,25 @@ public class PilotLogic : MonoBehaviour
         getSyncBar();
         getAveBar();
         setBar();
-
-        if (inFrame)
+        if (SyncPercentage < 70)
         {
-            if (currExercise < exerciseList.Length && currSet < setNo)
+            rotate += 1 * Time.deltaTime;
+            WarningScreen.Rotate(new Vector3(0, 0, rotate));
+        }
+
+        if (transitionTimer > 0)
+        {
+            transitionTimer -= Time.deltaTime;
+
+            // When the transition timer reaches zero, set transitionDone to true
+            if (transitionTimer <= 0)
+            {
+                transitionDone = true;
+            }
+        }
+        if (inFrame && transitionDone)
+        {
+            if (currExercise < exerciseLength && currSet < setNo)
             {
                 if (SetDone)
                 {
@@ -97,11 +148,12 @@ public class PilotLogic : MonoBehaviour
             }
             else if (currExercise == exerciseList.Length && currSet < setNo)
             {
+                Debug.LogWarning("ENTERED EQUALS");
                 currSet++;
                 if (currSet == setNo)
                 {
                     levelReport.generateReport();
-                    SceneManager.LoadScene("FinalCutscene");
+                    StartCoroutine(LoadLevel("FinalCutscene"));
                 }
                 else
                 {
@@ -112,37 +164,76 @@ public class PilotLogic : MonoBehaviour
                     currExercise = -1;
                     nextExercise = 0;
                 }
-
             }
-
         }
-        else
-        {
-            ExerciseLabel.text = "Body not in Frame";
-        }
+        // else
+        // {
+        //     ExerciseLabel.text = "Body not in Frame";
+        // }
 
         if (startCutscene)
         {
-            if (RestCutscenePanel.alpha < 1)
+            switch (exerciseIndex)
             {
-                RestCutscenePanel.alpha += Time.deltaTime;
-                if (RestCutscenePanel.alpha >= 1)
-                {
-                    startCutscene = false;
-                }
+                case "Sumo Squat":
+                    VideoPlayer.clip = sumoSquat;
+                    break;
+                case "Static Lunge (L)":
+                    VideoPlayer.clip = staticLunge;
+                    break;
+                case "Static Lunge (R)":
+                    VideoPlayer.clip = staticLunge;
+                    break;
+                case "Glute Bridge":
+                    VideoPlayer.clip = gluteBridge;
+                    break;
+                case "Single Leg Glute Bridge (L)":
+                    VideoPlayer.clip = singleGlute;
+                    break;
+                case "Single Leg Glute Bridge (R)":
+                    VideoPlayer.clip = singleGlute;
+                    break;
+                case "Straight Bridge":
+                    VideoPlayer.clip = straightBridge;
+                    break;
+                case "Elbow Planks":
+                    VideoPlayer.clip = elbowPlanks;
+                    break;
+                case "Side Plank (L)":
+                    VideoPlayer.clip = sidePlank;
+                    break;
+                case "Side Plank (R)":
+                    VideoPlayer.clip = sidePlank;
+                    break;
+                case "Superman Hold":
+                    VideoPlayer.clip = supermanHold;
+                    break;
+                case "Bird Dog (L)":
+                    VideoPlayer.clip = birdDog;
+                    break;
+                case "Bird Dog (R)":
+                    VideoPlayer.clip = birdDog;
+                    break;
+                case "High Planks":
+                    VideoPlayer.clip = highPlanks;
+                    break;
+                case "Pushup Hold":
+                    VideoPlayer.clip = pushupHold;
+                    break;
+                case "Side Plank (L) Easy":
+                    VideoPlayer.clip = easyPlanks;
+                    break;
+                case "Side Plank (R) Easy":
+                    VideoPlayer.clip = easyPlanks;
+                    break;
             }
+            RestCutscenePanel.CrossFadeAlpha(1f, 0.5f, false);
+            VideoPlayer.Play();
         }
         
         if (endCutscene)
         {
-            if (RestCutscenePanel.alpha >= 0)
-            {
-                RestCutscenePanel.alpha -= Time.deltaTime;
-                if (RestCutscenePanel.alpha == 0)
-                {
-                    endCutscene = false;
-                }
-            }
+            RestCutscenePanel.CrossFadeAlpha(0f, 0.5f, false);
         }
     }
 
@@ -159,6 +250,7 @@ public class PilotLogic : MonoBehaviour
 
     public void setLabel(string Label)
     {
+        exerciseIndex = ExerciseName;
         ExerciseName = Label;
         ExerciseLabel.text = ExerciseName;
         ExerciseLabel2.text = ExerciseName;
@@ -187,11 +279,11 @@ public class PilotLogic : MonoBehaviour
     public void SetExerciseTimer()
     {
         Timer.text = CurrentTime.ToString("0");
-
         if (!ExerciseDone)
         {
             if (getReady)
             {
+                audioSource.PlayOneShot(PowerUp, volume);
                 getReady = false;
                 startCutscene = false;
                 endCutscene = true;
@@ -205,6 +297,7 @@ public class PilotLogic : MonoBehaviour
                     setLabel("Get Ready");
                     CurrentTime = 5f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
+                    currExercise = nextExercise;
                 }
             }
             if (!getReady && CurrentTime <= 0 && !startExercise)
@@ -213,15 +306,34 @@ public class PilotLogic : MonoBehaviour
                 startExercise = true;
                 currExercise = nextExercise;
                 nextExercise++;
-                setLabel(exerciseList[currExercise]);
+                Debug.LogWarning("CurrExercise" + currExercise);
+                Debug.LogWarning("exLength" + exerciseLength);
+                if (currExercise < exerciseLength)
+                {
+                    setLabel(exerciseList[currExercise]);
+                }
                 UpcomingExerciseLabel.text = "";
                 audioSource.PlayOneShot(StartCue, volume);
+            }
+
+            if (!getReady && (CurrentTime <= 3) && !startExercise && !audioPlayed1)
+            {
+                audioPlayed1 = true;
+                audioSource.PlayOneShot(CountDown, volume);
+            }
+
+            if (startExercise && CurrentTime <= 3 && !audioPlayed2)
+            {
+                audioPlayed2 = true;
+                audioSource.PlayOneShot(CountDown, volume);
             }
             if (startExercise && CurrentTime <= 0)
             {
                 ExerciseDone = true;
                 startExercise = false;
                 audioSource.PlayOneShot(StopCue, volume);
+                audioPlayed2 = false;
+                audioPlayed1 = false;
                 currExercise = -1;
                 // nextExercise++;
                 if (nextExercise < exerciseLength)
@@ -240,7 +352,6 @@ public class PilotLogic : MonoBehaviour
         }
         else
         {
-
             if (CurrentTime <= 0)
             {
                 if (nextExercise < exerciseLength)
@@ -249,12 +360,21 @@ public class PilotLogic : MonoBehaviour
                 }
                 // currExercise++;
                 // nextExercise++;
-                currExercise = -1;
                 getReady = true;
                 ExerciseDone = false;
             }
         }
         CurrentTime -= 1 * Time.deltaTime;
+    }
+
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }
 

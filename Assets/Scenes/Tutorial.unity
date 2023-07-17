@@ -712,6 +712,10 @@ MonoBehaviour:
   currentScene: {fileID: 11400000, guid: 1d75ae6c093c845b69643f394f87c932, type: 2}
   speechBar: {fileID: 1511558591}
   backgroundController: {fileID: 71902985}
+  sceneLevel: Tutorial
+  isBattleEnd: 0
+  isPostBattle: 0
+  postBattleIndex: 0
 --- !u!1 &1367375757
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,13 +15,11 @@ MonoBehaviour:
   levelNumber: 1
   exerciseTimer: 10
   restTimer: 5
-  setNo: 2
+  setNo: 1
   starsEarned: 2
   starsRequired: 0
   energyCost: 0
   isUnlocked: 1
   isGuided: 1
   exerciseList:
-  - Sumo Squat Down
-  - Static Lunge (L)
-  - Static Lunge (R)
+  - Sumo Squat

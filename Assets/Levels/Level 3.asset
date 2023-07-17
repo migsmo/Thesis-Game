@@ -16,13 +16,13 @@ MonoBehaviour:
   exerciseTimer: 15
   restTimer: 10
   setNo: 1
-  starsEarned: 3
+  starsEarned: 1
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1
   isGuided: 0
   exerciseList:
-  - Sumo Squat Down
+  - Sumo Squat
   - Static Lunge (L)
   - Static Lunge (R)
   - Glute Bridge
