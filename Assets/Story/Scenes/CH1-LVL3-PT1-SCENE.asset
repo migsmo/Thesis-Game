@@ -59,7 +59,7 @@ MonoBehaviour:
       coords: {x: 557, y: -146}
       moveSpeed: 0
   - text: We won't let them down. Let's do this, Hyperion.
-    speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
       spriteIndex: 1
@@ -71,17 +71,18 @@ MonoBehaviour:
       actionType: 1
       coords: {x: -632, y: -132}
       moveSpeed: 0
-  - text: We won't let them down. Let's do this, Hyperion.
-    speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
+  - text: Atlas steels his heart and is filled with determination to defend the city
+      against the seemingly endless horde of rogue monsters.
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 0e33de4a91d1c40c8b01f97a04e983c8, type: 2}
       spriteIndex: 1
-      actionType: 1
+      actionType: 3
       coords: {x: 557, y: -146}
       moveSpeed: 0
     - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
       spriteIndex: 0
-      actionType: 1
+      actionType: 3
       coords: {x: -632, y: -132}
       moveSpeed: 0
   background: {fileID: 21300000, guid: 83de200c1b6eb56419b0f4c4e86f3251, type: 3}
