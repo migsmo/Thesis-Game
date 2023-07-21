@@ -8,7 +8,7 @@ public class IntroController : MonoBehaviour
     // Start is called before the first frame update
     public void Next()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Tutorial");
     }
 
     // Update is called once per frame

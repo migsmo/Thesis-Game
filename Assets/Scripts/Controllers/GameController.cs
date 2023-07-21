@@ -19,11 +19,23 @@ public class GameController : MonoBehaviour
     public static int restTimer;
     public static int setNo;
     public static string[] exerciseList;
+    public static int postScene;
 
     // Start is called before the first frame update
     void Start()
     {
         postBattleIndex = level.postIndex;
+        postScene = level.postScene;
+        if (true)
+        {
+            Debug.LogWarning("Entered Is Post Battle");
+            for (int i = 1; i < postScene; i++)
+            {
+                postBattleIndex -= currentScene.sentences.Count;
+                currentScene = currentScene.nextScene;
+                Debug.LogWarning(postBattleIndex + "POSTBATTLEINDEX");
+            }
+        }
         speechBar.PlayScene(currentScene);
         backgroundController.SetImage(currentScene.background);
         LevelSelectDisplay.selectedLevel = level.levelNumber;
@@ -47,16 +59,29 @@ public class GameController : MonoBehaviour
                 if(speechBar.IsLastSentence())
                 {
                     if (currentScene.nextScene == null)
-                        SceneManager.LoadScene("Pilot");
+                        if (isBattleEnd)
+                        {
+                            SceneManager.LoadScene("Pilot");
+                        }
+                        else
+                            SceneManager.LoadScene(level.nextLevel);
                     else
                     {
+                        postBattleIndex -= currentScene.sentences.Count;
                         currentScene = currentScene.nextScene;
                         speechBar.PlayScene(currentScene);
                         backgroundController.SwitchImage(currentScene.background);
+                        postScene++;
                     }
                 } else
                 {
-                    speechBar.PlayNextSentence();
+                    Debug.LogWarning(SpeechBarController.sentenceIndex + "sentenceIndex" + postBattleIndex + "postIndex");
+
+                    if (SpeechBarController.sentenceIndex == postBattleIndex - 1 && !isBattleEnd)
+                        SceneManager.LoadScene("Pilot");                    
+                    else
+                        speechBar.PlayNextSentence();
+
 
                 }
             }

@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PoseDemo.unity
     guid: abbd3e1f098384d7291df33029ab1df8
+  - enabled: 1
+    path: Assets/Scenes/CH1-LVL1.unity
+    guid: 9036c136352724e0a8c116bf46316d33
+  - enabled: 1
+    path: Assets/Scenes/CH1-LVL2.unity
+    guid: 847bbe62ba05f43308f0ae41e2e2c0fc
+  - enabled: 1
+    path: Assets/Scenes/CH1-LVL3.unity
+    guid: 93f2db3a48b18431fb78356ea3a7d57f
   m_configObjects: {}

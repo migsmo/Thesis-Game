@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNumber: 0
   levelName: Tutorial
-  nextLevel: CreateProfile
-  postIndex: 5
+  nextLevel: CH1-LVL1
+  postScene: 2
+  postIndex: 9
   exerciseTimer: 10
   restTimer: 15
   setNo: 1
