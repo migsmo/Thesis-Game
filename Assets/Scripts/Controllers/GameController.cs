@@ -26,7 +26,8 @@ public class GameController : MonoBehaviour
     {
         postBattleIndex = level.postIndex;
         postScene = level.postScene;
-        if (true)
+        isPostBattle = level.isPostBattle;
+        if (isPostBattle)
         {
             Debug.LogWarning("Entered Is Post Battle");
             for (int i = 1; i < postScene; i++)
