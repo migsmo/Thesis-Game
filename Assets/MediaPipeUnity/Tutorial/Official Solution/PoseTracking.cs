@@ -168,19 +168,31 @@ namespace Mediapipe.Unity.PoseLandmark
                                     UpdateModels(pose);
                                 }
                                 
-                                _pilotLogic.SyncPercentage = (int)Math.Floor(smoothed[pose] * 10);
+                                // _pilotLogic.SyncPercentage = (int)Math.Floor(smoothed[pose] * 10);
+                                //
+                                // // Update percentages here
+                                // frameCtr[_pilotLogic.currExercise]++;
+                                // totalScores[_pilotLogic.currExercise] += (int)Math.Floor(smoothed[pose] * 10);
+                                // _pilotLogic.percentageList[_pilotLogic.currExercise] =
+                                //     totalScores[_pilotLogic.currExercise] / frameCtr[_pilotLogic.currExercise];
+                                //
+                                // _pilotLogic.AvePercentage = _pilotLogic.percentageList[_pilotLogic.currExercise];
+                                
+                                if (!_pilotLogic.ExerciseDone)
+                                {
+                                    _pilotLogic.SyncPercentage = (int)Math.Floor(smoothed[pose] * 10);
 
-                                // Update percentages here
-                                frameCtr[_pilotLogic.currExercise]++;
-                                totalScores[_pilotLogic.currExercise] += (int)Math.Floor(smoothed[pose] * 10);
-                                _pilotLogic.percentageList[_pilotLogic.currExercise] =
-                                    totalScores[_pilotLogic.currExercise] / frameCtr[_pilotLogic.currExercise];
+                                    if (_pilotLogic.startExercise)
+                                    {
+                                        // Update percentages here
+                                        frameCtr[_pilotLogic.currExercise]++;
+                                        totalScores[_pilotLogic.currExercise] += (int)Math.Floor(smoothed[pose] * 10);
+                                        _pilotLogic.percentageList[_pilotLogic.currExercise] =
+                                            totalScores[_pilotLogic.currExercise] / frameCtr[_pilotLogic.currExercise];
 
-                                _pilotLogic.AvePercentage = _pilotLogic.percentageList[_pilotLogic.currExercise];
-
-                                print(_pilotLogic.percentageList);
-
-                                // Vector3[] landmarks = classifier.GetPoseLandmarks(pose);
+                                        _pilotLogic.AvePercentage = _pilotLogic.percentageList[_pilotLogic.currExercise];
+                                    }
+                                }
                             }
                             else
                             {

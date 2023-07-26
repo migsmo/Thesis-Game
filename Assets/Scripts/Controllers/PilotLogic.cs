@@ -45,9 +45,9 @@ public class PilotLogic : MonoBehaviour
     private float transitionTimer;
     private string exerciseIndex;
 
-    private bool getReady = true;
-    private bool startExercise = false;
-    private bool ExerciseDone = false;
+    public bool getReady = true;
+    public bool startExercise = false;
+    public bool ExerciseDone = false;
     private bool SetDone = false;
     private bool startCutscene = false;
     private bool endCutscene = true;

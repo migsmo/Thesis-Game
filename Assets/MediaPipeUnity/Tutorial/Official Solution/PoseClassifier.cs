@@ -797,39 +797,39 @@ public class PoseClassifier : MonoBehaviour
         // given one, but has one joint bent into another direction and actually
         // represent a different pose class.
 
-        var maxDistHeap = new List<Tuple<float, int>>();
-        for (int i = 0; i < poseSamples.Count; i++)
-        {
-            var sample = poseSamples[i];
-            var maxDist = Mathf.Min(
-                Enumerable.Range(0, poseEmbedding.Length)
-                    .Select(j => Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
-                    .Max(),
-                Enumerable.Range(0, poseEmbedding.Length)
-                    .Select(j => Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
-                    .Max()
-            );
-            maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
-        }
-
         // var maxDistHeap = new List<Tuple<float, int>>();
         // for (int i = 0; i < poseSamples.Count; i++)
         // {
         //     var sample = poseSamples[i];
-        //     try
-        //     {
-        //         var weights = GetWeightsForExercise(sample.className); // Get the weights for the current exercise
-        //         var maxDist = Mathf.Min(
-        //             Enumerable.Range(0, poseEmbedding.Length)
-        //                 .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
-        //                 .Max(),
-        //             Enumerable.Range(0, poseEmbedding.Length)
-        //                 .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
-        //                 .Max()
-        //         );
-        //         maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
-        //     } catch (Exception e) {}
+        //     var maxDist = Mathf.Min(
+        //         Enumerable.Range(0, poseEmbedding.Length)
+        //             .Select(j => Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
+        //             .Max(),
+        //         Enumerable.Range(0, poseEmbedding.Length)
+        //             .Select(j => Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
+        //             .Max()
+        //     );
+        //     maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
         // }
+
+        var maxDistHeap = new List<Tuple<float, int>>();
+        for (int i = 0; i < poseSamples.Count; i++)
+        {
+            var sample = poseSamples[i];
+            try
+            {
+                var weights = GetWeightsForExercise(sample.className); // Get the weights for the current exercise
+                var maxDist = Mathf.Min(
+                    Enumerable.Range(0, poseEmbedding.Length)
+                        .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
+                        .Max(),
+                    Enumerable.Range(0, poseEmbedding.Length)
+                        .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
+                        .Max()
+                );
+                maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
+            } catch (Exception e) {}
+        }
         
         maxDistHeap = maxDistHeap.OrderBy(t => t.Item1).ToList();
         maxDistHeap = maxDistHeap.Take(topNByMaxDistance).ToList();
