@@ -18,7 +18,7 @@ MonoBehaviour:
   postScene: 2
   postIndex: 9
   exerciseTimer: 10
-  restTimer: 15
+  restTimer: 10
   setNo: 1
   starsEarned: 2
   starsRequired: 0
