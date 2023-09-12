@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNumber: 3
   levelName: CH1-LVL3
-  nextLevel: Main Menu
+  nextLevel: MainMenu
   postScene: 2
   postIndex: 4
   exerciseTimer: 1
