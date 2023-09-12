@@ -12,7 +12,7 @@ public class MainMenuController : MonoBehaviour
 
     public void StoryMode()
     {
-        SceneManager.LoadScene("CreateProfile");
+        SceneManager.LoadScene("Tutorial");
     }
 
     // Update is called once per frame
