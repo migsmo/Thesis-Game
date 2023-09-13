@@ -108,11 +108,11 @@ public class LevelSelectDisplay : MonoBehaviour
     public void OpenScene()
     {
         Debug.LogWarning("level.energyCost" + level.energyCost);
-        bool isEnergyDeducted = energyBarOverlay.DecreaseEnergy(level.energyCost);
-        if(!isEnergyDeducted)
-        {
-            return;
-        }
+        // bool isEnergyDeducted = energyBarOverlay.DecreaseEnergy(level.energyCost);
+        // if(!isEnergyDeducted)
+        // {
+        //     return;
+        // }
 
         selectedLevel = level.levelNumber;
         exerciseTimer = level.exerciseTimer;
