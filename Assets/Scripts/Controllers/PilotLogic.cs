@@ -81,6 +81,11 @@ public class PilotLogic : MonoBehaviour
     
     public GameObject pauseMenu;
     public bool isPaused;
+
+    public Image target;
+    public Sprite abs;
+    public Sprite upper;
+    public Sprite lower;
     
     // Start is called before the first frame update
     void Awake()
@@ -97,6 +102,7 @@ public class PilotLogic : MonoBehaviour
         transitionTimer = 2.5f;
         pauseMenu.SetActive(false);
         isPaused = false;
+        target.sprite = null;
         
         if (!LevelSelectDisplay.currLevel.isGuided)
         {
@@ -319,8 +325,9 @@ public class PilotLogic : MonoBehaviour
                 if (nextExercise < exerciseLength)
                 {
                     setLabel("Get Ready");
-                    CurrentTime = 5f;
+                    CurrentTime = 10f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
+                    updateIcon(exerciseList[nextExercise]);
                     currExercise = nextExercise;
                 }
             }
@@ -410,7 +417,6 @@ public class PilotLogic : MonoBehaviour
         StartCoroutine(LoadLevel("MainMenu"));
     }
 
-
     IEnumerator LoadLevel(string sceneName)
     {
         transition.SetTrigger("Start");
@@ -418,6 +424,67 @@ public class PilotLogic : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void updateIcon(String Label)
+    {
+        switch (Label)
+            {
+                case "Sumo Squat":
+                    target.sprite = lower;
+                    break;
+                case "Static Lunge (L)":
+                    target.sprite = lower;
+                    break;
+                case "Static Lunge (R)":
+                    target.sprite = lower;
+                    break;
+                case "Glute Bridge":
+                    target.sprite = lower;
+                    break;
+                case "Single Leg Glute Bridge (L)":
+                    target.sprite = lower;
+                    break;
+                case "Single Leg Glute Bridge (R)":
+                    target.sprite = lower;
+                    break;
+                case "Straight Bridge":
+                    target.sprite = lower;
+                    break;
+                case "Elbow Planks":
+                    target.sprite = abs;
+                    break;
+                case "Side Plank (L)":
+                    target.sprite = abs;
+                    break;
+                case "Side Plank (R)":
+                    target.sprite = abs;
+                    break;
+                case "Superman Hold":
+                    target.sprite = upper;
+                    break;
+                case "Bird Dog (L)":
+                    target.sprite = lower;
+                    break;
+                case "Bird Dog (R)":
+                    target.sprite = lower;
+                    break;
+                case "High Planks":
+                    target.sprite = abs;
+                    break;
+                case "Pushup Hold":
+                    target.sprite = upper;
+                    break;
+                case "Side Plank (L) Easy":
+                    target.sprite = abs;
+                    break;
+                case "Side Plank (R) Easy":
+                    target.sprite = abs;
+                    break;
+                default:
+                    target.sprite = null;
+                    break;
+            }
     }
 }
 
