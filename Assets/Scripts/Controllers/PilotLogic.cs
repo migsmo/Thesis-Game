@@ -78,8 +78,15 @@ public class PilotLogic : MonoBehaviour
     public VideoClip highPlanks;
     public VideoClip pushupHold;
     public VideoClip easyPlanks;
+    
+    public GameObject pauseMenu;
+    public bool isPaused;
 
-
+    public Image target;
+    public Sprite abs;
+    public Sprite upper;
+    public Sprite lower;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -93,6 +100,9 @@ public class PilotLogic : MonoBehaviour
         percentageList = new int[exerciseList.Length];
         exerciseLength = exerciseList.Length;
         transitionTimer = 2.5f;
+        pauseMenu.SetActive(false);
+        isPaused = false;
+        target.sprite = null;
         
         if (!LevelSelectDisplay.currLevel.isGuided)
         {
@@ -170,7 +180,7 @@ public class PilotLogic : MonoBehaviour
         // {
         //     ExerciseLabel.text = "Body not in Frame";
         // }
-
+        
         if (startCutscene)
         {
             switch (exerciseIndex)
@@ -228,12 +238,32 @@ public class PilotLogic : MonoBehaviour
                     break;
             }
             RestCutscenePanel.CrossFadeAlpha(1f, 0.5f, false);
-            VideoPlayer.Play();
+            if (!isPaused)
+            {
+                VideoPlayer.Play();
+            }
         }
         
         if (endCutscene)
         {
             RestCutscenePanel.CrossFadeAlpha(0f, 0.5f, false);
+        }
+
+        if (isPaused)
+        {
+            audioSource.Pause();
+            if (startCutscene)
+            {  
+                VideoPlayer.Pause();
+            }
+        }
+        else
+        {
+            audioSource.Play();
+            if (startCutscene)
+            {
+                VideoPlayer.Play();
+            }
         }
     }
 
@@ -295,8 +325,9 @@ public class PilotLogic : MonoBehaviour
                 if (nextExercise < exerciseLength)
                 {
                     setLabel("Get Ready");
-                    CurrentTime = 5f;
+                    CurrentTime = 10f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
+                    updateIcon(exerciseList[nextExercise]);
                     currExercise = nextExercise;
                 }
             }
@@ -367,6 +398,25 @@ public class PilotLogic : MonoBehaviour
         CurrentTime -= 1 * Time.deltaTime;
     }
 
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1f;
+        StartCoroutine(LoadLevel("MainMenu"));
+    }
 
     IEnumerator LoadLevel(string sceneName)
     {
@@ -375,6 +425,67 @@ public class PilotLogic : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void updateIcon(String Label)
+    {
+        switch (Label)
+            {
+                case "Sumo Squat":
+                    target.sprite = lower;
+                    break;
+                case "Static Lunge (L)":
+                    target.sprite = lower;
+                    break;
+                case "Static Lunge (R)":
+                    target.sprite = lower;
+                    break;
+                case "Glute Bridge":
+                    target.sprite = lower;
+                    break;
+                case "Single Leg Glute Bridge (L)":
+                    target.sprite = lower;
+                    break;
+                case "Single Leg Glute Bridge (R)":
+                    target.sprite = lower;
+                    break;
+                case "Straight Bridge":
+                    target.sprite = lower;
+                    break;
+                case "Elbow Planks":
+                    target.sprite = abs;
+                    break;
+                case "Side Plank (L)":
+                    target.sprite = abs;
+                    break;
+                case "Side Plank (R)":
+                    target.sprite = abs;
+                    break;
+                case "Superman Hold":
+                    target.sprite = upper;
+                    break;
+                case "Bird Dog (L)":
+                    target.sprite = lower;
+                    break;
+                case "Bird Dog (R)":
+                    target.sprite = lower;
+                    break;
+                case "High Planks":
+                    target.sprite = abs;
+                    break;
+                case "Pushup Hold":
+                    target.sprite = upper;
+                    break;
+                case "Side Plank (L) Easy":
+                    target.sprite = abs;
+                    break;
+                case "Side Plank (R) Easy":
+                    target.sprite = abs;
+                    break;
+                default:
+                    target.sprite = null;
+                    break;
+            }
     }
 }
 
