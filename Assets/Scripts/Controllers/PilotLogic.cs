@@ -414,6 +414,7 @@ public class PilotLogic : MonoBehaviour
 
     public void QuitGame()
     {
+        Time.timeScale = 1f;
         StartCoroutine(LoadLevel("MainMenu"));
     }
 
