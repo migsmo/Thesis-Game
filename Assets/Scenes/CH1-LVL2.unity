@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: f1d0b096c3613564989e76d201ab1cda, type: 2}
-  currentScene: {fileID: 11400000, guid: 1ac283431f6c64f8f9aa9db240f87de9, type: 2}
+  currentScene: {fileID: 11400000, guid: 52e90e30a2f7845e4ba01e20231a6d52, type: 2}
   speechBar: {fileID: 150384831}
   backgroundController: {fileID: 694015374}
 --- !u!114 &1533780426
