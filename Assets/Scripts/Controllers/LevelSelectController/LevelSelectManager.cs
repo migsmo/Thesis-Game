@@ -25,6 +25,10 @@ public class LevelSelectManager : MonoBehaviour
                 {
                     levels[i].isUnlocked = true;
                 }
+                else
+                {
+                    levels[i].isUnlocked = false;
+                }
             }
         }
         else
