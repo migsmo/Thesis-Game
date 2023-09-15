@@ -10,37 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d49990daeb5623345a3c691462a3c98a, type: 3}
-  m_Name: Level 9
+  m_Name: Level 5 - Story
   m_EditorClassIdentifier: 
-  levelNumber: 9
-  levelName: CH3-LVL3
+  levelNumber: 5
+  levelName: CH2-LVL2
   nextLevel: 
   postScene: 0
   postIndex: 0
-  exerciseTimer: 35
+  exerciseTimer: 25
   restTimer: 10
-  setNo: 2
+  setNo: 3
   starsEarned: 0
-  starsRequired: 8
-  energyCost: 50
+  starsRequired: 4
+  energyCost: 45
   isUnlocked: 0
-  isGuided: 0
+  isGuided: 1
   isBattleEnd: 0
   isPostBattle: 0
   isStoryMode: 1
   exerciseList:
-  - Sumo Squat
-  - Static Lunge (L)
-  - Static Lunge (R)
   - Glute Bridge
   - Single Leg Glute Bridge (L)
   - Single Leg Glute Bridge (R)
   - Straight Bridge
-  - Elbow Planks
-  - Side Planks (L)
-  - Side Planks (R)
-  - Superman Hold
+  - Easy Side Planks (L)
+  - Easy Side Planks (R)
   - Bird Dog (L)
   - Bird Dog (R)
-  - High Plank
   - Pushup Hold

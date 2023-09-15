@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d49990daeb5623345a3c691462a3c98a, type: 3}
-  m_Name: Level 5
+  m_Name: Level 8 - Story
   m_EditorClassIdentifier: 
-  levelNumber: 5
-  levelName: CH2-LVL2
+  levelNumber: 8
+  levelName: CH3-LVL2
   nextLevel: 
   postScene: 0
   postIndex: 0
-  exerciseTimer: 25
+  exerciseTimer: 35
   restTimer: 10
   setNo: 3
   starsEarned: 0
-  starsRequired: 4
-  energyCost: 45
+  starsRequired: 8
+  energyCost: 50
   isUnlocked: 0
   isGuided: 1
   isBattleEnd: 0

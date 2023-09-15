@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d49990daeb5623345a3c691462a3c98a, type: 3}
-  m_Name: Level 1
+  m_Name: Level 7 - Story
   m_EditorClassIdentifier: 
-  levelNumber: 1
-  levelName: CH1-LVL1
-  nextLevel: CH1-LVL2
-  postScene: 1
-  postIndex: 9
-  exerciseTimer: 15
+  levelNumber: 7
+  levelName: CH3-LVL1
+  nextLevel: 
+  postScene: 0
+  postIndex: 0
+  exerciseTimer: 35
   restTimer: 10
-  setNo: 2
-  starsEarned: 2
-  starsRequired: 0
-  energyCost: 33
-  isUnlocked: 1
+  setNo: 3
+  starsEarned: 0
+  starsRequired: 8
+  energyCost: 50
+  isUnlocked: 0
   isGuided: 1
   isBattleEnd: 0
   isPostBattle: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
   - Static Lunge (L)
   - Static Lunge (R)
   - Elbow Planks
-  - Side Plank (L)
-  - Side Plank (R)
+  - Side Planks (L)
+  - Side Planks (R)
   - Superman Hold
-  - High Planks
+  - High Plank
