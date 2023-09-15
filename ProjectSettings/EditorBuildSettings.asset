@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PostBattle.unity
     guid: a90e6f850185c434282c0aa6f536cd88
   - enabled: 1
+    path: Assets/Scenes/StorySelect.unity
+    guid: 8b5f4c352174b08438ef3036c348de30
+  - enabled: 1
     path: Assets/Scenes/EnergyBar.unity
     guid: ce96dd82cd366484bb1242a5ce396b36
   - enabled: 1

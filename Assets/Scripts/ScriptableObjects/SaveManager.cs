@@ -9,7 +9,7 @@ namespace Resources
     public class SaveManager
     {
         private string Directory = "/LevelData/";
-        private string StoryModeDirectory = "/StoryModeData/StoryProgress.txt";
+        private string StoryModeDirectory = "/StoryModeData/";
         private string Filename = "";
         public Level[] loadedLevels;
 
@@ -31,6 +31,13 @@ namespace Resources
             string savedObject = JsonUtility.ToJson(level);
             Filename = "/Level" + level.levelNumber + ".txt";
             File.WriteAllText(Application.streamingAssetsPath + Filename, savedObject);
+        }
+
+        public void SaveStoryMode(Level level)
+        {
+            string savedObject = JsonUtility.ToJson(level);
+            Filename = "/Level" + level.levelNumber + ".txt";
+            File.WriteAllText(Application.streamingAssetsPath + StoryModeDirectory + Filename, savedObject);
         }
 
         // Makes a save file that stores the current level completed and total stars earned
@@ -63,6 +70,15 @@ namespace Resources
             var temp = new LevelData();
             Filename = "/Level" + level.levelNumber + ".txt";
             var data = File.ReadAllText(Application.streamingAssetsPath + Filename);
+            temp = JsonUtility.FromJson<LevelData>(data);
+            return temp.starsEarned;
+        }
+
+        public int LoadStoryLevel(Level level)
+        {
+            var temp = new LevelData();
+            Filename = "/Level" + level.levelNumber + ".txt";
+            var data = File.ReadAllText(Application.streamingAssetsPath + StoryModeDirectory + Filename);
             temp = JsonUtility.FromJson<LevelData>(data);
             return temp.starsEarned;
         }

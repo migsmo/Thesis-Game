@@ -49,10 +49,27 @@ public class LevelSelectDisplay : MonoBehaviour
         int time = 0;
         
         SaveManager saveManager = new SaveManager();
-        level.starsEarned = saveManager.Load(level);
+        
+        if (level.isStoryMode)
+        {
+            level.starsEarned = saveManager.LoadStoryLevel(level);
+        }
+        else
+        {
+            level.starsEarned = saveManager.Load(level);
+        }
+        
 
         // Initialize Panel
-        LevelName.text = "Level " + level.levelNumber;
+        if (level.isStoryMode)
+        {
+            LevelName.text = level.levelName;
+        }
+        else
+        {
+            LevelName.text = "Level " + level.levelNumber;
+        }
+      
         EnergyCost.text = "Energy Cost: " + level.energyCost;
         Sets.text = "Sets: " + level.setNo;
         Exercises.text = "Exercises (" + level.exerciseList.Length + ")";
@@ -76,14 +93,22 @@ public class LevelSelectDisplay : MonoBehaviour
             star3.enabled = false;
             starRemainder = level.starsRequired - LevelSelectManager.calculatedStars;
 
-            if (starRemainder > 1)
+            if (!level.isStoryMode)
             {
-                requiredStarsLabel.text = "You need " + starRemainder + " more stars to unlock";
+                if (starRemainder > 1)
+                {
+                    requiredStarsLabel.text = "You need " + starRemainder + " more stars to unlock";
+                }
+                else
+                {
+                    requiredStarsLabel.text = "You need " + starRemainder + " more star to unlock";
+                }
             }
             else
             {
-                requiredStarsLabel.text = "You need " + starRemainder + " more star to unlock";
+                requiredStarsLabel.text = "Complete the previous chapter to unlock";
             }
+            
         }
         else
         {
@@ -108,11 +133,11 @@ public class LevelSelectDisplay : MonoBehaviour
     public void OpenScene()
     {
         Debug.LogWarning("level.energyCost" + level.energyCost);
-        bool isEnergyDeducted = energyBarOverlay.DecreaseEnergy(level.energyCost);
-        if(!isEnergyDeducted)
-        {
-            return;
-        }
+        // bool isEnergyDeducted = energyBarOverlay.DecreaseEnergy(level.energyCost);
+        // if(!isEnergyDeducted)
+        // {
+        //     return;
+        // }
 
         selectedLevel = level.levelNumber;
         exerciseTimer = level.exerciseTimer;

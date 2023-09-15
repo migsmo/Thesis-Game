@@ -12,26 +12,40 @@ public class LevelSelectManager : MonoBehaviour
     public static int calculatedStars;
     public Animator transition;
     public float transitionTime;
+    public bool isStoryMode;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < levels.Length; i++)
+        if (isStoryMode)
         {
-            total_stars += levels[i].starsEarned;
-        }
-
-        calculatedStars = total_stars;
-
-        for (int i = 0; i < levels.Length; i++)
-        {
-            if (total_stars >= levels[i].starsRequired)
+            for (int i = 1; i < levels.Length; i++)
             {
-                levels[i].isUnlocked = true;
+                if (levels[i - 1].starsEarned >= 1)
+                {
+                    levels[i].isUnlocked = true;
+                }
             }
-            else
+        }
+        else
+        {
+            for (int i = 0; i < levels.Length; i++)
             {
-                levels[i].isUnlocked = false;
+                total_stars += levels[i].starsEarned;
+            }
+
+            calculatedStars = total_stars;
+
+            for (int i = 0; i < levels.Length; i++)
+            {
+                if (total_stars >= levels[i].starsRequired)
+                {
+                    levels[i].isUnlocked = true;
+                }
+                else
+                {
+                    levels[i].isUnlocked = false;
+                }
             }
         }
     }

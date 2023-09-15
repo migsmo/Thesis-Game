@@ -21,7 +21,7 @@ MonoBehaviour:
   restTimer: 10
   setNo: 3
   starsEarned: 0
-  starsRequired: 4
+  starsRequired: 0
   energyCost: 45
   isUnlocked: 0
   isGuided: 1
