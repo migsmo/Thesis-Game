@@ -17,10 +17,10 @@ MonoBehaviour:
   nextLevel: CH1-LVL1
   postScene: 2
   postIndex: 9
-  exerciseTimer: 1
-  restTimer: 1
+  exerciseTimer: 15
+  restTimer: 10
   setNo: 1
-  starsEarned: 0
+  starsEarned: 1
   starsRequired: 0
   energyCost: 0
   isUnlocked: 1
