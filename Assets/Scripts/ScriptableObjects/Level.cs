@@ -21,6 +21,7 @@ public class Level : ScriptableObject
     public bool isGuided;
     public bool isBattleEnd;
     public bool isPostBattle;
+    public bool isStoryMode;
 
     public string[] exerciseList;
 }
