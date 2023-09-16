@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
                     if (currentScene.nextScene == null)
                         if (isBattleEnd)
                         {
-                            SceneManager.LoadScene("PostBattle");
+                            SceneManager.LoadScene("CameraSpace");
                         }
                         else
                         {
@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
                             {
                                 isPostBattle = false;
                             } 
-                            SceneManager.LoadScene("MainMenu");
+                            SceneManager.LoadScene("StorySelect");
                         }
                     else
                     {
@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
                         }
                         else 
                             if(!isBattleEnd)
-                                SceneManager.LoadScene("PostBattle");
+                                SceneManager.LoadScene("CameraSpace");
                             else
                             {
                                 currentScene = currentScene.nextScene;

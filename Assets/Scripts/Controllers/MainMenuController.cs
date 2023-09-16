@@ -12,12 +12,14 @@ public class MainMenuController : MonoBehaviour
 
     public void StoryMode()
     {
+        LevelSelectDisplay.fromSim = false;
         StartCoroutine(LoadLevel("StorySelect"));
     }
 
     // Update is called once per frame
     public void ArcadeMode()
     {
+        LevelSelectDisplay.fromSim = true;
         StartCoroutine(LoadLevel("LevelSelect"));
     }
 
