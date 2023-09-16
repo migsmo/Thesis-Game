@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
         postScene = level.postScene;
         if (isPostBattle)
         {
+            Debug.LogWarning(isPostBattle + " = IsPostBattle2");
             Debug.LogWarning("Entered Is Post Battle");
             currentScene = currentScene.nextScene;
         }
@@ -49,6 +50,7 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
+            Debug.LogWarning(isPostBattle + " = IsPostBattle2");
             if(speechBar.IsCompleted())
             {
                 if(speechBar.IsLastSentence())
@@ -56,18 +58,33 @@ public class GameController : MonoBehaviour
                     if (currentScene.nextScene == null)
                         if (isBattleEnd)
                         {
-                            SceneManager.LoadScene("Pilot");
+                            SceneManager.LoadScene("PostBattle");
                         }
                         else
-                            SceneManager.LoadScene(level.nextLevel);
+                        {
+                            if (isPostBattle)
+                            {
+                                isPostBattle = false;
+                            } 
+                            SceneManager.LoadScene("MainMenu");
+                        }
                     else
                     {
-                        if (isBattleEnd)
+                        if (isPostBattle)
                         {
-                            SceneManager.LoadScene("Pilot");
+                            currentScene = currentScene.nextScene;
+                            speechBar.PlayScene(currentScene);
+                            backgroundController.SetImage(currentScene.background);
                         }
                         else 
-                            currentScene = currentScene.nextScene;
+                            if(!isBattleEnd)
+                                SceneManager.LoadScene("PostBattle");
+                            else
+                            {
+                                currentScene = currentScene.nextScene;
+                                speechBar.PlayScene(currentScene);
+                                backgroundController.SetImage(currentScene.background);
+                            }
                     }
                 } else
                 {

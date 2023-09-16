@@ -54,4 +54,4 @@ MonoBehaviour:
       coords: {x: -632, y: -132}
       moveSpeed: 0
   background: {fileID: 21300000, guid: 8e873496196de43ff833d17fa6cb4894, type: 3}
-  nextScene: {fileID: 0}
+  nextScene: {fileID: 11400000, guid: f273af4c7a95f4343b673203f333881c, type: 2}

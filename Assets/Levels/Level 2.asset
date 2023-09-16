@@ -25,7 +25,7 @@ MonoBehaviour:
   energyCost: 33
   isUnlocked: 1
   isGuided: 1
-  isBattleEnd: 1
+  isBattleEnd: 0
   isPostBattle: 0
   exerciseList:
   - Glute Bridge

@@ -19,4 +19,4 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
     actions: []
   background: {fileID: 21300000, guid: dd1d8311336fd42698534bd0985ab551, type: 3}
-  nextScene: {fileID: 0}
+  nextScene: {fileID: 11400000, guid: 303b7f4f4e02e43e0b4ebd00182678c3, type: 2}

@@ -28,10 +28,6 @@ public class SpeechBarController : MonoBehaviour
     public void PlayScene(StoryScene scene)
     {
         currentScene = scene;
-        if (GameController.isPostBattle)
-        {
-            GameController.isPostBattle = false;
-        } 
         sentenceIndex = -1;
         PlayNextSentence();
     }

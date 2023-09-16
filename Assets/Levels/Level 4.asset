@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNumber: 4
   levelName: CH2-LVL1
-  nextLevel: 
+  nextLevel: CH2-LVL2
   postScene: 0
   postIndex: 4
   exerciseTimer: 25

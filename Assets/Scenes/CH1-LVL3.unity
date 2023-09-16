@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ed1f1371d8640368095ace92bb37f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: 96c9969c4c4412048a77ba0e68a5296d, type: 2}
+  level: {fileID: 11400000, guid: 566cecadd06ca6d42873557d515470c0, type: 2}
   currentScene: {fileID: 11400000, guid: 0b7b924f3517b4a72a38e3c2bb9d7dea, type: 2}
   speechBar: {fileID: 1406819409}
   backgroundController: {fileID: 793879021}
@@ -413,7 +413,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &793879023
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -430,7 +430,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1319832437
 GameObject:
   m_ObjectHideFlags: 0
