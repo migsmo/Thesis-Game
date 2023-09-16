@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
+  m_Name: CH1-LVL1-SCENE1
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Welcome to the Titan Handler program, Atlas. This is where we prepare to
+      face our greatest challenge.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: 'I''m ready, Luna. I''ve been waiting for this day. '
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Your personal Titan is waiting. This is Hyperion, a remarkable creation
+      born from the celestial fragments that fell from the sky.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: Atlas approaches Hyperion, a sense of awe in his eyes
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
+    actions: []
+  - text: 'Incredible... Hyperion, we''re going to accomplish great things together. '
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: It really is responding to me!
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions: []
+  - text: 'That''s the bond speaking, Atlas. It''s the cornerstone of our Titan Handler
+      program. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: 'Your bond with Hyperion will be crucial in defending our city-state from
+      the rogue beasts. They''ve evolved from the influence of the celestial fragments,
+      and their threat grows by the day. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: "Now I\u2019ll run the simulation so you can try him out. "
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  background: {fileID: 21300000, guid: e95011c0105bb4fe5ac448f6c4f799eb, type: 3}
+  nextScene: {fileID: 11400000, guid: 1ac283431f6c64f8f9aa9db240f87de9, type: 2}

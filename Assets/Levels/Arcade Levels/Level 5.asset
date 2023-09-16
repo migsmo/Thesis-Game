@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Level 5
   m_EditorClassIdentifier: 
   levelNumber: 5
+  levelName: CH2-LVL2
+  nextLevel: 
+  postScene: 0
+  postIndex: 0
   exerciseTimer: 25
   restTimer: 10
   setNo: 3
@@ -21,6 +25,8 @@ MonoBehaviour:
   energyCost: 45
   isUnlocked: 0
   isGuided: 1
+  isBattleEnd: 1
+  isPostBattle: 0
   exerciseList:
   - Glute Bridge
   - Single Leg Glute Bridge (L)

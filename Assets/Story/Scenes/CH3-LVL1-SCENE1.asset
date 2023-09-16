@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
+  m_Name: CH3-LVL1-SCENE1
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: After a tense night of vigilance, Atlas, Luna, and Cygnus confront the
+      intelligent rogue beast in the city-state's outskirts.
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
+    actions: []
+  - text: We won't let you harm our city.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: How quaint. You do not know me, yet you stand defiant. I am born of cosmic
+      strife, a child of the fallen celestial... a living remnant of the Skyfall.
+      I am Nemestra.
+    speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -457, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -657, y: -132}
+      moveSpeed: 0
+  - text: It can... talk? This is impossible...
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -457, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: It's the incarnation of the evil celestial. The Skyfall vision... It was
+      a warning.
+    speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 157, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Your city hoards the celestial fragments, the spoils of our ancient battle.
+      I will consume them and reach my true potential. Witness your impending doom,
+      puny mortals. I am a child of celestial chaos, a fragment of the evil that
+      fell from the skies.
+    speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 157, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -457, y: -146}
+      moveSpeed: 0
+  - text: Your city hoards the celestial fragments, the spoils of our ancient battle.
+      I will consume them and reach my true potential. Witness your impending doom,
+      puny mortals. I am a child of celestial chaos, a fragment of the evil that
+      fell from the skies.
+    speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 157, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -457, y: -146}
+      moveSpeed: 0
+  - text: It wants the celestial fragments. But we can't let it have them. Our city
+      depends on it.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -457, y: -146}
+      moveSpeed: 0
+  - text: Get ready Atlas! It's launching a horrifying amount of rogue beasts. We
+      can't let them breach the city walls!
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  background: {fileID: 21300000, guid: 3f3216925d98c43b8abb56cb2e988bd8, type: 3}
+  nextScene: {fileID: 11400000, guid: b4c32fa4e08e042d5ae58b7cb3bb4187, type: 2}

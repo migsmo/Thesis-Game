@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
+  m_Name: CH1-LVL2-SCENE1
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Atlas, your initial progress is commendable. Today's focus? Deepening your
+      bond with Hyperion. Learn from those who've been through it. Meet Cygnus, the
+      top handler of his battalion.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: 'Pleasure to meet you, Atlas. Luna''s spoken highly of you. Though you
+      might have heard this in your training, it bears repeating: the strength of
+      your bond directly affects your control over the Titan. Never underestimate
+      its importance.'
+    speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: I understand, Cygnus. Let's begin.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: Strengthening your bond with Hyperion is akin to refining your body and
+      building relationships. Just as we exercise to improve physically and connect
+      with others through group workouts, so too can you sync with Hyperion. By training
+      within Hyperion, you both adapt to each other's rhythms and nuances. Let's
+      dive in.
+    speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  background: {fileID: 21300000, guid: 43d488ff33d9bb546b94b13308e41f10, type: 3}
+  nextScene: {fileID: 11400000, guid: 52e90e30a2f7845e4ba01e20231a6d52, type: 2}

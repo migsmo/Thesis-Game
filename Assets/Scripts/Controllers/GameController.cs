@@ -20,8 +20,6 @@ public class GameController : MonoBehaviour
     public static int setNo;
     public static string[] exerciseList;
     public static int postScene;
-    public Animator transition;
-    public float transitionTime;
 
     // Start is called before the first frame update
     void Start()
@@ -30,16 +28,11 @@ public class GameController : MonoBehaviour
         postScene = level.postScene;
         if (isPostBattle)
         {
+            Debug.LogWarning(isPostBattle + " = IsPostBattle2");
             Debug.LogWarning("Entered Is Post Battle");
-            for (int i = 1; i < postScene; i++)
-            {
-                postBattleIndex -= currentScene.sentences.Count;
-                currentScene = currentScene.nextScene;
-                Debug.LogWarning(postBattleIndex + "POSTBATTLEINDEX");
-            }
+            currentScene = currentScene.nextScene;
         }
         speechBar.PlayScene(currentScene);
-        Debug.LogWarning(currentScene);
         backgroundController.SetImage(currentScene.background);
         LevelSelectDisplay.selectedLevel = level.levelNumber;
         LevelSelectDisplay.exerciseTimer = level.exerciseTimer;
@@ -57,6 +50,7 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
+            Debug.LogWarning(isPostBattle + " = IsPostBattle2");
             if(speechBar.IsCompleted())
             {
                 if(speechBar.IsLastSentence())
@@ -64,26 +58,38 @@ public class GameController : MonoBehaviour
                     if (currentScene.nextScene == null)
                         if (isBattleEnd)
                         {
-                            StartCoroutine(LoadLevel("CameraSpace"));    
+                            SceneManager.LoadScene("PostBattle");
                         }
                         else
-                            StartCoroutine(LoadLevel(level.nextLevel)); 
+                        {
+                            if (isPostBattle)
+                            {
+                                isPostBattle = false;
+                            } 
+                            SceneManager.LoadScene("MainMenu");
+                        }
                     else
                     {
-                        postBattleIndex -= currentScene.sentences.Count;
-                        currentScene = currentScene.nextScene;
-                        speechBar.PlayScene(currentScene);
-                        backgroundController.SwitchImage(currentScene.background);
-                        postScene++;
+                        if (isPostBattle)
+                        {
+                            currentScene = currentScene.nextScene;
+                            speechBar.PlayScene(currentScene);
+                            backgroundController.SetImage(currentScene.background);
+                        }
+                        else 
+                            if(!isBattleEnd)
+                                SceneManager.LoadScene("PostBattle");
+                            else
+                            {
+                                currentScene = currentScene.nextScene;
+                                speechBar.PlayScene(currentScene);
+                                backgroundController.SetImage(currentScene.background);
+                            }
                     }
                 } else
                 {
                     Debug.LogWarning(SpeechBarController.sentenceIndex + "sentenceIndex" + postBattleIndex + "postIndex");
-
-                    if (SpeechBarController.sentenceIndex == postBattleIndex - 1 && !isBattleEnd)
-                        StartCoroutine(LoadLevel("CameraSpace"));        
-                    else
-                        speechBar.PlayNextSentence();
+                    speechBar.PlayNextSentence();
 
 
                 }
@@ -91,15 +97,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-    IEnumerator LoadLevel(string sceneName)
-    {
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(transitionTime);
-
-        SceneManager.LoadScene(sceneName);
-    }
-    
     public bool getIsBattleEnd()
     {
         return isBattleEnd;
