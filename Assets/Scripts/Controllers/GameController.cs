@@ -26,15 +26,10 @@ public class GameController : MonoBehaviour
     {
         postBattleIndex = level.postIndex;
         postScene = level.postScene;
-        if (true)
+        if (isPostBattle)
         {
             Debug.LogWarning("Entered Is Post Battle");
-            for (int i = 1; i < postScene; i++)
-            {
-                postBattleIndex -= currentScene.sentences.Count;
-                currentScene = currentScene.nextScene;
-                Debug.LogWarning(postBattleIndex + "POSTBATTLEINDEX");
-            }
+            currentScene = currentScene.nextScene;
         }
         speechBar.PlayScene(currentScene);
         backgroundController.SetImage(currentScene.background);
@@ -67,20 +62,17 @@ public class GameController : MonoBehaviour
                             SceneManager.LoadScene(level.nextLevel);
                     else
                     {
-                        postBattleIndex -= currentScene.sentences.Count;
-                        currentScene = currentScene.nextScene;
-                        speechBar.PlayScene(currentScene);
-                        backgroundController.SwitchImage(currentScene.background);
-                        postScene++;
+                        if (isBattleEnd)
+                        {
+                            SceneManager.LoadScene("Pilot");
+                        }
+                        else 
+                            currentScene = currentScene.nextScene;
                     }
                 } else
                 {
                     Debug.LogWarning(SpeechBarController.sentenceIndex + "sentenceIndex" + postBattleIndex + "postIndex");
-
-                    if (SpeechBarController.sentenceIndex == postBattleIndex - 1 && !isBattleEnd)
-                        SceneManager.LoadScene("Pilot");                    
-                    else
-                        speechBar.PlayNextSentence();
+                    speechBar.PlayNextSentence();
 
 
                 }

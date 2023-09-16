@@ -30,11 +30,9 @@ public class SpeechBarController : MonoBehaviour
         currentScene = scene;
         if (GameController.isPostBattle)
         {
-            sentenceIndex = GameController.postBattleIndex;
             GameController.isPostBattle = false;
-        }
-        else
-            sentenceIndex = -1;
+        } 
+        sentenceIndex = -1;
         PlayNextSentence();
     }
 
@@ -52,6 +50,7 @@ public class SpeechBarController : MonoBehaviour
 
     public bool IsLastSentence()
     {
+        Debug.LogWarning(currentScene.sentences.Count);
         return sentenceIndex + 1 == currentScene.sentences.Count;
     }
 
