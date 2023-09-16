@@ -88,5 +88,5 @@ MonoBehaviour:
       actionType: 1
       coords: {x: -632, y: -132}
       moveSpeed: 0
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: b8b0a888a1d724b7cacc1a876af51baa, type: 3}
   nextScene: {fileID: 0}

@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
+  m_Name: CH3-LVL2-SCENE2
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Nemestra's beasts are converging from all directions. Soon, Olympia will
+      be encircled.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Our defenses can handle Nemestra, but the combined might of the rogue beasts
+      will overwhelm us. We must shift the battlefield.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: The celestial fragment. We use it as a beacon, lead them away from the
+      city.
+    speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 157, y: -146}
+      moveSpeed: 0
+  - text: It's a gambit, but it could just tip the scales. Draw them out into open
+      ground.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 157, y: -146}
+      moveSpeed: 0
+  - text: I'll spearhead the diversion. They want the fragment? They can come get
+      it.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: Side by side, Atlas. We'll make them regret ever setting their sights on
+      Olympia.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+  - text: I'll oversee the operation, ensuring our movements remain cohesive. Timing
+      is crucial. Okay, Let's do this!
+    speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 157, y: -146}
+      moveSpeed: 0
+  background: {fileID: 21300000, guid: 0585d2520385f4cada70b2afee8ae30a, type: 3}
+  nextScene: {fileID: 0}
