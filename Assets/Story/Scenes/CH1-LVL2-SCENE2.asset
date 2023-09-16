@@ -76,8 +76,21 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 557, y: -146}
       moveSpeed: 0
-  - text: 'Yes, the celestial fragments brought forth both wonders and horrors. They''re
-      the source of the rogue beasts and our Titans. '
+  - text: So, they're a gift... and a curse.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Well said, Atlas. The celestial fragments are a double-edged sword. That's
+      why we need to be ready.
     speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
@@ -89,6 +102,33 @@ MonoBehaviour:
       spriteIndex: 0
       actionType: 1
       coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: And that's why we need you, Atlas. Our city-state, our world, depends on
+      it.
+    speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 157, y: -146}
+      moveSpeed: 0
+  - text: I won't let you down. I won't let us down.
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 157, y: -146}
       moveSpeed: 0
   background: {fileID: 21300000, guid: 5310aed3d7f83b542af0c908ab863a8c, type: 3}
   nextScene: {fileID: 0}
