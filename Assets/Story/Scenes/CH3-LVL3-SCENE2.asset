@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
-  m_Name: CH3-LVL2-SCENE2
+  m_Name: CH3-LVL3-SCENE2
   m_EditorClassIdentifier: 
   sentences:
-  - text: We've bought some time, but the war is far from over.
+  - text: It's done.
     speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
@@ -21,8 +21,7 @@ MonoBehaviour:
       actionType: 1
       coords: {x: -632, y: -132}
       moveSpeed: 0
-  - text: They've tasted our resolve. Let's ensure they feel our full fury when the
-      time comes.
+  - text: Olympia remains untouched. We've saved our city.
     speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
@@ -35,8 +34,7 @@ MonoBehaviour:
       actionType: 1
       coords: {x: -632, y: -132}
       moveSpeed: 0
-  - text: Your bravery has given Olympia a fighting chance. Now, we fortify and await
-      the final confrontation.
+  - text: By standing together.
     speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
@@ -49,12 +47,12 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 157, y: -146}
       moveSpeed: 0
-  - text: The weight of the impending conflict hangs in the air, but Olympia's heroes
-      are resolute. They will not let their beloved city fall.
+  - text: The trio gaze back towards Olympia in the distance, the city gleaming under
+      the now-breaking storm clouds, a symbol of hope and resilience.
     speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4da1349162b9249a983856943424b454, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 1
       coords: {x: 157, y: -146}
       moveSpeed: 0
