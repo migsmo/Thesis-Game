@@ -26,7 +26,7 @@ public class EnergyBarController : MonoBehaviour
             // Load the energy value from PlayerPrefs
             int energy = PlayerPrefs.GetInt(energyKey, 100);
 
-            //energy = 100;
+            energy = 100;
 
             if (energySlider != null)
             {
