@@ -43,6 +43,8 @@ namespace Mediapipe.Unity.PoseLandmark
         [SerializeField] private GameObject frontView;
         [SerializeField] private GameObject sideView;
         [SerializeField] private GameObject[] exercisePrefabs;
+        [SerializeField] private GameObject[] frontPrefabs;
+        [SerializeField] private GameObject[] sidePrefabs;
 
         private IEnumerator Start()
         {
@@ -155,7 +157,7 @@ namespace Mediapipe.Unity.PoseLandmark
                             new Vector3(lmk.X * _width, lmk.Y * _height, lmk.Z * _width)
                         ).ToArray();
 
-                        var classifications = classifier.Classify(worldLandmarkPoints);
+                        var classifications = classifier.Classify(worldLandmarkPoints, _width, _height);
                         var smoothed = smoothing.Smooth(classifications);
                         try
                         {
@@ -272,24 +274,36 @@ namespace Mediapipe.Unity.PoseLandmark
                 };
 
                 // Instantiate the prefab
-                GameObject instantiatedPrefab = Instantiate(exercisePrefabs[prefabs[exercise]]);
-                GameObject clonedPrefab = Instantiate(instantiatedPrefab);
+                // GameObject instantiatedPrefab = Instantiate(exercisePrefabs[prefabs[exercise]]);
+                // GameObject clonedPrefab = Instantiate(instantiatedPrefab);
 
+                GameObject instantiatedFront = Instantiate(frontPrefabs[prefabs[exercise]]);
+                GameObject instantiededSide = Instantiate(sidePrefabs[prefabs[exercise]]);
+                
+                // Canvas positioning
+                instantiatedFront.transform.GetChild(0).transform.localPosition = new Vector3(6.4f, 19.9f, 6.2f);
+                instantiatedFront.transform.GetChild(0).transform.localScale = new Vector3(0.08f, 0.08f, 0.08f);
+                instantiatedFront.transform.GetChild(0).transform.GetChild(0).localScale = new Vector3(10, 5, 5);
+                
+                instantiededSide.transform.GetChild(0).transform.localPosition = new Vector3(6.4f, 19.9f, 6.2f);
+                instantiededSide.transform.GetChild(0).transform.localScale = new Vector3(0.08f, 0.08f, 0.08f);
+                instantiededSide.transform.GetChild(0).transform.GetChild(0).localScale = new Vector3(10, 5, 5);
+                
                 // Set the instantiated prefab's parent to the desired GameObject
-                instantiatedPrefab.transform.SetParent(frontView.transform);
-                clonedPrefab.transform.SetParent(sideView.transform);
+                instantiatedFront.transform.SetParent(frontView.transform);
+                instantiededSide.transform.SetParent(sideView.transform);
 
                 // Set the instantiated prefab's local position to zero
-                instantiatedPrefab.transform.localPosition = Vector3.zero;
-                clonedPrefab.transform.localPosition = Vector3.zero;
+                instantiatedFront.transform.localPosition = Vector3.zero;
+                instantiededSide.transform.localPosition = Vector3.zero;
 
                 // Set the instantiated prefab's local rotation to identity (no rotation)
-                instantiatedPrefab.transform.localRotation = Quaternion.identity;
-                clonedPrefab.transform.localRotation = Quaternion.identity;
+                instantiatedFront.transform.localRotation = Quaternion.identity;
+                instantiededSide.transform.localRotation = Quaternion.identity;
 
                 // Set the instantiated prefab's local scale to one (default scale)
-                instantiatedPrefab.transform.localScale = Vector3.one;
-                clonedPrefab.transform.localScale = Vector3.one;
+                instantiatedFront.transform.localScale = Vector3.one;
+                instantiededSide.transform.localScale = Vector3.one;
             }
             catch (Exception e)
             {

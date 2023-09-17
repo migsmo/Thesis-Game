@@ -295,7 +295,7 @@ public class PilotLogic : MonoBehaviour
                 if (nextExercise < exerciseLength)
                 {
                     setLabel("Get Ready");
-                    CurrentTime = 5f;
+                    CurrentTime = 10f;
                     UpcomingExerciseLabel.text = "Upcoming Exercise: " + exerciseList[nextExercise];
                     currExercise = nextExercise;
                 }

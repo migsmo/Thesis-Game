@@ -25,20 +25,20 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
-                0.15f, // Right shoulder
-                0.15f, // Left elbow
-                0.15f, // Right elbow
-                0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Left shoulder
+                1f, // Right shoulder
+                1f, // Left elbow
+                1f, // Right elbow
+                1f, // Left wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.1f, // Right hip
+                1f, // Left hip
+                1f, // Right hip
                 0.05f, // Left knee
                 0.05f, // Right knee
                 0.05f, // Left ankle
@@ -63,20 +63,20 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
-                0.15f, // Right shoulder
-                0.15f, // Left elbow
-                0.15f, // Right elbow
-                0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Left shoulder
+                1f, // Right shoulder
+                1f, // Left elbow
+                1f, // Right elbow
+                1f, // Left wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.1f, // Right hip
+                1f, // Left hip
+                1f, // Right hip
                 0.05f, // Left knee
                 0.05f, // Right knee
                 0.05f, // Left ankle
@@ -101,24 +101,24 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
-                0.15f, // Right shoulder
-                0.15f, // Left elbow
-                0.15f, // Right elbow
-                0.01f, // Left wrist
-                0.01f, // Right wrist
+                1f, // Left shoulder
+                1f, // Right shoulder
+                1f, // Left elbow
+                1f, // Right elbow
+                1f, // Left wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.15f, // Left hip
-                0.15f, // Right hip
-                0.05f, // Left knee
-                0.05f, // Right knee
-                0.05f, // Left ankle
-                0.05f, // Right ankle
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
+                1f, // Left ankle
+                1f, // Right ankle
                 0.01f, // Left heel
                 0.01f, // Right heel
                 0.01f, // Left foot index
@@ -151,12 +151,12 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.2f, // Left hip
-                0.2f, // Right hip
-                0.2f, // Left knee
-                0.2f, // Right knee
-                0.1f, // Left ankle
-                0.1f, // Right ankle
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
+                1f, // Left ankle
+                1f, // Right ankle
                 0.01f, // Left heel
                 0.01f, // Right heel
                 0.01f, // Left foot index
@@ -177,24 +177,24 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
-                0.15f, // Right shoulder
-                0.01f, // Left elbow
-                0.01f, // Right elbow
-                0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Left shoulder
+                1f, // Right shoulder
+                1f, // Left elbow
+                1f, // Right elbow
+                1f, // Left wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.15f, // Left hip
-                0.15f, // Right hip
-                0.05f, // Left knee
-                0.05f, // Right knee
-                0.05f, // Left ankle
-                0.05f, // Right ankle
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
+                1f, // Left ankle
+                1f, // Right ankle
                 0.01f, // Left heel
                 0.01f, // Right heel
                 0.01f, // Left foot index
@@ -215,24 +215,24 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
-                0.15f, // Right shoulder
-                0.15f, // Left elbow
-                0.15f, // Right elbow
-                0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Left shoulder
+                1f, // Right shoulder
+                1f, // Left elbow
+                1f, // Right elbow
+                1f, // Left wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.05f, // Left hip
-                0.05f, // Right hip
-                0.05f, // Left knee
-                0.05f, // Right knee
-                0.05f, // Left ankle
-                0.05f, // Right ankle
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
+                1f, // Left ankle
+                1f, // Right ankle
                 0.01f, // Left heel
                 0.01f, // Right heel
                 0.01f, // Left foot index
@@ -253,11 +253,11 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
+                1f, // Left shoulder
                 0.15f, // Right shoulder
-                0.15f, // Left elbow
+                1f, // Left elbow
                 0.15f, // Right elbow
-                0.15f, // Left wrist
+                1f, // Left wrist
                 0.15f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
@@ -265,10 +265,10 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.1f, // Right hip
-                0.01f, // Left knee
-                0.01f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.01f, // Left ankle
                 0.01f, // Right ankle
                 0.01f, // Left heel
@@ -303,10 +303,10 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.1f, // Right hip
-                0.01f, // Left knee
-                0.01f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.01f, // Left ankle
                 0.01f, // Right ankle
                 0.01f, // Left heel
@@ -330,21 +330,21 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Mouth left
                 0.01f, // Mouth right
                 0.15f, // Left shoulder
-                0.15f, // Right shoulder
+                1f, // Right shoulder
                 0.15f, // Left elbow
-                0.15f, // Right elbow
+                1f, // Right elbow
                 0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.1f, // Right hip
-                0.01f, // Left knee
-                0.01f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.01f, // Left ankle
                 0.01f, // Right ankle
                 0.01f, // Left heel
@@ -368,21 +368,21 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Mouth left
                 0.01f, // Mouth right
                 0.15f, // Left shoulder
-                0.15f, // Right shoulder
+                1f, // Right shoulder
                 0.15f, // Left elbow
-                0.15f, // Right elbow
+                1f, // Right elbow
                 0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.1f, // Right hip
-                0.01f, // Left knee
-                0.01f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.01f, // Left ankle
                 0.01f, // Right ankle
                 0.01f, // Left heel
@@ -417,10 +417,10 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.2f, // Right hip
-                0.1f, // Left knee
-                0.2f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.05f, // Left ankle
                 0.15f, // Right ankle
                 0.01f, // Left heel
@@ -455,10 +455,10 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.2f, // Left hip
-                0.1f, // Right hip
-                0.2f, // Left knee
-                0.1f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.15f, // Left ankle
                 0.05f, // Right ankle
                 0.01f, // Left heel
@@ -493,10 +493,10 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.2f, // Left hip
-                0.2f, // Right hip
-                0.2f, // Left knee
-                0.2f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.1f, // Left ankle
                 0.1f, // Right ankle
                 0.01f, // Left heel
@@ -531,10 +531,10 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.2f, // Left hip
-                0.2f, // Right hip
-                0.2f, // Left knee
-                0.2f, // Right knee
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
                 0.1f, // Left ankle
                 0.1f, // Right ankle
                 0.01f, // Left heel
@@ -557,20 +557,20 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
-                0.15f, // Right shoulder
-                0.15f, // Left elbow
-                0.15f, // Right elbow
-                0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Left shoulder
+                1f, // Right shoulder
+                1f, // Left elbow
+                1f, // Right elbow
+                1f, // Left wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.1f, // Left hip
-                0.1f, // Right hip
+                1f, // Left hip
+                1f, // Right hip
                 0.05f, // Left knee
                 0.05f, // Right knee
                 0.05f, // Left ankle
@@ -595,12 +595,12 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right ear
                 0.01f, // Mouth left
                 0.01f, // Mouth right
-                0.15f, // Left shoulder
-                0.15f, // Right shoulder
-                0.15f, // Left elbow
-                0.15f, // Right elbow
-                0.15f, // Left wrist
-                0.15f, // Right wrist
+                1f, // Left shoulder
+                1f, // Right shoulder
+                1f, // Left elbow
+                1f, // Right elbow
+                1f, // Left wrist
+                1f, // Right wrist
                 0.01f, // Left pinky
                 0.01f, // Right pinky
                 0.01f, // Left index
@@ -645,12 +645,12 @@ public class PoseClassifier : MonoBehaviour
                 0.01f, // Right index
                 0.01f, // Left thumb
                 0.01f, // Right thumb
-                0.15f, // Left hip
-                0.15f, // Right hip
-                0.15f, // Left knee
-                0.15f, // Right knee
-                0.15f, // Left ankle
-                0.15f, // Right ankle
+                1f, // Left hip
+                1f, // Right hip
+                1f, // Left knee
+                1f, // Right knee
+                1f, // Left ankle
+                1f, // Right ankle
                 0.01f, // Left heel
                 0.01f, // Right heel
                 0.01f, // Left foot index
@@ -702,18 +702,18 @@ public class PoseClassifier : MonoBehaviour
             poseEmbedder);
         
         // normalize weights
-        foreach (var exercise in exerciseWeights)
-        {
-            float sum = exercise.Value.Sum();
-            float[] normalizedWeights = new float[exercise.Value.Length];
-            for (int i = 0; i < exercise.Value.Length; i++)
-            {
-                normalizedWeights[i] = exercise.Value[i] / sum;
-            }
-            normalizedExerciseWeights.Add(exercise.Key, normalizedWeights);
-        }
-        
-        print(normalizedExerciseWeights.ToString());
+        // foreach (var exercise in exerciseWeights)
+        // {
+        //     float sum = exercise.Value.Sum();
+        //     float[] normalizedWeights = new float[exercise.Value.Length];
+        //     for (int i = 0; i < exercise.Value.Length; i++)
+        //     {
+        //         normalizedWeights[i] = exercise.Value[i] / sum;
+        //     }
+        //     normalizedExerciseWeights.Add(exercise.Key, normalizedWeights);
+        // }
+        //
+        // print(normalizedExerciseWeights.ToString());
     }
 
     private static List<PoseSample> LoadPoseSamples(string poseSamplesFolder, string fileExtension,
@@ -767,14 +767,14 @@ public class PoseClassifier : MonoBehaviour
 
     public float[] GetWeightsForExercise(string exercise)
     {
-        // if (exerciseWeights.ContainsKey(exercise))
-        // {
-        //     return exerciseWeights[exercise];
-        // }
-        if (normalizedExerciseWeights.ContainsKey(exercise))
+        if (exerciseWeights.ContainsKey(exercise))
         {
-            return normalizedExerciseWeights[exercise];
+            return exerciseWeights[exercise];
         }
+        // if (normalizedExerciseWeights.ContainsKey(exercise))
+        // {
+        //     return normalizedExerciseWeights[exercise];
+        // }
         else
         {
             throw new Exception("Unknown exercise: " + exercise);
@@ -782,10 +782,29 @@ public class PoseClassifier : MonoBehaviour
     }
 
 
-    public Dictionary<string, int> Classify(Vector3[] poseLandmarks)
+    public Dictionary<string, int> Classify(Vector3[] poseLandmarks, int cameraWidth, int cameraHeight)
     {
         // Check that provided and target poses have the same shape.
         Debug.Assert(poseLandmarks.Length == nLandmarks, "Unexpected shape");
+
+        // Calculate the bounding box of the pose.
+        float minX = poseLandmarks.Min(landmark => landmark.x);
+        float minY = poseLandmarks.Min(landmark => landmark.y);
+        float minZ = poseLandmarks.Min(landmark => landmark.z);
+        float maxX = poseLandmarks.Max(landmark => landmark.x);
+        float maxY = poseLandmarks.Max(landmark => landmark.y);
+        float maxZ = poseLandmarks.Max(landmark => landmark.z);
+
+        print($"minX: {minX}, minY: {minY}, maxX: {maxX}, maxY: {maxY}");
+        
+        // Check if the bounding box is within the camera's field of view.
+        if (minX < 0 || minY < 0 || /*minZ < 0 ||*/
+            maxX > cameraWidth || maxY > cameraHeight /*|| maxZ > cameraDepth*/)
+        {
+            // The bounding box is not entirely within the camera's field of view.
+            // Return an error or a special result.
+            return new Dictionary<string, int> { { "error", 1 } };
+        }
 
         // Get given pose embedding.
         var poseEmbedding = poseEmbedder.Embed(poseLandmarks);
@@ -797,39 +816,39 @@ public class PoseClassifier : MonoBehaviour
         // given one, but has one joint bent into another direction and actually
         // represent a different pose class.
 
-        // var maxDistHeap = new List<Tuple<float, int>>();
-        // for (int i = 0; i < poseSamples.Count; i++)
-        // {
-        //     var sample = poseSamples[i];
-        //     var maxDist = Mathf.Min(
-        //         Enumerable.Range(0, poseEmbedding.Length)
-        //             .Select(j => Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
-        //             .Max(),
-        //         Enumerable.Range(0, poseEmbedding.Length)
-        //             .Select(j => Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
-        //             .Max()
-        //     );
-        //     maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
-        // }
-
         var maxDistHeap = new List<Tuple<float, int>>();
         for (int i = 0; i < poseSamples.Count; i++)
         {
             var sample = poseSamples[i];
-            try
-            {
-                var weights = GetWeightsForExercise(sample.className); // Get the weights for the current exercise
-                var maxDist = Mathf.Min(
-                    Enumerable.Range(0, poseEmbedding.Length)
-                        .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
-                        .Max(),
-                    Enumerable.Range(0, poseEmbedding.Length)
-                        .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
-                        .Max()
-                );
-                maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
-            } catch (Exception e) {}
+            var maxDist = Mathf.Min(
+                Enumerable.Range(0, poseEmbedding.Length)
+                    .Select(j => Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
+                    .Max(),
+                Enumerable.Range(0, poseEmbedding.Length)
+                    .Select(j => Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
+                    .Max()
+            );
+            maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
         }
+
+        // var maxDistHeap = new List<Tuple<float, int>>();
+        // for (int i = 0; i < poseSamples.Count; i++)
+        // {
+        //     var sample = poseSamples[i];
+        //     try
+        //     {
+        //         var weights = GetWeightsForExercise(sample.className); // Get the weights for the current exercise
+        //         var maxDist = Mathf.Min(
+        //             Enumerable.Range(0, poseEmbedding.Length)
+        //                 .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], poseEmbedding[j]))
+        //                 .Max(),
+        //             Enumerable.Range(0, poseEmbedding.Length)
+        //                 .Select(j => weights[j] * Vector3.Distance(sample.embedding[j], flippedPoseEmbedding[j]))
+        //                 .Max()
+        //         );
+        //         maxDistHeap.Add(new Tuple<float, int>(maxDist, i));
+        //     } catch (Exception e) {}
+        // }
         
         maxDistHeap = maxDistHeap.OrderBy(t => t.Item1).ToList();
         maxDistHeap = maxDistHeap.Take(topNByMaxDistance).ToList();
