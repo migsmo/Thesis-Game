@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
+  m_Name: CH2-LVL1-SCENE2
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: 'Amid the rhythm of training, Atlas''s consciousness wavers. The present
+      fades, giving way to visions vast and timeless. Before him, a cosmic ballet
+      unfolds: two colossal celestial beings locked in fierce combat.'
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
+    actions: []
+  - text: "Their clashes resonate with the fury of creation itself, turning the world
+      into a chaotic wasteland. Just as quickly as it appeared, the vision recedes,
+      leaving behind an echo of a cataclysm \u2014 the Skyfall"
+    speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
+    actions: []
+  background: {fileID: 21300000, guid: 188c295158b4647f1b6d5827ba7f2d6c, type: 3}
+  nextScene: {fileID: 11400000, guid: fbc005436f49b4fd2bb2b5936f990be5, type: 2}

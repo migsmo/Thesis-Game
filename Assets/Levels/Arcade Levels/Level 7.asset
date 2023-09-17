@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Level 7
   m_EditorClassIdentifier: 
   levelNumber: 7
+  levelName: CH3-LVL1
+  nextLevel: 
+  postScene: 0
+  postIndex: 8
   exerciseTimer: 35
   restTimer: 10
   setNo: 3
@@ -21,6 +25,8 @@ MonoBehaviour:
   energyCost: 50
   isUnlocked: 0
   isGuided: 1
+  isBattleEnd: 0
+  isPostBattle: 0
   exerciseList:
   - Sumo Squat
   - Static Lunge (L)

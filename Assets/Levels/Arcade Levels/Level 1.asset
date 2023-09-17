@@ -16,9 +16,9 @@ MonoBehaviour:
   levelName: CH1-LVL1
   nextLevel: CH1-LVL2
   postScene: 1
-  postIndex: 9
-  exerciseTimer: 15
-  restTimer: 10
+  postIndex: 8
+  exerciseTimer: 1
+  restTimer: 1
   setNo: 2
   starsEarned: 2
   starsRequired: 0

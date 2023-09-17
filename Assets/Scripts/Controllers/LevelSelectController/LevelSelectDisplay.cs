@@ -76,7 +76,6 @@ public class LevelSelectDisplay : MonoBehaviour
 
         time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
         PlayTime.text = "Play Time: " + time + "min";
-        fromSim = false;
        
     }
 
@@ -145,8 +144,10 @@ public class LevelSelectDisplay : MonoBehaviour
         setNo = level.setNo;
         exerciseList = level.exerciseList;
         currLevel = level;
-        fromSim = true;
-        StartCoroutine(LoadLevel("CameraSpace"));
+        if (fromSim)
+            StartCoroutine(LoadLevel("CameraSpace"));
+        else
+            StartCoroutine(LoadLevel(level.levelName));
     }
 
     public void OnMouseOver()
