@@ -16,17 +16,17 @@ public class EnergyBarController : MonoBehaviour
     void Start()
     {
         energySlider = GetComponent<Slider>();
+
         if (IsNewDay())
         {
             SetEnergy(100);
+
         }
         else
         {
-
             // Load the energy value from PlayerPrefs
             int energy = PlayerPrefs.GetInt(energyKey, 100);
-
-            energy = 100;
+            //energy = 100;
 
             if (energySlider != null)
             {
@@ -56,17 +56,18 @@ public class EnergyBarController : MonoBehaviour
 
     public void SetEnergy(int energy)
     {
-
         energySlider.value = energy;
         energyCount.text = energy.ToString();
 
         // Save the energy value to PlayerPrefs
         PlayerPrefs.SetInt(energyKey, energy);
-        PlayerPrefs.Save();
+       
 
         // Save the current date for energy reset
         string currentDate = System.DateTime.Now.ToString("yyyyMMdd");
         PlayerPrefs.SetString(lastResetDateKey, currentDate);
+
+        PlayerPrefs.Save();
 
     }
 
