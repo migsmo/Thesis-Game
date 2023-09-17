@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: lockIcon
       value: 
       objectReference: {fileID: 894739022}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -412,6 +416,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 82fc9f6c598691b42ae4e8f95f9f8216, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -788,6 +796,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 9d9b17a8e868d12439681f498b6b66bd, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1436,6 +1448,10 @@ PrefabInstance:
       propertyPath: lockIcon
       value: 
       objectReference: {fileID: 2142613844}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1694,6 +1710,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 8c53313f082fe554483145b6158ff991, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1967,6 +1987,10 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 2089062608}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2295,6 +2319,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+--- !u!114 &1091479805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 763491892816838082, guid: 66e8543fb351f43c88df6f5f3c86a4f5, type: 3}
+  m_PrefabInstance: {fileID: 1091479804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba7ae7db94c6451f809698e53379209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1154222395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2322,6 +2357,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 012318eebb9e0b849a7b8e4eb0801191, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2785,6 +2824,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: 50958e45935c95141ac467671b95cff9, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3169,6 +3212,10 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 11400000, guid: cf2cc630363661f4c9f4b61fff843fda, type: 2}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3895,6 +3942,10 @@ PrefabInstance:
       propertyPath: lockIcon
       value: 
       objectReference: {fileID: 1998689810}
+    - target: {fileID: 1691250338565099543, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
+      propertyPath: energyBarOverlay
+      value: 
+      objectReference: {fileID: 1091479805}
     - target: {fileID: 1701732220697658375, guid: 26748a03d6c72024eb1ae06ef32e36d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

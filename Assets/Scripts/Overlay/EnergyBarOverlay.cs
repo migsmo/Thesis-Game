@@ -9,7 +9,7 @@ public class EnergyBarOverlay : MonoBehaviour
 {
     private EnergyBarController energyBarController;
     private PopupWindowController popupWindowController;
-    
+    private static string lastEnergyDeductedKey = "LastEnergyDeducted";
 
     void Start()
     {
@@ -74,6 +74,9 @@ public class EnergyBarOverlay : MonoBehaviour
             popupWindowController.AddToQueue("Not enough energy");
             return false;
         }
+
+        PlayerPrefs.SetInt(lastEnergyDeductedKey, energy);
+        PlayerPrefs.Save();
 
         energyBarController.SetEnergy(energyBarController.GetEnergy() - energy);
 

@@ -9,6 +9,7 @@ using UnityEngine.Video;
 
 public class PilotLogic : MonoBehaviour
 {
+    private static string energyKey = "Energy";
     public TextMeshProUGUI Timer;
     public TextMeshProUGUI ExerciseLabel;
     public TextMeshProUGUI CurrentLevel;
@@ -65,7 +66,8 @@ public class PilotLogic : MonoBehaviour
     public int nextExercise = 0;
     private float rotate = 0;
     public int[] percentageList = new int[17];
-    
+    private static string lastEnergyDeductedKey = "LastEnergyDeducted";
+
     public VideoClip sumoSquat;
     public VideoClip staticLunge;
     public VideoClip gluteBridge;
@@ -415,6 +417,17 @@ public class PilotLogic : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1f;
+        int lastEnergyDeducted =  PlayerPrefs.GetInt(lastEnergyDeductedKey, 0);
+        int energy = PlayerPrefs.GetInt(energyKey, 0);
+
+        Debug.Log("Deduct energy =  " + energy + lastEnergyDeducted);
+
+
+        PlayerPrefs.SetInt(lastEnergyDeductedKey, 0);
+        PlayerPrefs.SetInt(energyKey, energy  + lastEnergyDeducted);
+
+        PlayerPrefs.Save();
+
         StartCoroutine(LoadLevel("MainMenu"));
     }
 
