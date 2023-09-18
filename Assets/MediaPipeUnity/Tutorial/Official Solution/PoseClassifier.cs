@@ -736,9 +736,11 @@ public class PoseClassifier : MonoBehaviour
         foreach (string fileName in files)
         {
             // Use file name as pose class name.
-            int startIdx = fileName.LastIndexOf('/') + 1;
-            string className = fileName.Substring(startIdx, fileName.Length - (fileExtension.Length + 1) - startIdx);
+            // int startIdx = fileName.LastIndexOf('/') + 1;
+            // string className = fileName.Substring(startIdx, fileName.Length - (fileExtension.Length + 1) - startIdx);
 
+            string className = Path.GetFileNameWithoutExtension(fileName);
+            
             // if (className != "Wall Sit")
             // {
             //     print(className);
