@@ -17,16 +17,17 @@ MonoBehaviour:
   nextLevel: CH1-LVL2
   postScene: 1
   postIndex: 8
-  exerciseTimer: 1
-  restTimer: 1
+  exerciseTimer: 15
+  restTimer: 10
   setNo: 2
-  starsEarned: 2
+  starsEarned: 3
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1
   isGuided: 1
   isBattleEnd: 0
   isPostBattle: 0
+  isStoryMode: 0
   exerciseList:
   - Sumo Squat
   - Static Lunge (L)

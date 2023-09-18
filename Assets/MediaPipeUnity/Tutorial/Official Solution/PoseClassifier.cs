@@ -721,7 +721,17 @@ public class PoseClassifier : MonoBehaviour
     {
         List<PoseSample> poseSamples = new List<PoseSample>();
         // Each file in the folder represents one pose class.
-        string[] files = System.IO.Directory.GetFiles(poseSamplesFolder, $"*.{fileExtension}");
+        string[] files = null;
+        string targetFolder = Path.Combine(Application.streamingAssetsPath, poseSamplesFolder);
+
+        try
+        {
+            files = System.IO.Directory.GetFiles(targetFolder, $"*.{fileExtension}");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error accessing files: {e.Message}");
+        }
 
         foreach (string fileName in files)
         {

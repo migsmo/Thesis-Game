@@ -97,7 +97,6 @@ namespace Mediapipe.Unity.PoseLandmark
             //     yield return _resourceManager.PrepareAssetAsync("pose_landmark_full.bytes");
             // }
             
-            // AssetLoader.Provide(new LocalResourceManager());
             AssetLoader.PrepareAssetAsync("pose_detection.bytes");
             AssetLoader.PrepareAssetAsync("pose_landmark_full.bytes");
 
@@ -126,7 +125,8 @@ namespace Mediapipe.Unity.PoseLandmark
             stopwatch.Start();
 
             PoseEmbedder poseEmbedder = new PoseEmbedder();
-            PoseClassifier classifier = new PoseClassifier("Assets/fitness_poses_csvs_out", poseEmbedder);
+            PoseClassifier classifier = new PoseClassifier("fitness_poses_csvs_out", poseEmbedder);
+
             EMADictSmoothing smoothing = new EMADictSmoothing();
 
             while (true)
