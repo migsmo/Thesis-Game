@@ -118,22 +118,35 @@ namespace Resources
                               DateTime.Now.Year + "-" +
                               time + "-" +
                               "Level" + report.levelNumber + ".txt";
-            string path = Application.persistentDataPath + "/Logs/" + fileName;
+            string directoryPath = Application.persistentDataPath + "/Logs/";
+            string path = Path.Combine(directoryPath, fileName);
             string data = "";
             string newLine = "\n";
 
             DateTime currentDateTime = DateTime.Now;
-            
-            File.AppendAllText(path, currentDateTime.ToString() + newLine);
-            File.AppendAllText(path, "Level " + report.levelNumber + " Performace Breakdown:" + newLine);
 
-            for (int i = 0; i < report.exerciseList.Length; i++)
+            // Check if the directory exists, and create it if it doesn't
+            if (!Directory.Exists(directoryPath))
             {
-                File.AppendAllText(path, report.exerciseList[i] + " " + report.percentageList[i] + "%" + newLine);
+                Directory.CreateDirectory(directoryPath);
             }
             
-            File.AppendAllText(path, "Total Percentage: " + report.totalPercentage + "%" + newLine);
-            File.AppendAllText(path, "Total Stars Earned: " + report.earnedStars);
+            Debug.Log(directoryPath + Filename);
+
+            // Create or append to the log file
+            using (StreamWriter writer = File.AppendText(path))
+            {
+                writer.WriteLine(currentDateTime.ToString());
+                writer.WriteLine("Level " + report.levelNumber + " Performance Breakdown:");
+
+                for (int i = 0; i < report.exerciseList.Length; i++)
+                {
+                    writer.WriteLine(report.exerciseList[i] + " " + report.percentageList[i] + "%");
+                }
+
+                writer.WriteLine("Total Percentage: " + report.totalPercentage + "%");
+                writer.WriteLine("Total Stars Earned: " + report.earnedStars);
+            }
         }
     }
 }
