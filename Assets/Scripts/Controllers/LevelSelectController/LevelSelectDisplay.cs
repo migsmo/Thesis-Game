@@ -14,6 +14,7 @@ public class LevelSelectDisplay : MonoBehaviour
     public static int restTimer;
     public static int setNo;
     public static string[] exerciseList;
+    public static bool isStoryMode = false;
 
     public EnergyBarOverlay energyBarOverlay;
     public static Level currLevel;
@@ -50,15 +51,7 @@ public class LevelSelectDisplay : MonoBehaviour
         
         SaveManager saveManager = new SaveManager();
         
-        if (level.isStoryMode)
-        {
-            level.starsEarned = saveManager.LoadStoryLevel(level);
-        }
-        else
-        {
-            level.starsEarned = saveManager.Load(level);
-        }
-        
+        level.starsEarned = saveManager.Load(level);
 
         // Initialize Panel
         if (level.isStoryMode)
@@ -76,7 +69,6 @@ public class LevelSelectDisplay : MonoBehaviour
 
         time = ((level.exerciseTimer + level.restTimer) * (level.exerciseList.Length * level.setNo) + (60 * (level.setNo - 1))) / 60;
         PlayTime.text = "Play Time: " + time + "min";
-       
     }
 
     void Update()
@@ -144,6 +136,8 @@ public class LevelSelectDisplay : MonoBehaviour
         setNo = level.setNo;
         exerciseList = level.exerciseList;
         currLevel = level;
+        isStoryMode = currLevel.isStoryMode;
+
         if (fromSim)
             StartCoroutine(LoadLevel("CameraSpace"));
         else

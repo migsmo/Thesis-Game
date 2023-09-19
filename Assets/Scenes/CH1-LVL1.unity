@@ -408,8 +408,6 @@ MonoBehaviour:
   currentScene: {fileID: 11400000, guid: 3814f19fb1f5c48e7a1e5011a96d72b8, type: 2}
   speechBar: {fileID: 1179961857}
   backgroundController: {fileID: 1600131863}
-  transition: {fileID: 1917777913}
-  transitionTime: 2.5
 --- !u!114 &449325048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,11 +1237,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50322dc1c87931f478cbe5ef98929292, type: 3}
---- !u!95 &1917777913 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3728573656729453889, guid: 50322dc1c87931f478cbe5ef98929292, type: 3}
-  m_PrefabInstance: {fileID: 1917777912}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1917777914 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3728573656729453894, guid: 50322dc1c87931f478cbe5ef98929292, type: 3}

@@ -8,7 +8,7 @@ namespace Resources
     [System.Serializable]
     public class SaveManager
     {
-        private string Directory = "/LevelData/";
+        private string ArcadeDirectory = "/ArcadeData/";
         private string StoryModeDirectory = "/StoryModeData/";
         private string Filename = "";
         public Level[] loadedLevels;
@@ -16,69 +16,97 @@ namespace Resources
         public class LevelData
         {
             public int levelNumber;
+            public string levelName;
+            public string nextLevel;
+            public int postScene;
+            public int postIndex;
             public int exerciseTimer;
             public int restTimer;
             public int setNo;
             public int starsEarned;
             public int starsRequired;
             public int energyCost;
-            public bool isUnlocked = false;
+            public bool isUnlocked;
+            public bool isGuided;
+            public bool isBattleEnd;
+            public bool isPostBattle;
+            public bool isStoryMode;
             public string[] exerciseList;
         }
         
         public void Save(Level level)
         {
             string savedObject = JsonUtility.ToJson(level);
-            Filename = "/Level" + level.levelNumber + ".txt";
-            File.WriteAllText(Application.streamingAssetsPath + Filename, savedObject);
+            string directoryPath = "";
+            
+            if (LevelSelectDisplay.isStoryMode)
+            {
+                directoryPath = Application.persistentDataPath + StoryModeDirectory;
+            }
+            else
+            {
+                directoryPath = Application.persistentDataPath + ArcadeDirectory;
+            }
+            
+
+            // Create the base directory if it doesn't exist
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            string filename = "Level" + level.levelNumber + ".txt";
+            string filePath = Path.Combine(directoryPath, filename);
+
+            // Save the file
+            File.WriteAllText(filePath, savedObject);
         }
 
         public void SaveStoryMode(Level level)
         {
             string savedObject = JsonUtility.ToJson(level);
-            Filename = "/Level" + level.levelNumber + ".txt";
-            File.WriteAllText(Application.streamingAssetsPath + StoryModeDirectory + Filename, savedObject);
-        }
+            string directoryPath = Application.persistentDataPath + StoryModeDirectory;
 
-        // Makes a save file that stores the current level completed and total stars earned
-        public void SaveStoryProgress(StoryProgress story)
-        {
-            string savedObject = JsonUtility.ToJson(story); ;
-            File.WriteAllText(Application.streamingAssetsPath + StoryModeDirectory, savedObject);
-        }
-
-        // returns StoryProgress object from text file that has the last level completed and total stars earned
-        public StoryProgress LoadStoryProgress()
-        {
-            StoryProgress temp = new StoryProgress();
-
-            try
+            // Create the base directory if it doesn't exist
+            if (!Directory.Exists(directoryPath))
             {
-                string data = File.ReadAllText(Application.streamingAssetsPath + StoryModeDirectory);
-                temp = JsonUtility.FromJson<StoryProgress>(data);
+                Directory.CreateDirectory(directoryPath);
             }
-            catch (Exception e)
-            {
-                Debug.Log("No story mode text file found. Creating one now");
-            }
-            
-            return temp;
+
+            string filename = "Level" + level.levelNumber + ".txt";
+            string filePath = Path.Combine(directoryPath, filename);
+
+            // Save the file
+            File.WriteAllText(filePath, savedObject);
         }
 
         public int Load(Level level)
         {
             var temp = new LevelData();
             Filename = "/Level" + level.levelNumber + ".txt";
-            var data = File.ReadAllText(Application.streamingAssetsPath + Filename);
-            temp = JsonUtility.FromJson<LevelData>(data);
-            return temp.starsEarned;
-        }
+            var data = "";
+            string filePath = "";
 
-        public int LoadStoryLevel(Level level)
-        {
-            var temp = new LevelData();
-            Filename = "/Level" + level.levelNumber + ".txt";
-            var data = File.ReadAllText(Application.streamingAssetsPath + StoryModeDirectory + Filename);
+            if (level.isStoryMode)
+            {
+                filePath = Application.persistentDataPath + StoryModeDirectory + Filename;
+            }
+            else
+            {
+                filePath = Application.persistentDataPath + ArcadeDirectory + Filename;
+            }
+
+            // Check if the file exists
+            if (File.Exists(filePath))
+            {
+                data = File.ReadAllText(filePath);
+            }
+            else
+            {
+                Save(level);
+                return 0;
+            }
+  
             temp = JsonUtility.FromJson<LevelData>(data);
             return temp.starsEarned;
         }
@@ -90,7 +118,7 @@ namespace Resources
                               DateTime.Now.Year + "-" +
                               time + "-" +
                               "Level" + report.levelNumber + ".txt";
-            string path = Application.streamingAssetsPath + Directory + fileName;
+            string path = Application.persistentDataPath + "/Logs/" + fileName;
             string data = "";
             string newLine = "\n";
 

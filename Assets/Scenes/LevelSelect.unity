@@ -175,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: level
       value: 
-      objectReference: {fileID: 11400000, guid: 3dce7f65803e94d14b03fe953e968d72, type: 2}
+      objectReference: {fileID: 11400000, guid: ad6515aae2283144c8ee0eb6bd609ada, type: 2}
     - target: {fileID: 1691250338565099543, guid: 79ba4235064d05947ad409022fa66688, type: 3}
       propertyPath: transition
       value: 
@@ -3403,6 +3403,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad6515aae2283144c8ee0eb6bd609ada, type: 2}
   transition: {fileID: 2089062608}
   transitionTime: 3
+  isStoryMode: 0
 --- !u!4 &1430455577
 Transform:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Resources;
@@ -27,7 +28,7 @@ public class PostBattleManager : MonoBehaviour
         LevelName.text = "Level " + LevelSelectDisplay.currLevel.levelNumber;
         SaveManager saveManager = new SaveManager();
         report = PilotLogic.levelReport;
-        saveManager.generateLog(report);
+        // saveManager.generateLog(report);
 
         for (int i = 0; i < PilotLogic.levelReport.getExerciseLength(); i++)
         {
@@ -42,6 +43,8 @@ public class PostBattleManager : MonoBehaviour
 
         PercentageLabel.text = report.totalPercentage.ToString("F2") + "%";
         TotalBar.fillAmount = (float)report.totalPercentage / 100;
+        
+ 
         
         switch (report.earnedStars)
         {
@@ -62,15 +65,7 @@ public class PostBattleManager : MonoBehaviour
         if (report.earnedStars > LevelSelectDisplay.currLevel.starsEarned)
         {
             LevelSelectDisplay.currLevel.starsEarned = report.earnedStars;
-            // if statement
-            if (LevelSelectDisplay.currLevel.isStoryMode)
-            {
-                saveManager.SaveStoryMode(LevelSelectDisplay.currLevel);
-            }
-            else
-            {
-                saveManager.Save(LevelSelectDisplay.currLevel);
-            }
+            saveManager.Save(LevelSelectDisplay.currLevel);
         }
     }
 

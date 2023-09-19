@@ -4,6 +4,7 @@ using Resources;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class LevelSelectManager : MonoBehaviour
 { 
@@ -17,6 +18,7 @@ public class LevelSelectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SaveManager saveManager = new SaveManager();
         if (isStoryMode)
         {
             for (int i = 1; i < levels.Length; i++)
@@ -30,16 +32,26 @@ public class LevelSelectManager : MonoBehaviour
                     levels[i].isUnlocked = false;
                 }
             }
+            
+            // for (int i = 0; i < levels.Length; i++)
+            // {
+            //     saveManager.SaveStoryMode(levels[i]);
+            // }
         }
         else
         {
+            // for (int i = 0; i < levels.Length; i++)
+            // {
+            //     saveManager.Save(levels[i]);
+            // }
+            
             for (int i = 0; i < levels.Length; i++)
             {
                 total_stars += levels[i].starsEarned;
             }
-
+            
             calculatedStars = total_stars;
-
+            
             for (int i = 0; i < levels.Length; i++)
             {
                 if (total_stars >= levels[i].starsRequired)

@@ -1,9 +1,0 @@
-07/08/2023 3:24:24 PM
-Level 0 Performace Breakdown:
-Sumo Squat 99%
-Static Lunge (L) 45%
-Static Lunge (R) 68%
-Single Leg Glute Bridge (L) 81%
-Single Leg Glute Bridge (R) 78%
-Total Percentage: 74.2%
-Total Stars Earned: 1
