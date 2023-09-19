@@ -103,7 +103,7 @@ public class PilotLogic : MonoBehaviour
         pauseMenu.SetActive(false);
         isPaused = false;
         target.sprite = null;
-        
+
         if (!LevelSelectDisplay.currLevel.isGuided)
         {
             RightContainer.enabled = false;
@@ -414,7 +414,6 @@ public class PilotLogic : MonoBehaviour
 
     public void QuitGame()
     {
-        Time.timeScale = 1f;
         StartCoroutine(LoadLevel("MainMenu"));
     }
 

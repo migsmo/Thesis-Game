@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Resources;
@@ -43,6 +44,8 @@ public class PostBattleManager : MonoBehaviour
         PercentageLabel.text = report.totalPercentage.ToString("F2") + "%";
         TotalBar.fillAmount = (float)report.totalPercentage / 100;
         
+ 
+        
         switch (report.earnedStars)
         {
             case 3:
@@ -62,15 +65,7 @@ public class PostBattleManager : MonoBehaviour
         if (report.earnedStars > LevelSelectDisplay.currLevel.starsEarned)
         {
             LevelSelectDisplay.currLevel.starsEarned = report.earnedStars;
-            // if statement
-            if (LevelSelectDisplay.currLevel.isStoryMode)
-            {
-                saveManager.SaveStoryMode(LevelSelectDisplay.currLevel);
-            }
-            else
-            {
-                saveManager.Save(LevelSelectDisplay.currLevel);
-            }
+            saveManager.Save(LevelSelectDisplay.currLevel);
         }
     }
 

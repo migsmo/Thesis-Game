@@ -20,7 +20,7 @@ MonoBehaviour:
   exerciseTimer: 15
   restTimer: 10
   setNo: 2
-  starsEarned: 1
+  starsEarned: 0
   starsRequired: 0
   energyCost: 33
   isUnlocked: 1

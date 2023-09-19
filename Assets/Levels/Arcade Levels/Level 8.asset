@@ -27,6 +27,7 @@ MonoBehaviour:
   isGuided: 1
   isBattleEnd: 0
   isPostBattle: 0
+  isStoryMode: 0
   exerciseList:
   - Glute Bridge
   - Single Leg Glute Bridge (L)
