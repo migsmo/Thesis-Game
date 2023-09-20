@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 500ef08f4cfac4121a17369cfd788261, type: 3}
-  m_Name: TutorialScene2
+  m_Name: TutorialScene3
   m_EditorClassIdentifier: 
   sentences:
   - text: 'This is the main interface. Let me explain to you each element that you

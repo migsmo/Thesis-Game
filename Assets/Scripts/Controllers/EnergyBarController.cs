@@ -20,7 +20,6 @@ public class EnergyBarController : MonoBehaviour
         if (IsNewDay())
         {
             SetEnergy(100);
-
         }
         else
         {
