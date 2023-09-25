@@ -10,6 +10,7 @@ namespace Resources
     {
         private string ArcadeDirectory = "/ArcadeData/";
         private string StoryModeDirectory = "/StoryModeData/";
+        private string LogsDirectory = "/Logs/";
         private string Filename = "";
         public Level[] loadedLevels;
 
@@ -118,7 +119,7 @@ namespace Resources
                               DateTime.Now.Year + "-" +
                               time + "-" +
                               "Level" + report.levelNumber + ".txt";
-            string directoryPath = Application.persistentDataPath + "/Logs/";
+            string directoryPath = Application.persistentDataPath + LogsDirectory;
             string path = Path.Combine(directoryPath, fileName);
             string data = "";
             string newLine = "\n";
