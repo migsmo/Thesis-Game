@@ -85,7 +85,7 @@ public class PostBattleManager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(LoadLevel(GameController.nextName));
+                StartCoroutine(LoadLevel("StorySelect"));
             }
         }
         else
