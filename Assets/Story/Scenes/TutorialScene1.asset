@@ -51,5 +51,5 @@ MonoBehaviour:
       body and mind. Now get in the Titan and I\u2019ll explain to you the interface."
     speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions: []
-  background: {fileID: 21300000, guid: 858290d4f7dbf47e98971da837d68772, type: 3}
+  background: {fileID: 21300000, guid: b8b0a888a1d724b7cacc1a876af51baa, type: 3}
   nextScene: {fileID: 11400000, guid: 2b96f284e43a04d6981805ceead6c1be, type: 2}
