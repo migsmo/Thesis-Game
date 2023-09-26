@@ -17,7 +17,7 @@ MonoBehaviour:
   nextLevel: MainMenu
   postScene: 2
   postIndex: 4
-  exerciseTimer: 15
+  exerciseTimer: 0
   restTimer: 10
   setNo: 1
   starsEarned: 0

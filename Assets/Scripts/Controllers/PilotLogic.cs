@@ -335,16 +335,21 @@ public class PilotLogic : MonoBehaviour
             }
             if (!getReady && CurrentTime <= 0 && !startExercise)
             {
-                CurrentTime = exerciseTimer + 0.3f;
-                startExercise = true;
-                currExercise = nextExercise;
-                nextExercise++;
                 Debug.LogWarning("CurrExercise" + currExercise);
                 Debug.LogWarning("exLength" + exerciseLength);
+
+                startExercise = true;
+                currExercise = nextExercise;
+                
+                CurrentTime = getExerciseTimer(exerciseList[nextExercise]) + 0.3f;
+                
+                nextExercise++;
+                
                 if (currExercise < exerciseLength)
                 {
                     setLabel(exerciseList[currExercise]);
                 }
+
                 UpcomingExerciseLabel.text = "";
                 audioSource.PlayOneShot(StartCue, volume);
             }
@@ -498,6 +503,39 @@ public class PilotLogic : MonoBehaviour
                     target.sprite = null;
                     break;
             }
+    }
+
+    public float getExerciseTimer(String exercise)
+    {
+        float timer = 0f;
+
+        if (exercise == "Static Lunge (L)" || exercise == "Static Lunge (R)")
+        {
+            timer = 15f;
+        }
+        else if (exercise == "Superman Hold" 
+                 || exercise == "Single Leg Glute Bridge (L)"
+                 || exercise == "Single Leg Glute Bridge (R)"
+                 || exercise == "Pushup Hold"
+                 || exercise == "Side Plank (L)"
+                 || exercise == "Side Plank (R)")
+        {
+            timer = 20f;
+        }
+        else if (exercise == "Sumo Squat" 
+                 || exercise == "Bird Dog (L)" 
+                 || exercise == "Bird Dog (R)" 
+                 || exercise == "Side Plank (L) Easy"
+                 || exercise == "Side Plank (R) Easy")
+        {
+            timer = 30f;
+        }
+        else
+        {
+            timer = 40f;
+        }
+        
+        return timer + (exerciseTimer * 5);
     }
 }
 

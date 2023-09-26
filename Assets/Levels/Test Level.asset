@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Test Level
   m_EditorClassIdentifier: 
   levelNumber: 1
-  levelName: 
+  levelName: Test
   nextLevel: 
   postScene: 0
   postIndex: 0
-  exerciseTimer: 7
-  restTimer: 5
+  exerciseTimer: 0
+  restTimer: 1
   setNo: 1
   starsEarned: 0
   starsRequired: 0
@@ -27,6 +27,7 @@ MonoBehaviour:
   isGuided: 1
   isBattleEnd: 0
   isPostBattle: 0
+  isStoryMode: 0
   exerciseList:
   - Bird Dog (L)
   - Bird Dog (R)

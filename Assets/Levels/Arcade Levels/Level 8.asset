@@ -17,7 +17,7 @@ MonoBehaviour:
   nextLevel: 
   postScene: 0
   postIndex: 6
-  exerciseTimer: 35
+  exerciseTimer: 2
   restTimer: 10
   setNo: 3
   starsEarned: 0
