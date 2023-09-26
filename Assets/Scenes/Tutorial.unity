@@ -256,8 +256,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 584397947}
   - {fileID: 254801730}
+  - {fileID: 584397947}
   m_Father: {fileID: 691225571}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -297,7 +297,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 71902987}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -492,11 +492,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3728573656729453894, guid: 50322dc1c87931f478cbe5ef98929292, type: 3}
   m_PrefabInstance: {fileID: 546557613}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &546557615 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3728573656729453889, guid: 50322dc1c87931f478cbe5ef98929292, type: 3}
-  m_PrefabInstance: {fileID: 546557613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &584397944
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +561,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 71902987}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -832,8 +827,6 @@ MonoBehaviour:
   currentScene: {fileID: 11400000, guid: 1d75ae6c093c845b69643f394f87c932, type: 2}
   speechBar: {fileID: 1511558591}
   backgroundController: {fileID: 71902985}
-  transition: {fileID: 546557615}
-  transitionTime: 2.5
 --- !u!1 &1367375757
 GameObject:
   m_ObjectHideFlags: 0
