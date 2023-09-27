@@ -29,9 +29,9 @@ public class GameController : MonoBehaviour
         // isPostBattle = level.isPostBattle;
         if (isPostBattle)
         {
-            Debug.LogWarning(isPostBattle + " = IsPostBattle2");
-            Debug.LogWarning("Entered Is Post Battle");
             currentScene = currentScene.nextScene;
+            if (level.levelNumber == 0)
+                currentScene = currentScene.nextScene;
         }
         speechBar.PlayScene(currentScene);
         backgroundController.SetImage(currentScene.background);
@@ -51,7 +51,6 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            Debug.LogWarning(isPostBattle + " = IsPostBattle2");
             if(speechBar.IsCompleted())
             {
                 if(speechBar.IsLastSentence())
@@ -85,6 +84,8 @@ public class GameController : MonoBehaviour
                                 currentScene = currentScene.nextScene;
                                 speechBar.PlayScene(currentScene);
                                 backgroundController.SetImage(currentScene.background);
+                                if (level.levelNumber == 0)
+                                    isBattleEnd = false;
                             }
                     }
                 } else
