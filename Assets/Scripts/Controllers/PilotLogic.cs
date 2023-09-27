@@ -407,9 +407,18 @@ public class PilotLogic : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        Debug.LogWarning("Pressing Pause");
+        isPaused = !isPaused;
+        if (isPaused)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 
     public void ResumeGame()
