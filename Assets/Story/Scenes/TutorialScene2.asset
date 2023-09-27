@@ -22,8 +22,73 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 0, y: 0}
       moveSpeed: 0
-  - text: 'The exercises that you perform, Atlas, will control every aspect of your
-      Titan. It''s not just about strength, but flexibility, stamina, and coordination. '
+  - text: 'On the top left you will see an icon. The icon will show which body part
+      of the mech is being powered up. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: 'Below that is a timer. The timer will show how long you need to execute
+      the move in order to successfully power the body part. It also shows a timer
+      to get ready and rest in order to not over exert yourself '
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 557, y: -146}
+      moveSpeed: 0
+  - text: Now on the edge of the lower part of the interface you can see models.
+      These models act as a guide so you can power up your mech to its full potential
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: Moving on to the top right side, is a pause button which you can use to
+      stop the game in case of emergency.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: "Below that is a percentage performance indicator to see how well you\u2019re
+      executing a specific move for one duration.  "
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: 'For the main part of the interface, we have the pilot view which shows
+      you the pilot executing the moves. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: Above are labels, the top left most label will display what you have to
+      do. It will show three kinds of labels, namely a rest label, a get ready label,
+      and a label for which move to perform.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: Below that is the next move you need to perform to prepare yourself.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: On the top right most is the current level you are executing.
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: 'Below that is the set number which is the current cycle and how many cycles
+      of moves in total you need to perform. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: 'And Lastly in the bottom middle of the screen is the one of the most important
+      parts of the interface which is the synchronization bar. This shows how well
+      you are doing the moves and how in sync you are with your mech. The higher
+      this is, the better your performance is. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: 'That''s pretty much it for the mech interface. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: 'Now take note of this atlas. The exercises that you perform, Atlas, will
+      control every aspect of your Titan. It''s not just about strength, but flexibility,
+      stamina, and coordination. '
+    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    actions: []
+  - text: 'Now take note of this atlas. The exercises that you perform, Atlas, will
+      control every aspect of your Titan. It''s not just about strength, but flexibility,
+      stamina, and coordination. '
     speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions: []
   - text: So, it's a full-body challenge?
@@ -43,91 +108,19 @@ MonoBehaviour:
       growth. It\u2019s best that you get a feel for it yourself."
     speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions:
-    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-      spriteIndex: 0
-      actionType: 1
-      coords: {x: 557, y: -146}
-      moveSpeed: 0
     - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
       spriteIndex: 1
       actionType: 1
       coords: {x: -632, y: -132}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 557, y: -146}
       moveSpeed: 0
   - text: "I\u2019ll start the simulation mode, and try to see and feel what it\u2019s
       like to sync with your mech."
     speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions: []
-  - text: (Atlas in the pilot)
-    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-    actions:
-    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-      spriteIndex: 1
-      actionType: 3
-      coords: {x: -632, y: -132}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-      spriteIndex: 0
-      actionType: 3
-      coords: {x: 557, y: -146}
-      moveSpeed: 0
-  - text: Good job, Atlas! Remember, each exercise has its purpose. A squat can power
-      a Titan's legs for a strong kick, a push-up charges your Titan's arm strength
-      for a powerful punch.
-    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-    actions:
-    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-      spriteIndex: 1
-      actionType: 1
-      coords: {x: -632, y: -132}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-      spriteIndex: 0
-      actionType: 1
-      coords: {x: 557, y: -146}
-      moveSpeed: 0
-  - text: I understand, Luna. So, my fitness directly influences my Titan?
-    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-    actions:
-    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-      spriteIndex: 0
-      actionType: 1
-      coords: {x: -632, y: -132}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-      spriteIndex: 1
-      actionType: 1
-      coords: {x: 557, y: -146}
-      moveSpeed: 0
-  - text: That's right. Now, as we progress these things will become even more difficult.
-      But for now, practice these exercises. It's the first step to becoming a Titan
-      Handler.
-    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-    actions:
-    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-      spriteIndex: 1
-      actionType: 1
-      coords: {x: -632, y: -132}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-      spriteIndex: 0
-      actionType: 1
-      coords: {x: 557, y: -146}
-      moveSpeed: 0
-  - text: I'm on it, Luna.
-    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-    actions:
-    - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-      spriteIndex: 0
-      actionType: 1
-      coords: {x: -632, y: -132}
-      moveSpeed: 0
-    - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
-      spriteIndex: 1
-      actionType: 1
-      coords: {x: 557, y: -146}
-      moveSpeed: 0
-  - text: 'Here''s to becoming the best Titan Handler Neo-Terra has ever seen. '
-    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
-    actions: []
-  background: {fileID: 21300000, guid: 5310aed3d7f83b542af0c908ab863a8c, type: 3}
-  nextScene: {fileID: 11400000, guid: 8e6ba4eca1138488e84d4caaf1fe51ae, type: 2}
+  background: {fileID: 21300000, guid: 6b8bcbfda178443c79e604803033d404, type: 3}
+  nextScene: {fileID: 11400000, guid: 343c418328d874c3a97e80de7850d301, type: 2}
