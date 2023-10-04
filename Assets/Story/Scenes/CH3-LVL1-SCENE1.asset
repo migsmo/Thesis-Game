@@ -43,15 +43,15 @@ MonoBehaviour:
   - text: It can... talk? This is impossible...
     speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
     actions:
-    - speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
-      spriteIndex: 1
-      actionType: 1
-      coords: {x: -457, y: -146}
-      moveSpeed: 0
     - speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
       spriteIndex: 0
       actionType: 1
       coords: {x: 557, y: -146}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 3a2178d9e9ae34a1ebb233620e0f3598, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: -457, y: -146}
       moveSpeed: 0
   - text: It's the incarnation of the evil celestial. The Skyfall vision... It was
       a warning.

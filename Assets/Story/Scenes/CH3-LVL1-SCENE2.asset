@@ -18,7 +18,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 651f8c6407d06472c820459941e2ea71, type: 2}
     actions: []
   - text: That... That was just the beginning. The real fight is yet to come.
-    speaker: {fileID: 11400000, guid: 59764f4eef94842ba9b4f4a26e2e36dd, type: 2}
+    speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 238185b8d5a334aa2970362b639adf6c, type: 2}
       spriteIndex: 0

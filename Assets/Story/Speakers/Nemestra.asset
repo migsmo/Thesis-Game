@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Nemestra
   sprites: []
-  prefab: {fileID: 8597925127304662073, guid: 93cfbf9f9b8204d428ef67cab01b5b15, type: 3}
+  prefab: {fileID: 6953552240541568357, guid: 53ffc13a4c8fd4dc9ba2acda655f107b, type: 3}
