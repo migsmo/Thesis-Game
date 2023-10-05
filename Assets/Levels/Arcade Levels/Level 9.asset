@@ -22,7 +22,7 @@ MonoBehaviour:
   setNo: 2
   starsEarned: 0
   starsRequired: 8
-  energyCost: 50
+  energyCost: 0
   isUnlocked: 0
   isGuided: 0
   isBattleEnd: 0
