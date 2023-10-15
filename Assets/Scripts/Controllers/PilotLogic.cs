@@ -517,7 +517,7 @@ public class PilotLogic : MonoBehaviour
     public float getExerciseTimer(String exercise)
     {
         float timer = 0f;
-
+        
         if (exercise == "Static Lunge (L)" || exercise == "Static Lunge (R)")
         {
             timer = 15f;
