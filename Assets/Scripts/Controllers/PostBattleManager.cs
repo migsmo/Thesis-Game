@@ -62,7 +62,7 @@ public class PostBattleManager : MonoBehaviour
                 break;
         }
 
-        if (report.earnedStars > LevelSelectDisplay.currLevel.starsEarned)
+        if (report.earnedStars >= LevelSelectDisplay.currLevel.starsEarned)
         {
             LevelSelectDisplay.currLevel.starsEarned = report.earnedStars;
             saveManager.Save(LevelSelectDisplay.currLevel);
